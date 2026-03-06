@@ -352,6 +352,128 @@
       font-size: 0.9375rem;
     }
 
+    /* Formula block */
+    .formula-block {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--blue-600);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+      color: var(--slate-800);
+      overflow-x: auto;
+      line-height: 1.8;
+    }
+
+    .formula-block .var-label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 0.8125rem;
+      color: var(--slate-500);
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    /* Tip cards grid */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .tip-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 1.15rem;
+    }
+
+    .tip-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tip-card p {
+      font-size: 0.875rem;
+      color: var(--slate-500);
+      margin-bottom: 0;
+      line-height: 1.55;
+    }
+
+    .tip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      flex-shrink: 0;
+    }
+
+    .tip-icon.blue  { background: var(--blue-50); color: var(--blue-600); }
+    .tip-icon.green { background: var(--emerald-50); color: var(--emerald-500); }
+    .tip-icon.amber { background: var(--amber-50); color: var(--amber-500); }
+    .tip-icon.slate { background: var(--slate-100); color: var(--slate-600); }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--slate-200);
+      text-align: left;
+    }
+
+    .comparison-table th {
+      background: var(--blue-50);
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-600);
+    }
+
+    .comparison-table tbody tr { transition: background 0.15s; }
+    .comparison-table tbody tr:hover { background: var(--slate-50); }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+
+    .comparison-table .highlight {
+      font-weight: 700;
+      color: var(--blue-600);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge.green { background: var(--emerald-50); color: var(--emerald-500); }
+    .badge.amber { background: var(--amber-50); color: var(--amber-500); }
+    .badge.red   { background: #fef2f2; color: #ef4444; }
+
+    @media (max-width: 640px) {
+      .tips-grid { grid-template-columns: 1fr; }
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -508,6 +630,72 @@
         <h3>How do monthly contributions affect compound interest?</h3>
         <p>Regular monthly contributions dramatically increase your final balance. Each contribution begins earning compound interest from the moment it is added, so earlier contributions have more time to grow. Even small consistent deposits can lead to substantial wealth over long investment horizons.</p>
       </div>
+    </div>
+
+    <!-- Compound Interest Formula -->
+    <div class="card section" id="formula">
+      <h2>The Compound Interest Formula Explained</h2>
+      <p>The future value of an investment with regular monthly contributions and monthly compounding is calculated by combining two standard formulas: one for the lump-sum principal and one for the annuity stream of contributions.</p>
+
+      <div class="formula-block">
+        FV = P &times; (1 + r/n)^(n&times;t) + M &times; [((1 + r/n)^(n&times;t) - 1) / (r/n)]
+        <span class="var-label">Where: P = principal, r = annual rate, n = compounds per year, t = years, M = monthly contribution</span>
+      </div>
+
+      <p>The first part, <strong>P &times; (1 + r/n)^(n&times;t)</strong>, calculates how the initial lump sum grows over time. With monthly compounding, n equals 12, so the annual rate is divided into 12 smaller periods. Each period, interest is earned on the growing balance, producing exponential rather than linear growth.</p>
+      <p>The second part, <strong>M &times; [((1 + r/n)^(n&times;t) &minus; 1) / (r/n)]</strong>, is the future value of an ordinary annuity. It accounts for the fact that each monthly contribution enters the account at a different time, so earlier contributions compound for more periods than later ones. The formula sums this geometric series into a single expression.</p>
+      <p>Together, these components show why starting early and contributing consistently are the two most powerful levers for building wealth. A longer time horizon dramatically increases the exponent, while regular deposits ensure the annuity component grows alongside the principal.</p>
+    </div>
+
+    <!-- Compound Interest Tips -->
+    <div class="card section" id="tips">
+      <h2>5 Strategies to Maximize Your Compound Interest</h2>
+      <p>Understanding the math behind compounding is only half the equation. Applying these proven strategies can significantly increase the amount of interest your investments earn over a lifetime.</p>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h3><span class="tip-icon blue">1</span> Start Investing as Early as Possible</h3>
+          <p>Time is the most powerful factor in compound interest. An investor who starts at age 25 with $200 per month at 7% will accumulate over $525,000 by age 65. Waiting until age 35 to start cuts that figure nearly in half. Every year of delay costs more than the last because you lose the most powerful compounding years at the end.</p>
+        </div>
+        <div class="tip-card">
+          <h3><span class="tip-icon green">2</span> Increase Contributions Annually</h3>
+          <p>Commit to raising your monthly contribution each year, even by a small amount. Increasing your deposit by just 3% per year — roughly in line with typical salary growth — can add tens of thousands of dollars to your final balance compared to keeping contributions flat.</p>
+        </div>
+        <div class="tip-card">
+          <h3><span class="tip-icon amber">3</span> Reinvest All Dividends and Earnings</h3>
+          <p>Withdrawing dividends or interest payments breaks the compounding cycle. By reinvesting every distribution, your earnings generate their own earnings. Over a 30-year period, reinvested dividends can account for more than half of a stock portfolio's total return.</p>
+        </div>
+        <div class="tip-card">
+          <h3><span class="tip-icon slate">4</span> Minimize Fees and Expenses</h3>
+          <p>Investment fees reduce the effective rate at which your money compounds. A 1% annual fee may seem small, but over 30 years it can consume over 25% of your potential returns. Choose low-cost index funds or ETFs whenever possible to keep more of your gains compounding.</p>
+        </div>
+      </div>
+
+      <div class="tip-card" style="margin-top: 1rem;">
+        <h3><span class="tip-icon blue">5</span> Use Tax-Advantaged Accounts</h3>
+        <p>Accounts like 401(k)s, IRAs, and Roth IRAs allow your investments to compound without the drag of annual taxes on gains. In a taxable account, capital gains taxes reduce your effective return each year. Tax-deferred or tax-free compounding lets 100% of your returns continue working for you, which can result in a significantly larger balance over multi-decade horizons.</p>
+      </div>
+    </div>
+
+    <!-- Compound vs Simple Interest Comparison -->
+    <div class="card section" id="comparison">
+      <h2>Compound Interest vs. Simple Interest: Side-by-Side Comparison</h2>
+      <p>The difference between compound and simple interest becomes dramatic over long time horizons. The table below compares a <strong>$10,000 initial investment</strong> at a <strong>7% annual rate</strong> with <strong>no additional contributions</strong>, showing how compounding pulls ahead as the years increase.</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Time Period</th>
+            <th>Simple Interest</th>
+            <th>Compound Interest (Monthly)</th>
+            <th>Compounding Advantage</th>
+          </tr>
+        </thead>
+        <tbody id="comparisonBody"></tbody>
+      </table>
+
+      <p style="margin-top: 1.25rem;">With simple interest, a $10,000 investment earns exactly $700 every year regardless of how long you hold it. With monthly compounding, the interest earned each year grows because prior interest joins the principal. After 30 years, compound interest produces more than double the simple interest result — a clear demonstration of why Albert Einstein reportedly called compound interest "the eighth wonder of the world."</p>
+      <p>This gap widens even further when monthly contributions are added, because each deposit also begins compounding immediately. The takeaway is straightforward: the longer your time horizon, the greater the advantage of compound interest over simple interest.</p>
     </div>
   </main>
 
@@ -731,8 +919,32 @@
       renderChart(labels, res.yearlyBalances, res.yearlyContributions, res.yearlyInterest);
     });
 
+    // ---- Build comparison table ----
+    function buildComparisonTable() {
+      var P = 10000;
+      var rate = 0.07;
+      var tbody = document.getElementById("comparisonBody");
+      tbody.innerHTML = "";
+      var years = [1, 5, 10, 15, 20, 25, 30];
+      years.forEach(function (t) {
+        var simple = P + (P * rate * t);
+        var compound = P * Math.pow(1 + rate / 12, 12 * t);
+        var advantage = compound - simple;
+        var pct = ((compound / simple - 1) * 100).toFixed(1);
+        var badgeClass = pct < 5 ? "amber" : "green";
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + t + " year" + (t > 1 ? "s" : "") + "</td>" +
+          "<td>" + formatCurrency(simple) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(compound) + "</td>" +
+          "<td>+" + formatCurrency(advantage) + " <span class='badge " + badgeClass + "'>+" + pct + "%</span></td>";
+        tbody.appendChild(tr);
+      });
+    }
+
     // Init
     buildExampleTable();
+    buildComparisonTable();
   </script>
 </body>
 </html>
