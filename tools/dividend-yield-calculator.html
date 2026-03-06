@@ -13,7 +13,7 @@
   <header class="site-header">
     <nav>
       <a href="../index.html" class="logo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         Finance Tools
       </a>
       <ul class="nav-links">
@@ -25,6 +25,12 @@
   </header>
 
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Dividend Yield Calculator</span>
+    </div>
+
     <div class="hero">
       <h1>Dividend Yield Calculator</h1>
       <p>Find out how much income a dividend stock can generate for your portfolio.</p>
@@ -103,17 +109,19 @@
     <div class="card section">
       <h2>Example Calculation</h2>
       <p>Suppose you own <strong>100 shares</strong> of a company trading at <strong>$150 per share</strong> that pays an annual dividend of <strong>$4.50 per share</strong>.</p>
-      <table class="data-table">
-        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-        <tbody>
-          <tr><td>Stock Price</td><td>$150.00</td></tr>
-          <tr><td>Annual Dividend / Share</td><td>$4.50</td></tr>
-          <tr><td>Dividend Yield</td><td class="highlight">3.00%</td></tr>
-          <tr><td>Shares Owned</td><td>100</td></tr>
-          <tr><td>Annual Income</td><td class="highlight">$450.00</td></tr>
-          <tr><td>Monthly Income (est.)</td><td class="highlight">$37.50</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Stock Price</td><td>$150.00</td></tr>
+            <tr><td>Annual Dividend / Share</td><td>$4.50</td></tr>
+            <tr><td>Dividend Yield</td><td class="highlight">3.00%</td></tr>
+            <tr><td>Shares Owned</td><td>100</td></tr>
+            <tr><td>Annual Income</td><td class="highlight">$450.00</td></tr>
+            <tr><td>Monthly Income (est.)</td><td class="highlight">$37.50</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- FAQ -->

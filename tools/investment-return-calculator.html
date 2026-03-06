@@ -13,7 +13,7 @@
   <header class="site-header">
     <nav>
       <a href="../index.html" class="logo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         Finance Tools
       </a>
       <ul class="nav-links">
@@ -25,6 +25,12 @@
   </header>
 
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Investment Return Calculator</span>
+    </div>
+
     <div class="hero">
       <h1>Investment Return Calculator</h1>
       <p>Measure how well your investment performed with total return, annualized return, and profit.</p>
@@ -102,17 +108,19 @@
     <div class="card section">
       <h2>Example of Investment Performance</h2>
       <p>You invested <strong>$10,000</strong> in an index fund. After <strong>10 years</strong>, the value is <strong>$25,000</strong>.</p>
-      <table class="data-table">
-        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
-        <tbody>
-          <tr><td>Initial Investment</td><td>$10,000.00</td></tr>
-          <tr><td>Final Value</td><td>$25,000.00</td></tr>
-          <tr><td>Holding Period</td><td>10 years</td></tr>
-          <tr><td>Total Return</td><td class="highlight">+150.00%</td></tr>
-          <tr><td>Annualized Return (CAGR)</td><td class="highlight">+9.60%</td></tr>
-          <tr><td>Total Profit</td><td class="highlight">$15,000.00</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Initial Investment</td><td>$10,000.00</td></tr>
+            <tr><td>Final Value</td><td>$25,000.00</td></tr>
+            <tr><td>Holding Period</td><td>10 years</td></tr>
+            <tr><td>Total Return</td><td class="highlight">+150.00%</td></tr>
+            <tr><td>Annualized Return (CAGR)</td><td class="highlight">+9.60%</td></tr>
+            <tr><td>Total Profit</td><td class="highlight">$15,000.00</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- FAQ -->

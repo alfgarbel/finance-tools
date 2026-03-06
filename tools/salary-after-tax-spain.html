@@ -13,7 +13,7 @@
   <header class="site-header">
     <nav>
       <a href="../index.html" class="logo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         Finance Tools
       </a>
       <ul class="nav-links">
@@ -25,6 +25,12 @@
   </header>
 
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Salary After Tax — Spain</span>
+    </div>
+
     <div class="hero">
       <h1>Salary After Tax — Spain</h1>
       <p>Estimate your net annual and monthly salary after income tax and social security contributions.</p>
@@ -99,11 +105,13 @@
 
       <!-- Breakdown table (shown after calculation) -->
       <div id="breakdownWrap" style="display:none;margin-top:1.5rem;">
-        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem;color:var(--slate-800);">Tax Breakdown</h3>
-        <table class="data-table" id="breakdownTable">
-          <thead><tr><th>Component</th><th>Amount</th></tr></thead>
-          <tbody></tbody>
-        </table>
+        <h3 style="font-size:0.9375rem;font-weight:700;margin-bottom:0.75rem;color:var(--slate-800);">Tax Breakdown</h3>
+        <div class="table-wrap">
+          <table class="data-table" id="breakdownTable">
+            <thead><tr><th>Component</th><th>Amount</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -130,20 +138,22 @@
     <div class="card section">
       <h2>Example Net Salary Calculation</h2>
       <p>For a single employee earning <strong>&euro;35,000 gross per year</strong> with 14 payments:</p>
-      <table class="data-table">
-        <thead><tr><th>Item</th><th>Amount</th></tr></thead>
-        <tbody>
-          <tr><td>Gross Annual Salary</td><td>&euro;35,000.00</td></tr>
-          <tr><td>Social Security (~6.35%)</td><td>&minus;&euro;2,222.50</td></tr>
-          <tr><td>Taxable Income</td><td>&euro;32,777.50</td></tr>
-          <tr><td>Personal Allowance (single)</td><td>&minus;&euro;5,550.00</td></tr>
-          <tr><td>Estimated IRPF</td><td>&minus;&euro;6,333.75</td></tr>
-          <tr><td>Total Deductions</td><td style="font-weight:700;color:var(--red-500);">&minus;&euro;8,556.25</td></tr>
-          <tr><td>Net Annual Salary</td><td class="highlight">&euro;26,443.75</td></tr>
-          <tr><td>Net per Payment (14)</td><td class="highlight">&euro;1,888.84</td></tr>
-        </tbody>
-      </table>
-      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--slate-400);">Figures are approximate and based on the simplified model used by this calculator.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Item</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>Gross Annual Salary</td><td>&euro;35,000.00</td></tr>
+            <tr><td>Social Security (~6.35%)</td><td>&minus;&euro;2,222.50</td></tr>
+            <tr><td>Taxable Income</td><td>&euro;32,777.50</td></tr>
+            <tr><td>Personal Allowance (single)</td><td>&minus;&euro;5,550.00</td></tr>
+            <tr><td>Estimated IRPF</td><td>&minus;&euro;6,333.75</td></tr>
+            <tr><td>Total Deductions</td><td style="font-weight:700;color:var(--red-500);">&minus;&euro;8,556.25</td></tr>
+            <tr><td>Net Annual Salary</td><td class="highlight">&euro;26,443.75</td></tr>
+            <tr><td>Net per Payment (14)</td><td class="highlight">&euro;1,888.84</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.8125rem;color:var(--slate-400);">Figures are approximate and based on the simplified model used by this calculator.</p>
     </div>
 
     <!-- FAQ -->

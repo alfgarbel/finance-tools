@@ -14,7 +14,7 @@
   <header class="site-header">
     <nav>
       <a href="../index.html" class="logo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         Finance Tools
       </a>
       <ul class="nav-links">
@@ -26,6 +26,12 @@
   </header>
 
   <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Compound Interest Calculator</span>
+    </div>
+
     <div class="hero">
       <h1>Compound Interest Calculator</h1>
       <p>See how your money grows over time with the power of compounding and regular contributions.</p>
@@ -95,7 +101,7 @@
     <div class="card section" id="growth-table">
       <h2>Year-by-Year Growth</h2>
       <p>Detailed breakdown of your investment balance at the end of each year.</p>
-      <div style="overflow-x:auto;">
+      <div class="table-wrap">
         <table class="data-table" id="yearTable">
           <thead>
             <tr>
@@ -140,12 +146,14 @@
     <div class="card section">
       <h2>Example of Compound Interest Growth</h2>
       <p>Suppose you invest <strong>$10,000</strong> with a <strong>7% annual return</strong> compounded monthly and add <strong>$200 every month</strong>. Here is how your investment would grow at key milestones:</p>
-      <table class="data-table" id="exampleTable">
-        <thead>
-          <tr><th>Year</th><th>Contributions</th><th>Interest Earned</th><th>Balance</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <div class="table-wrap">
+        <table class="data-table" id="exampleTable">
+          <thead>
+            <tr><th>Year</th><th>Contributions</th><th>Interest Earned</th><th>Balance</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
 
     <!-- FAQ -->
@@ -214,9 +222,9 @@
               label: "Total Balance",
               data: balances,
               borderColor: "#2563eb",
-              backgroundColor: "rgba(37,99,235,0.08)",
-              fill: true, tension: 0.35, borderWidth: 2.5,
-              pointRadius: 0, pointHoverRadius: 6,
+              backgroundColor: "rgba(37,99,235,0.06)",
+              fill: true, tension: 0.35, borderWidth: 2,
+              pointRadius: 0, pointHoverRadius: 5,
               pointHoverBackgroundColor: "#2563eb",
               pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
             },
@@ -224,9 +232,9 @@
               label: "Contributions",
               data: contribs,
               borderColor: "#94a3b8",
-              backgroundColor: "rgba(148,163,184,0.06)",
-              fill: true, tension: 0.35, borderWidth: 2, borderDash: [6,3],
-              pointRadius: 0, pointHoverRadius: 5,
+              backgroundColor: "rgba(148,163,184,0.04)",
+              fill: true, tension: 0.35, borderWidth: 1.5, borderDash: [6,3],
+              pointRadius: 0, pointHoverRadius: 4,
               pointHoverBackgroundColor: "#94a3b8",
               pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
             },
@@ -234,9 +242,9 @@
               label: "Interest Earned",
               data: interest,
               borderColor: "#f59e0b",
-              backgroundColor: "rgba(245,158,11,0.06)",
-              fill: true, tension: 0.35, borderWidth: 2,
-              pointRadius: 0, pointHoverRadius: 5,
+              backgroundColor: "rgba(245,158,11,0.04)",
+              fill: true, tension: 0.35, borderWidth: 1.5,
+              pointRadius: 0, pointHoverRadius: 4,
               pointHoverBackgroundColor: "#f59e0b",
               pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
             }
@@ -248,11 +256,11 @@
           plugins: {
             legend: {
               position: "top",
-              labels: { usePointStyle: true, pointStyle: "circle", padding: 20, font: { size: 12, weight: "600" }, color: "#475569" }
+              labels: { usePointStyle: true, pointStyle: "circle", padding: 16, font: { size: 11, weight: "600" }, color: "#475569" }
             },
             tooltip: {
-              backgroundColor: "rgba(15,23,42,0.92)", titleFont: { size: 13, weight: "700" },
-              bodyFont: { size: 12 }, padding: 12, cornerRadius: 8, boxPadding: 4,
+              backgroundColor: "rgba(15,23,42,0.92)", titleFont: { size: 12, weight: "700" },
+              bodyFont: { size: 11 }, padding: 10, cornerRadius: 8, boxPadding: 4,
               callbacks: {
                 title: function(items) { return "Year " + items[0].label; },
                 label: function(ctx) { return " " + ctx.dataset.label + ": " + formatCurrency(ctx.parsed.y); }
@@ -261,16 +269,16 @@
           },
           scales: {
             x: {
-              title: { display: true, text: "Year", color: "#64748b", font: { size: 12, weight: "600" } },
+              title: { display: true, text: "Year", color: "#64748b", font: { size: 11, weight: "600" } },
               grid: { display: false },
-              ticks: { color: "#94a3b8", font: { size: 11 }, maxTicksLimit: 12 },
+              ticks: { color: "#94a3b8", font: { size: 10 }, maxTicksLimit: 12 },
               border: { color: "#e2e8f0" }
             },
             y: {
-              title: { display: true, text: "Value ($)", color: "#64748b", font: { size: 12, weight: "600" } },
+              title: { display: true, text: "Value ($)", color: "#64748b", font: { size: 11, weight: "600" } },
               grid: { color: "#f1f5f9" },
               ticks: {
-                color: "#94a3b8", font: { size: 11 },
+                color: "#94a3b8", font: { size: 10 },
                 callback: function(v) {
                   if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + "M";
                   if (v >= 1e3) return "$" + (v / 1e3).toFixed(0) + "K";
