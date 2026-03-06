@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dividend Yield Calculator – Free Stock Income Tool</title>
+  <meta name="description" content="Calculate dividend yield, annual dividend income, and monthly income from any stock. Enter the stock price, dividend per share, and number of shares.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#what-is">What Is Dividend Yield?</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>Dividend Yield Calculator</h1>
+      <p>Find out how much income a dividend stock can generate for your portfolio.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <div class="card-title">Calculate Dividend Income</div>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="price">Stock Price</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="price" value="150" min="0.01" step="0.01" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dividend">Annual Dividend / Share</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="dividend" value="4.50" min="0" step="0.01" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="shares">Number of Shares</label>
+            <div class="input-wrap">
+              <input type="number" id="shares" value="100" min="1" step="1" required>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Dividend Yield</div>
+          <div class="value" id="yieldPct">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Annual Income</div>
+          <div class="value" id="annualIncome">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Monthly Income (est.)</div>
+          <div class="value" id="monthlyIncome">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Is Dividend Yield? -->
+    <div class="card section" id="what-is">
+      <h2>What Is Dividend Yield?</h2>
+      <p>Dividend yield is a financial ratio that shows how much a company pays out in dividends each year relative to its stock price. It is expressed as a percentage and calculated by dividing the annual dividend per share by the current stock price.</p>
+      <div class="formula-block">
+        Dividend Yield = (Annual Dividend Per Share / Stock Price) &times; 100
+      </div>
+      <p>A higher yield means you receive more income for every dollar invested, but extremely high yields can sometimes signal that the market expects the dividend to be cut. Investors use dividend yield to compare income potential across different stocks and sectors.</p>
+    </div>
+
+    <!-- How Investors Use Dividend Yield -->
+    <div class="card section">
+      <h2>How Investors Use Dividend Yield</h2>
+      <p>Income-focused investors rely on dividend yield to build portfolios that generate regular cash flow. Here are common ways the metric is used:</p>
+      <ul>
+        <li><strong>Screening stocks</strong> — filtering for yields above a target threshold (e.g., 3%) to find income candidates.</li>
+        <li><strong>Comparing sectors</strong> — utilities and REITs typically offer higher yields than technology stocks, reflecting different business models.</li>
+        <li><strong>Estimating income</strong> — multiplying yield by portfolio value gives a quick annual income estimate.</li>
+        <li><strong>Spotting value</strong> — a rising yield caused by a falling stock price may indicate a buying opportunity, provided the dividend is sustainable.</li>
+      </ul>
+      <p>Always pair dividend yield with other metrics like payout ratio, earnings growth, and dividend history to get a complete picture of a stock's income potential.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Calculation</h2>
+      <p>Suppose you own <strong>100 shares</strong> of a company trading at <strong>$150 per share</strong> that pays an annual dividend of <strong>$4.50 per share</strong>.</p>
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Stock Price</td><td>$150.00</td></tr>
+          <tr><td>Annual Dividend / Share</td><td>$4.50</td></tr>
+          <tr><td>Dividend Yield</td><td class="highlight">3.00%</td></tr>
+          <tr><td>Shares Owned</td><td>100</td></tr>
+          <tr><td>Annual Income</td><td class="highlight">$450.00</td></tr>
+          <tr><td>Monthly Income (est.)</td><td class="highlight">$37.50</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is a good dividend yield?</h3>
+        <p>A "good" yield depends on your goals and the broader market. In most environments, yields between 2% and 5% are considered healthy for large-cap stocks. Yields above 6-7% may indicate higher risk and warrant closer examination of the company's payout ratio and cash flow.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does dividend yield change over time?</h3>
+        <p>Yes. Dividend yield changes whenever the stock price moves or the company adjusts its dividend payment. A falling stock price increases the yield even if the dividend stays the same, while a dividend increase boosts the yield if the price stays constant.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are dividends taxed?</h3>
+        <p>In most countries, dividends are subject to income tax. In the United States, qualified dividends are taxed at the long-term capital gains rate (0%, 15%, or 20% depending on income), while ordinary dividends are taxed at your regular income tax rate. Tax treatment varies by jurisdiction.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var price    = parseNum(document.getElementById("price").value);
+      var dividend = parseNum(document.getElementById("dividend").value);
+      var shares   = parseInt10(document.getElementById("shares").value, 1);
+
+      if (price <= 0) { setError("errorMsg", "Stock price must be greater than zero."); return; }
+      if (shares < 1) { setError("errorMsg", "You must own at least 1 share."); return; }
+
+      var yieldPct     = (dividend / price) * 100;
+      var annualIncome = dividend * shares;
+      var monthlyInc   = annualIncome / 12;
+
+      setText("yieldPct", formatPercent(yieldPct));
+      setText("annualIncome", formatCurrency(annualIncome));
+      setText("monthlyIncome", formatCurrency(monthlyInc));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

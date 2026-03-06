@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compound Interest Calculator – Free Investment Growth Tool</title>
+  <meta name="description" content="Calculate how your investments grow over time with our free compound interest calculator. See the power of monthly compounding, contributions, and long-term growth.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>Compound Interest Calculator</h1>
+      <p>See how your money grows over time with the power of compounding and regular contributions.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card" id="calculator">
+      <div class="card-title">Calculate Your Investment Growth</div>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="principal">Initial Investment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="principal" value="10000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="200" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Annual Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.1" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Investment Period</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="20" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Total Final Value</div>
+          <div class="value" id="totalValue">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Interest Earned</div>
+          <div class="value" id="totalInterest">—</div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-wrap" id="chartWrap">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Year-by-year table -->
+    <div class="card section" id="growth-table">
+      <h2>Year-by-Year Growth</h2>
+      <p>Detailed breakdown of your investment balance at the end of each year.</p>
+      <div style="overflow-x:auto;">
+        <table class="data-table" id="yearTable">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Contributions</th>
+              <th>Interest Earned</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- What Is Compound Interest -->
+    <div class="card section" id="how-it-works">
+      <h2>What Is Compound Interest?</h2>
+      <p>Compound interest is the process of earning interest on both your original principal and on previously accumulated interest. Unlike simple interest, which is calculated only on the initial amount, compound interest accelerates the growth of your savings over time.</p>
+      <p>When interest is compounded monthly, each month's interest is added to your balance, and the next month's interest is calculated on the new, larger balance. This creates an exponential growth curve that becomes more dramatic over longer time periods.</p>
+      <p>The key factors that influence compound interest are:</p>
+      <ul>
+        <li><strong>Principal</strong> — the initial amount you invest.</li>
+        <li><strong>Interest rate</strong> — the annual rate of return.</li>
+        <li><strong>Compounding frequency</strong> — how often interest is calculated (this calculator uses monthly compounding).</li>
+        <li><strong>Time</strong> — the longer your money compounds, the faster it grows.</li>
+        <li><strong>Regular contributions</strong> — adding money each month significantly boosts the final balance.</li>
+      </ul>
+    </div>
+
+    <!-- How to Calculate -->
+    <div class="card section">
+      <h2>How to Calculate Compound Interest</h2>
+      <p>The future value of an investment with regular monthly contributions and monthly compounding is calculated by combining two standard formulas:</p>
+      <div class="formula-block">
+        FV = P &times; (1 + r/n)^(n&times;t) + M &times; [((1 + r/n)^(n&times;t) &minus; 1) / (r/n)]
+        <span class="var-label">P = principal, r = annual rate, n = 12 (monthly), t = years, M = monthly contribution</span>
+      </div>
+      <p>The first part calculates how the initial lump sum grows. The second part is the future value of an ordinary annuity — it accounts for each monthly contribution entering the account at a different time, so earlier contributions compound for more periods than later ones.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example of Compound Interest Growth</h2>
+      <p>Suppose you invest <strong>$10,000</strong> with a <strong>7% annual return</strong> compounded monthly and add <strong>$200 every month</strong>. Here is how your investment would grow at key milestones:</p>
+      <table class="data-table" id="exampleTable">
+        <thead>
+          <tr><th>Year</th><th>Contributions</th><th>Interest Earned</th><th>Balance</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is the difference between compound interest and simple interest?</h3>
+        <p>Simple interest is calculated only on the original principal. Compound interest is calculated on the principal plus all previously earned interest. Over time, compound interest generates significantly higher returns because each interest payment itself earns interest in subsequent periods.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How often should interest be compounded?</h3>
+        <p>The more frequently interest is compounded, the more you earn. Common compounding frequencies include annually, quarterly, monthly, and daily. This calculator assumes monthly compounding, which is the most common frequency for savings accounts and many investment products.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do monthly contributions affect compound interest?</h3>
+        <p>Regular monthly contributions dramatically increase your final balance. Each contribution begins earning compound interest from the moment it is added, so earlier contributions have more time to grow. Even small consistent deposits can lead to substantial wealth over long investment horizons.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /* ---- Compound Interest Calculator ---- */
+    var growthChart = null;
+
+    /** Core calculation — monthly compounding. */
+    function calculate(P, M, r, t) {
+      var monthlyRate = r / 12 / 100;
+      var months = t * 12;
+      var balances = [], contributions = [], interestData = [];
+      var balance = P;
+
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + monthlyRate) + M;
+        if (m % 12 === 0) {
+          var contrib = P + M * m;
+          balances.push(balance);
+          contributions.push(contrib);
+          interestData.push(balance - contrib);
+        }
+      }
+
+      return {
+        finalValue: balance,
+        totalContrib: P + M * months,
+        totalInterest: balance - (P + M * months),
+        yearlyBalances: balances,
+        yearlyContributions: contributions,
+        yearlyInterest: interestData
+      };
+    }
+
+    /** Render Chart.js line chart. */
+    function renderChart(labels, balances, contribs, interest) {
+      var ctx = document.getElementById("chart").getContext("2d");
+      if (growthChart) growthChart.destroy();
+
+      growthChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Total Balance",
+              data: balances,
+              borderColor: "#2563eb",
+              backgroundColor: "rgba(37,99,235,0.08)",
+              fill: true, tension: 0.35, borderWidth: 2.5,
+              pointRadius: 0, pointHoverRadius: 6,
+              pointHoverBackgroundColor: "#2563eb",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            },
+            {
+              label: "Contributions",
+              data: contribs,
+              borderColor: "#94a3b8",
+              backgroundColor: "rgba(148,163,184,0.06)",
+              fill: true, tension: 0.35, borderWidth: 2, borderDash: [6,3],
+              pointRadius: 0, pointHoverRadius: 5,
+              pointHoverBackgroundColor: "#94a3b8",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            },
+            {
+              label: "Interest Earned",
+              data: interest,
+              borderColor: "#f59e0b",
+              backgroundColor: "rgba(245,158,11,0.06)",
+              fill: true, tension: 0.35, borderWidth: 2,
+              pointRadius: 0, pointHoverRadius: 5,
+              pointHoverBackgroundColor: "#f59e0b",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: true, aspectRatio: 2,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: {
+              position: "top",
+              labels: { usePointStyle: true, pointStyle: "circle", padding: 20, font: { size: 12, weight: "600" }, color: "#475569" }
+            },
+            tooltip: {
+              backgroundColor: "rgba(15,23,42,0.92)", titleFont: { size: 13, weight: "700" },
+              bodyFont: { size: 12 }, padding: 12, cornerRadius: 8, boxPadding: 4,
+              callbacks: {
+                title: function(items) { return "Year " + items[0].label; },
+                label: function(ctx) { return " " + ctx.dataset.label + ": " + formatCurrency(ctx.parsed.y); }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: "Year", color: "#64748b", font: { size: 12, weight: "600" } },
+              grid: { display: false },
+              ticks: { color: "#94a3b8", font: { size: 11 }, maxTicksLimit: 12 },
+              border: { color: "#e2e8f0" }
+            },
+            y: {
+              title: { display: true, text: "Value ($)", color: "#64748b", font: { size: 12, weight: "600" } },
+              grid: { color: "#f1f5f9" },
+              ticks: {
+                color: "#94a3b8", font: { size: 11 },
+                callback: function(v) {
+                  if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + "M";
+                  if (v >= 1e3) return "$" + (v / 1e3).toFixed(0) + "K";
+                  return "$" + v;
+                }
+              },
+              border: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    /** Populate year-by-year table. */
+    function fillTable(res, tbodySelector) {
+      var tbody = document.querySelector(tbodySelector);
+      tbody.innerHTML = "";
+      for (var i = 0; i < res.yearlyBalances.length; i++) {
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + (i + 1) + "</td>" +
+          "<td>" + formatCurrency(res.yearlyContributions[i]) + "</td>" +
+          "<td>" + formatCurrency(res.yearlyInterest[i]) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(res.yearlyBalances[i]) + "</td>";
+        tbody.appendChild(tr);
+      }
+    }
+
+    /** Build static example table. */
+    function buildExampleTable() {
+      var res = calculate(10000, 200, 7, 30);
+      var tbody = document.querySelector("#exampleTable tbody");
+      tbody.innerHTML = "";
+      [5, 10, 15, 20, 25, 30].forEach(function(yr) {
+        if (yr > res.yearlyBalances.length) return;
+        var bal = res.yearlyBalances[yr - 1];
+        var contrib = res.yearlyContributions[yr - 1];
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + yr + "</td>" +
+          "<td>" + formatCurrency(contrib) + "</td>" +
+          "<td>" + formatCurrency(bal - contrib) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(bal) + "</td>";
+        tbody.appendChild(tr);
+      });
+    }
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var P = parseNum(document.getElementById("principal").value);
+      var M = parseNum(document.getElementById("monthly").value);
+      var r = parseNum(document.getElementById("rate").value);
+      var t = parseInt10(document.getElementById("years").value, 1);
+
+      if (t < 1) { setError("errorMsg", "Investment period must be at least 1 year."); return; }
+      if (r < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+
+      var res = calculate(P, M, r, t);
+
+      setText("totalValue", formatCurrency(res.finalValue));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalInterest", formatCurrency(res.totalInterest));
+      showResults("results");
+
+      // Year-by-year table
+      fillTable(res, "#yearTable tbody");
+      document.getElementById("growth-table").style.display = "";
+
+      // Chart
+      var labels = [];
+      for (var i = 1; i <= t; i++) labels.push("" + i);
+      document.getElementById("chartWrap").classList.add("visible");
+      renderChart(labels, res.yearlyBalances, res.yearlyContributions, res.yearlyInterest);
+    });
+
+    // Hide year table until first calculation
+    document.getElementById("growth-table").style.display = "none";
+
+    buildExampleTable();
+  </script>
+</body>
+</html>

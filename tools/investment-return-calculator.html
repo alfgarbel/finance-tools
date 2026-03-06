@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Return Calculator – Total &amp; Annualized Return Tool</title>
+  <meta name="description" content="Calculate total return, annualized return (CAGR), and profit from any investment. Enter your initial investment, final value, and time period.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#what-is">What Is Investment Return?</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>Investment Return Calculator</h1>
+      <p>Measure how well your investment performed with total return, annualized return, and profit.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <div class="card-title">Calculate Your Returns</div>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="initial">Initial Investment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="initial" value="10000" min="0.01" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="final">Final Value</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="final" value="25000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Investment Period</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="10" min="0.1" max="200" step="0.1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Total Return</div>
+          <div class="value" id="totalReturn">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Annualized Return (CAGR)</div>
+          <div class="value" id="cagr">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Profit</div>
+          <div class="value" id="profit">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Is Investment Return? -->
+    <div class="card section" id="what-is">
+      <h2>What Is Investment Return?</h2>
+      <p>Investment return measures how much money you gained or lost on an investment relative to the amount you originally invested. It is typically expressed as a percentage and can be calculated as a total (cumulative) return or as an annualized return.</p>
+      <p><strong>Total return</strong> tells you the overall percentage gain or loss from start to finish, regardless of how much time passed. <strong>Annualized return</strong> (also known as CAGR — Compound Annual Growth Rate) normalizes the result to a per-year basis, making it easy to compare investments held for different time periods.</p>
+    </div>
+
+    <!-- Total vs Annualized -->
+    <div class="card section">
+      <h2>Total Return vs. Annualized Return</h2>
+      <p>These two metrics answer different questions:</p>
+      <div class="formula-block">
+        Total Return = ((Final Value &minus; Initial Investment) / Initial Investment) &times; 100
+      </div>
+      <div class="formula-block">
+        CAGR = ((Final Value / Initial Investment)^(1/years) &minus; 1) &times; 100
+      </div>
+      <p>Total return is useful for understanding absolute performance: "My investment doubled" (100% total return). Annualized return is useful for benchmarking: "My investment grew at 7.2% per year, which beat the market average of 6%."</p>
+      <p>Two investments with the same total return can have very different annualized returns if held for different durations. A 100% total return over 5 years (~14.9% CAGR) is much more impressive than 100% over 20 years (~3.5% CAGR).</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example of Investment Performance</h2>
+      <p>You invested <strong>$10,000</strong> in an index fund. After <strong>10 years</strong>, the value is <strong>$25,000</strong>.</p>
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Initial Investment</td><td>$10,000.00</td></tr>
+          <tr><td>Final Value</td><td>$25,000.00</td></tr>
+          <tr><td>Holding Period</td><td>10 years</td></tr>
+          <tr><td>Total Return</td><td class="highlight">+150.00%</td></tr>
+          <tr><td>Annualized Return (CAGR)</td><td class="highlight">+9.60%</td></tr>
+          <tr><td>Total Profit</td><td class="highlight">$15,000.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is CAGR?</h3>
+        <p>CAGR stands for Compound Annual Growth Rate. It represents the constant annual rate at which an investment would have grown to reach its final value from its initial value over a given period. It smooths out volatility and gives a single annualized figure for comparison.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this calculator account for dividends or fees?</h3>
+        <p>This calculator works with the total beginning and ending values you enter. If your final value already includes reinvested dividends and is net of fees, then those factors are automatically reflected in the results. Otherwise, adjust the final value accordingly before calculating.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I use this for investments with a loss?</h3>
+        <p>Yes. If your final value is less than your initial investment, the calculator will show a negative total return and negative CAGR, indicating a loss. The profit field will display the loss amount.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var initial = parseNum(document.getElementById("initial").value);
+      var final_  = parseNum(document.getElementById("final").value);
+      var years   = parseNum(document.getElementById("years").value, 1);
+
+      if (initial <= 0) { setError("errorMsg", "Initial investment must be greater than zero."); return; }
+      if (years <= 0)   { setError("errorMsg", "Investment period must be greater than zero."); return; }
+
+      var totalReturn = ((final_ - initial) / initial) * 100;
+      var cagr = (Math.pow(final_ / initial, 1 / years) - 1) * 100;
+      var profit = final_ - initial;
+
+      // Total return display
+      var trEl = document.getElementById("totalReturn");
+      trEl.textContent = (totalReturn >= 0 ? "+" : "") + formatPercent(totalReturn);
+      trEl.style.color = totalReturn >= 0 ? "" : "var(--red-500)";
+
+      // CAGR display
+      var cagrEl = document.getElementById("cagr");
+      cagrEl.textContent = (cagr >= 0 ? "+" : "") + formatPercent(cagr);
+      cagrEl.style.color = cagr >= 0 ? "" : "var(--red-500)";
+
+      // Profit display
+      var profEl = document.getElementById("profit");
+      profEl.textContent = (profit >= 0 ? "" : "\u2212") + formatCurrency(Math.abs(profit));
+      profEl.style.color = profit >= 0 ? "" : "var(--red-500)";
+
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Increase Calculator – Free Percent Change Tool</title>
+  <meta name="description" content="Calculate the percentage increase or decrease between two values instantly. See the formula, absolute difference, and real-world examples.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#formula">Formula</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>Percentage Increase Calculator</h1>
+      <p>Find the percentage change between any two numbers — increase or decrease.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <div class="card-title">Calculate Percentage Change</div>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="original">Original Value</label>
+            <div class="input-wrap">
+              <input type="number" id="original" placeholder="e.g. 200" step="any" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newVal">New Value</label>
+            <div class="input-wrap">
+              <input type="number" id="newVal" placeholder="e.g. 250" step="any" required>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results cols-2" id="results">
+        <div class="result-item blue">
+          <div class="label" id="changeLabel">Percentage Change</div>
+          <div class="value" id="changePct">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Absolute Difference</div>
+          <div class="value" id="absDiff">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to Calculate -->
+    <div class="card section" id="formula">
+      <h2>How to Calculate Percentage Increase</h2>
+      <p>Percentage increase (or decrease) measures how much a value has changed relative to its original amount. The formula works for any two numbers:</p>
+      <div class="formula-block">
+        Percentage Change = ((New Value &minus; Original Value) / |Original Value|) &times; 100
+      </div>
+      <p>If the result is positive, the value increased. If the result is negative, the value decreased. The absolute value of the original is used in the denominator to handle negative starting values correctly.</p>
+    </div>
+
+    <!-- Formula deep dive -->
+    <div class="card section">
+      <h2>Percentage Increase Formula</h2>
+      <p>To break it down step by step:</p>
+      <ol>
+        <li><strong>Subtract</strong> the original value from the new value to find the absolute difference.</li>
+        <li><strong>Divide</strong> the difference by the absolute value of the original.</li>
+        <li><strong>Multiply</strong> by 100 to convert the decimal to a percentage.</li>
+      </ol>
+      <p>For example, if a product's price goes from $80 to $100:</p>
+      <div class="formula-block">
+        (100 &minus; 80) / 80 &times; 100 = 25%
+        <span class="var-label">The price increased by 25%.</span>
+      </div>
+      <p>If the same product later drops from $100 to $90:</p>
+      <div class="formula-block">
+        (90 &minus; 100) / 100 &times; 100 = &minus;10%
+        <span class="var-label">The price decreased by 10%.</span>
+      </div>
+    </div>
+
+    <!-- Real-World Examples -->
+    <div class="card section">
+      <h2>Real-World Examples</h2>
+      <p>Percentage change is used across many fields. Here are a few common scenarios:</p>
+      <table class="data-table">
+        <thead><tr><th>Scenario</th><th>Original</th><th>New</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr><td>Salary raise</td><td>$50,000</td><td>$55,000</td><td class="highlight">+10.00%</td></tr>
+          <tr><td>Stock price drop</td><td>$120</td><td>$96</td><td style="color:var(--red-500);font-weight:700;">&minus;20.00%</td></tr>
+          <tr><td>Rent increase</td><td>$1,200</td><td>$1,350</td><td class="highlight">+12.50%</td></tr>
+          <tr><td>Weight loss</td><td>200 lbs</td><td>185 lbs</td><td style="color:var(--emerald-500);font-weight:700;">&minus;7.50%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is the difference between percentage increase and percentage points?</h3>
+        <p>Percentage increase measures relative change (e.g., a rate going from 5% to 10% is a 100% increase). Percentage points measure the absolute difference between two percentages (the same change is 5 percentage points). Confusing the two is one of the most common statistical mistakes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can the percentage increase be more than 100%?</h3>
+        <p>Yes. If the new value is more than double the original, the percentage increase exceeds 100%. For example, going from 50 to 150 is a 200% increase.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I calculate percentage decrease?</h3>
+        <p>Use the same formula. When the new value is smaller than the original, the result will automatically be negative, indicating a decrease. This calculator handles both directions and labels the result accordingly.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var original = parseNum(document.getElementById("original").value);
+      var newVal   = parseNum(document.getElementById("newVal").value);
+
+      if (original === 0) {
+        setError("errorMsg", "Original value cannot be zero (division by zero).");
+        return;
+      }
+
+      var diff = newVal - original;
+      var pct  = (diff / Math.abs(original)) * 100;
+
+      // Label dynamically
+      var label = pct >= 0 ? "Percentage Increase" : "Percentage Decrease";
+      setText("changeLabel", label);
+
+      // Color the result
+      var el = document.getElementById("changePct");
+      el.textContent = (pct >= 0 ? "+" : "") + formatPercent(pct);
+      el.style.color = pct >= 0 ? "var(--emerald-500)" : "var(--red-500)";
+
+      setText("absDiff", (diff >= 0 ? "+" : "\u2212") + Math.abs(diff).toFixed(2));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

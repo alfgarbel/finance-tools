@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary After Tax Spain – Net Pay Estimator</title>
+  <meta name="description" content="Estimate your net salary in Spain after income tax and social security. Enter your gross annual salary to see monthly take-home pay, total taxes, and effective rate.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#how-estimated">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>Salary After Tax — Spain</h1>
+      <p>Estimate your net annual and monthly salary after income tax and social security contributions.</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This calculator provides <em>approximate estimates</em> for educational purposes only. It uses a simplified progressive tax model and does not account for all regional variations, deductions, or personal circumstances. Do not use these figures as legal or tax advice. Consult a qualified tax professional for accurate calculations.
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <div class="card-title">Estimate Your Net Salary</div>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="gross">Gross Annual Salary</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">&euro;</span>
+              <input type="number" id="gross" value="35000" min="0" step="500" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="payments">Salary Payments / Year</label>
+            <div class="input-wrap">
+              <select id="payments">
+                <option value="12">12 payments</option>
+                <option value="14" selected>14 payments (common in Spain)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="profile">Tax Profile</label>
+            <div class="input-wrap">
+              <select id="profile">
+                <option value="single" selected>Single</option>
+                <option value="married">Married</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="region">Region</label>
+            <div class="input-wrap">
+              <select id="region">
+                <option value="general" selected>General Estimate</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results cols-4" id="results">
+        <div class="result-item green">
+          <div class="label">Net Annual Salary</div>
+          <div class="value" id="netAnnual">—</div>
+        </div>
+        <div class="result-item blue">
+          <div class="label">Net Monthly Salary</div>
+          <div class="value" id="netMonthly">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Taxes</div>
+          <div class="value" id="totalTax">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Effective Tax Rate</div>
+          <div class="value" id="effectiveRate">—</div>
+        </div>
+      </div>
+
+      <!-- Breakdown table (shown after calculation) -->
+      <div id="breakdownWrap" style="display:none;margin-top:1.5rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem;color:var(--slate-800);">Tax Breakdown</h3>
+        <table class="data-table" id="breakdownTable">
+          <thead><tr><th>Component</th><th>Amount</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- How Salary After Tax Is Estimated -->
+    <div class="card section" id="how-estimated">
+      <h2>How Salary After Tax Is Estimated in Spain</h2>
+      <p>In Spain, employees pay two main types of deductions from their gross salary:</p>
+      <ol>
+        <li><strong>Social Security contributions</strong> — the employee share is approximately 6.35% of gross salary, capped at the maximum contribution base (currently around &euro;56,600/year). This funds public pensions, unemployment, and healthcare.</li>
+        <li><strong>Personal Income Tax (IRPF)</strong> — a progressive tax applied to your taxable income (gross minus social security). Spain uses a split system where roughly half is set by the state and half by the autonomous community, but the combined brackets follow a progressive structure.</li>
+      </ol>
+      <p>This calculator uses a simplified progressive model that approximates the combined state + regional IRPF rates. A small personal allowance is applied depending on your tax profile (single or married).</p>
+    </div>
+
+    <!-- Gross vs Net -->
+    <div class="card section">
+      <h2>Gross Salary vs. Net Salary</h2>
+      <p><strong>Gross salary</strong> is the total amount your employer pays before any deductions. It includes your base salary plus any bonuses or benefits that are subject to tax.</p>
+      <p><strong>Net salary</strong> (take-home pay) is what you actually receive after social security contributions and income tax have been deducted. In Spain, the difference between gross and net can range from about 15% for low salaries to over 40% for very high earners.</p>
+      <p>In Spain it is common to receive <strong>14 payments per year</strong> instead of 12. The annual gross is the same, but it is divided into 14 installments — the two extra payments (known as <em>pagas extra</em>) are traditionally paid in June and December.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Net Salary Calculation</h2>
+      <p>For a single employee earning <strong>&euro;35,000 gross per year</strong> with 14 payments:</p>
+      <table class="data-table">
+        <thead><tr><th>Item</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Gross Annual Salary</td><td>&euro;35,000.00</td></tr>
+          <tr><td>Social Security (~6.35%)</td><td>&minus;&euro;2,222.50</td></tr>
+          <tr><td>Taxable Income</td><td>&euro;32,777.50</td></tr>
+          <tr><td>Personal Allowance (single)</td><td>&minus;&euro;5,550.00</td></tr>
+          <tr><td>Estimated IRPF</td><td>&minus;&euro;4,643.83</td></tr>
+          <tr><td>Total Deductions</td><td style="font-weight:700;color:var(--red-500);">&minus;&euro;6,866.33</td></tr>
+          <tr><td>Net Annual Salary</td><td class="highlight">&euro;28,133.67</td></tr>
+          <tr><td>Net per Payment (14)</td><td class="highlight">&euro;2,009.55</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--slate-400);">Figures are approximate and based on the simplified model used by this calculator.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Why are there 14 payments in Spain?</h3>
+        <p>Spanish labor law traditionally provides for two extra salary payments (pagas extraordinarias) — one in summer (typically June) and one at Christmas. The total annual gross remains the same; it is simply divided into 14 installments instead of 12. Some companies allow employees to choose between 12 or 14 payments.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How accurate is this calculator?</h3>
+        <p>This calculator provides a reasonable approximation for general planning. It uses simplified IRPF brackets and a flat social security rate. Actual take-home pay may differ depending on your autonomous community's regional tax rates, specific deductions (children, disability, mortgage), employment type, and other factors.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this include employer social security costs?</h3>
+        <p>No. This calculator only shows deductions from the employee's perspective. Employers in Spain pay an additional ~30% on top of gross salary for their share of social security, but that does not affect your take-home pay.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /* --------------------------------------------------------
+       Simplified Spain salary-after-tax model.
+       This is an ESTIMATE — see disclaimer.
+       -------------------------------------------------------- */
+
+    /** Social security employee rate (approximate). */
+    var SS_RATE = 0.0635;
+    /** Maximum annual base for social security contributions (approx 2024). */
+    var SS_CAP = 56600;
+
+    /** Personal allowance by profile. */
+    var ALLOWANCE = { single: 5550, married: 6700 };
+
+    /**
+     * Simplified combined IRPF brackets (state + region average).
+     * Each entry: [upper limit of bracket, marginal rate].
+     */
+    var BRACKETS = [
+      [12450,  0.19],
+      [20200,  0.24],
+      [35200,  0.30],
+      [60000,  0.37],
+      [300000, 0.45],
+      [Infinity, 0.47]
+    ];
+
+    /** Apply progressive tax brackets to a taxable amount. */
+    function calcIRPF(taxable) {
+      if (taxable <= 0) return 0;
+      var tax = 0;
+      var prev = 0;
+      for (var i = 0; i < BRACKETS.length; i++) {
+        var limit = BRACKETS[i][0];
+        var rate  = BRACKETS[i][1];
+        var chunk = Math.min(taxable, limit) - prev;
+        if (chunk <= 0) break;
+        tax += chunk * rate;
+        prev = limit;
+      }
+      return tax;
+    }
+
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var gross    = parseNum(document.getElementById("gross").value);
+      var payments = parseInt10(document.getElementById("payments").value, 14);
+      var profile  = document.getElementById("profile").value;
+
+      if (gross <= 0) { setError("errorMsg", "Gross salary must be greater than zero."); return; }
+
+      // 1. Social security
+      var ssBase = Math.min(gross, SS_CAP);
+      var ssCost = ssBase * SS_RATE;
+
+      // 2. Taxable income
+      var taxableBase = gross - ssCost;
+      var allowance   = ALLOWANCE[profile] || ALLOWANCE.single;
+      var taxable     = Math.max(0, taxableBase - allowance);
+
+      // 3. IRPF
+      var irpf = calcIRPF(taxable);
+
+      // 4. Totals
+      var totalDeductions = ssCost + irpf;
+      var netAnnual  = gross - totalDeductions;
+      var netMonthly = netAnnual / payments;
+      var effectiveRate = (totalDeductions / gross) * 100;
+
+      // Display results
+      setText("netAnnual",    formatEUR(netAnnual));
+      setText("netMonthly",   formatEUR(netMonthly));
+      setText("totalTax",     formatEUR(totalDeductions));
+      setText("effectiveRate", formatPercent(effectiveRate));
+      showResults("results");
+
+      // Breakdown table
+      var tbody = document.querySelector("#breakdownTable tbody");
+      tbody.innerHTML = "";
+      var rows = [
+        ["Gross Annual Salary",        formatEUR(gross)],
+        ["Social Security (" + formatPercent(SS_RATE * 100, 2) + ")", "\u2212" + formatEUR(ssCost)],
+        ["Taxable Income",             formatEUR(taxableBase)],
+        ["Personal Allowance",         "\u2212" + formatEUR(allowance)],
+        ["Estimated IRPF",             "\u2212" + formatEUR(irpf)],
+        ["Total Deductions",           "\u2212" + formatEUR(totalDeductions)],
+        ["Net Annual Salary",          formatEUR(netAnnual)],
+        ["Net per Payment (" + payments + ")", formatEUR(netMonthly)]
+      ];
+      rows.forEach(function(r, idx) {
+        var tr = document.createElement("tr");
+        var cls = (idx === rows.length - 1 || idx === rows.length - 2) ? " class='highlight'" : "";
+        tr.innerHTML = "<td>" + r[0] + "</td><td" + cls + ">" + r[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+      document.getElementById("breakdownWrap").style.display = "block";
+    });
+  </script>
+</body>
+</html>
