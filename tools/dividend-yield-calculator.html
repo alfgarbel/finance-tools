@@ -154,8 +154,9 @@
       var dividend = parseNum(document.getElementById("dividend").value);
       var shares   = parseInt10(document.getElementById("shares").value, 1);
 
-      if (price <= 0) { setError("errorMsg", "Stock price must be greater than zero."); return; }
-      if (shares < 1) { setError("errorMsg", "You must own at least 1 share."); return; }
+      if (price <= 0)   { setError("errorMsg", "Stock price must be greater than zero."); return; }
+      if (dividend < 0) { setError("errorMsg", "Annual dividend cannot be negative."); return; }
+      if (shares < 1)   { setError("errorMsg", "You must own at least 1 share."); return; }
 
       var yieldPct     = (dividend / price) * 100;
       var annualIncome = dividend * shares;

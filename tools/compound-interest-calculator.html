@@ -336,10 +336,18 @@
       var r = parseNum(document.getElementById("rate").value);
       var t = parseInt10(document.getElementById("years").value, 1);
 
-      if (t < 1) { setError("errorMsg", "Investment period must be at least 1 year."); return; }
+      if (P < 0) { setError("errorMsg", "Initial investment cannot be negative."); return; }
+      if (M < 0) { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
       if (r < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      if (t < 1) { setError("errorMsg", "Investment period must be at least 1 year."); return; }
 
       var res = calculate(P, M, r, t);
+
+      // Guard against overflow from extreme rate/period combinations
+      if (!isFinite(res.finalValue)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter period.");
+        return;
+      }
 
       setText("totalValue", formatCurrency(res.finalValue));
       setText("totalContributions", formatCurrency(res.totalContrib));

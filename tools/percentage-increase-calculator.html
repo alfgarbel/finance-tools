@@ -156,13 +156,17 @@
       var pct  = (diff / Math.abs(original)) * 100;
 
       // Label dynamically
-      var label = pct >= 0 ? "Percentage Increase" : "Percentage Decrease";
+      var label;
+      if (pct > 0) label = "Percentage Increase";
+      else if (pct < 0) label = "Percentage Decrease";
+      else label = "No Change";
       setText("changeLabel", label);
 
-      // Color the result
+      // Color the result — use unicode minus for consistency
       var el = document.getElementById("changePct");
-      el.textContent = (pct >= 0 ? "+" : "") + formatPercent(pct);
-      el.style.color = pct >= 0 ? "var(--emerald-500)" : "var(--red-500)";
+      var sign = pct > 0 ? "+" : pct < 0 ? "\u2212" : "";
+      el.textContent = sign + formatPercent(Math.abs(pct));
+      el.style.color = pct > 0 ? "var(--emerald-500)" : pct < 0 ? "var(--red-500)" : "";
 
       setText("absDiff", (diff >= 0 ? "+" : "\u2212") + Math.abs(diff).toFixed(2));
       showResults("results");

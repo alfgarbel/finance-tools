@@ -167,19 +167,22 @@
         cagr = (Math.pow(final_ / initial, 1 / years) - 1) * 100;
       }
 
-      // Total return display
+      // Total return display — use unicode minus for consistency
       var trEl = document.getElementById("totalReturn");
-      trEl.textContent = (totalReturn >= 0 ? "+" : "") + formatPercent(totalReturn);
+      var trSign = totalReturn > 0 ? "+" : totalReturn < 0 ? "\u2212" : "";
+      trEl.textContent = trSign + formatPercent(Math.abs(totalReturn));
       trEl.style.color = totalReturn >= 0 ? "" : "var(--red-500)";
 
       // CAGR display
       var cagrEl = document.getElementById("cagr");
-      cagrEl.textContent = (cagr >= 0 ? "+" : "") + formatPercent(cagr);
+      var cagrSign = cagr > 0 ? "+" : cagr < 0 ? "\u2212" : "";
+      cagrEl.textContent = cagrSign + formatPercent(Math.abs(cagr));
       cagrEl.style.color = cagr >= 0 ? "" : "var(--red-500)";
 
       // Profit display
       var profEl = document.getElementById("profit");
-      profEl.textContent = (profit >= 0 ? "" : "\u2212") + formatCurrency(Math.abs(profit));
+      var profSign = profit > 0 ? "+" : profit < 0 ? "\u2212" : "";
+      profEl.textContent = profSign + formatCurrency(Math.abs(profit));
       profEl.style.color = profit >= 0 ? "" : "var(--red-500)";
 
       showResults("results");
