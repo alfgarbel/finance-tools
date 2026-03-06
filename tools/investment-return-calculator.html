@@ -32,7 +32,7 @@
 
     <!-- Calculator -->
     <div class="card">
-      <div class="card-title">Calculate Your Returns</div>
+      <h2 class="card-title">Calculate Your Returns</h2>
       <form id="calcForm">
         <div class="form-grid">
           <div class="form-group">
@@ -149,8 +149,15 @@
       if (years <= 0)   { setError("errorMsg", "Investment period must be greater than zero."); return; }
 
       var totalReturn = ((final_ - initial) / initial) * 100;
-      var cagr = (Math.pow(final_ / initial, 1 / years) - 1) * 100;
       var profit = final_ - initial;
+
+      // CAGR: guard against negative final values where fractional exponent produces NaN
+      var cagr;
+      if (final_ <= 0) {
+        cagr = -100; // Total loss or worse
+      } else {
+        cagr = (Math.pow(final_ / initial, 1 / years) - 1) * 100;
+      }
 
       // Total return display
       var trEl = document.getElementById("totalReturn");
