@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inflation Calculator – See How Prices Change Over Time</title>
+  <meta name="description" content="Calculate how inflation erodes purchasing power over time. Enter an amount, inflation rate, and number of years to see the future cost and loss in value.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#what-is">What Is Inflation</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Inflation Calculator</span>
+    </div>
+
+    <div class="hero">
+      <h1>Inflation Calculator</h1>
+      <p>See how inflation changes the real value of your money and what things will cost in the future.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate the Impact of Inflation</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="amount">Initial Amount</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="amount" value="1000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Inflation Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="3" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Number of Years</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="10" min="1" max="200" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results cols-2" id="results">
+        <div class="result-item blue">
+          <div class="label">Future Value</div>
+          <div class="value" id="futureValue">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Loss of Purchasing Power</div>
+          <div class="value" id="lostPower">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Is Inflation -->
+    <div class="card section" id="what-is">
+      <h2>What Is Inflation?</h2>
+      <p>Inflation is the rate at which the general level of prices for goods and services rises over time. As prices increase, each unit of currency buys fewer items than it did before, which means the purchasing power of money decreases.</p>
+      <p>Inflation is typically measured as an annual percentage. For example, a 3% inflation rate means that something costing $100 today would cost about $103 one year from now. Over many years this effect compounds, causing significant price increases and a corresponding decline in the real value of savings.</p>
+      <p>Central banks aim to keep inflation at a moderate level (often around 2%) to encourage spending and investment while maintaining price stability.</p>
+    </div>
+
+    <!-- How Inflation Affects Purchasing Power -->
+    <div class="card section">
+      <h2>How Inflation Affects Purchasing Power</h2>
+      <p>The compound inflation formula shows what an amount of money will be equivalent to in the future:</p>
+      <div class="formula-block">
+        FV = PV &times; (1 + r)^t
+        <span class="var-label">FV = future value (cost), PV = present value, r = annual inflation rate (as decimal), t = number of years</span>
+      </div>
+      <p>The loss of purchasing power is the difference between the future value and the original amount:</p>
+      <div class="formula-block">
+        Loss = FV &minus; PV
+      </div>
+      <p>This means that if you hold cash without earning any return, inflation steadily reduces what your money can buy. To preserve purchasing power, your investments need to earn a return that at least matches the inflation rate.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Inflation Calculation</h2>
+      <p>Suppose you have <strong>$1,000</strong> today and the average inflation rate is <strong>3% per year</strong> for the next <strong>10 years</strong>.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What inflation rate should I use?</h3>
+        <p>The long-term historical average in the United States is roughly 3% per year. Recent years have seen both lower and higher rates. For conservative planning, 3% is a reasonable default. Check your country's central bank for current data and adjust as needed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does inflation affect investments?</h3>
+        <p>Yes. Inflation reduces the real return on investments. If your portfolio earns 7% and inflation is 3%, your real return is approximately 4%. When comparing investment options, always consider returns after inflation to understand actual purchasing power growth.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can I protect my money from inflation?</h3>
+        <p>Common strategies include investing in stocks, real estate, or inflation-protected securities (like TIPS in the US). Keeping large amounts in cash or low-yield savings accounts causes your money to lose value in real terms over time. Diversifying across asset classes is generally the best defense.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /** Calculate compound inflation. */
+    function calcInflation(amount, annualRate, years) {
+      var futureValue = amount * Math.pow(1 + annualRate / 100, years);
+      return {
+        futureValue: futureValue,
+        loss: futureValue - amount
+      };
+    }
+
+    /* Build static example table */
+    (function() {
+      var res = calcInflation(1000, 3, 10);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Initial Amount", "$1,000.00"],
+        ["Inflation Rate", "3.00%"],
+        ["Number of Years", "10"],
+        ["Future Value", formatCurrency(res.futureValue)],
+        ["Loss of Purchasing Power", formatCurrency(res.loss)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Future Value" || row[0] === "Loss of Purchasing Power";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var amount = parseNum(document.getElementById("amount").value);
+      var rate   = parseNum(document.getElementById("rate").value);
+      var years  = parseInt10(document.getElementById("years").value, 1);
+
+      if (amount <= 0) { setError("errorMsg", "Initial amount must be greater than zero."); return; }
+      if (rate < 0)    { setError("errorMsg", "Inflation rate cannot be negative."); return; }
+      if (years < 1)   { setError("errorMsg", "Number of years must be at least 1."); return; }
+
+      var res = calcInflation(amount, rate, years);
+
+      if (!isFinite(res.futureValue)) {
+        setError("errorMsg", "Result is too large. Try a lower inflation rate or fewer years.");
+        return;
+      }
+
+      setText("futureValue", formatCurrency(res.futureValue));
+      setText("lostPower", formatCurrency(res.loss));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
