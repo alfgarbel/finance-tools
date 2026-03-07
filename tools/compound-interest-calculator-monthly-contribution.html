@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compound Interest Calculator with Monthly Contributions – See the Impact</title>
+  <meta name="description" content="See how monthly contributions supercharge compound interest growth. Compare investing with and without regular deposits to understand the power of consistent saving.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="compound-interest-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="compound-interest-calculator.html">Compound Interest Calculator</a>
+      <span class="sep">/</span>
+      <span>Monthly Contribution Impact</span>
+    </div>
+
+    <div class="hero">
+      <h1>Compound Interest Calculator: Monthly Contribution Impact</h1>
+      <p>Start with nothing and build real wealth. See how consistent monthly contributions combined with compound interest can transform small regular deposits into a substantial portfolio.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card" id="calculator">
+      <h2 class="card-title">Calculate Your Monthly Contribution Growth</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="principal">Initial Investment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="principal" value="0" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="500" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Annual Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.1" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Investment Period</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="20" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Total Final Value</div>
+          <div class="value" id="totalValue">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Interest Earned</div>
+          <div class="value" id="totalInterest">&mdash;</div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-wrap" id="chartWrap">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Year-by-year table -->
+    <div class="card section" id="growth-table">
+      <h2>Year-by-Year Growth</h2>
+      <p>Detailed breakdown of your investment balance at the end of each year.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="yearTable">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Contributions</th>
+              <th>Interest Earned</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Power of Monthly Contributions -->
+    <div class="card section" id="monthly-power">
+      <h2>The Power of Regular Monthly Contributions</h2>
+      <p>Most people assume they need a large lump sum to start investing. The truth is that consistent monthly contributions are often more powerful than a one-time deposit, especially for those building wealth from scratch.</p>
+      <p>Here is why monthly contributions matter so much:</p>
+      <ul>
+        <li><strong>Dollar-cost averaging</strong> &mdash; by investing the same amount every month, you automatically buy more shares when prices are low and fewer when prices are high, reducing the impact of market volatility.</li>
+        <li><strong>Habit formation</strong> &mdash; automating a monthly contribution removes emotion and decision fatigue from investing. It becomes as routine as paying a bill.</li>
+        <li><strong>Accessible entry point</strong> &mdash; you do not need $10,000 or $50,000 to start. Even $100 or $200 per month compounds into significant wealth over 20+ years.</li>
+        <li><strong>Compounding acceleration</strong> &mdash; each monthly deposit immediately starts earning interest, and that interest earns interest. Over time, your contributions create a snowball effect that grows faster and faster.</li>
+      </ul>
+    </div>
+
+    <!-- Comparison: With vs Without Contributions -->
+    <div class="card section">
+      <h2>With Contributions vs. Without: A Side-by-Side Comparison</h2>
+      <p>The table below compares two scenarios over 20 years at 7% annual return: investing a $10,000 lump sum with no further contributions versus starting at $0 but contributing $500 every month.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="comparisonTable">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Lump Sum Only ($10K)</th>
+              <th>Monthly $500 (No Lump Sum)</th>
+              <th>Difference</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem;">As the table shows, $500 monthly contributions starting from zero dramatically outpace a one-time $10,000 investment. By year 20, the monthly contributor has built a portfolio more than four times larger, despite having no initial lump sum.</p>
+    </div>
+
+    <!-- Building Wealth from Zero -->
+    <div class="card section">
+      <h2>Building Wealth from Zero: It Is Possible</h2>
+      <p>One of the most empowering truths in personal finance is that you do not need to be wealthy to start building wealth. A disciplined monthly contribution plan can take you from $0 to a six-figure portfolio in under 15 years.</p>
+      <p>Consider these realistic monthly contribution scenarios at 7% annual return:</p>
+      <ul>
+        <li><strong>$200/month</strong> &mdash; grows to approximately $104,000 after 20 years ($48,000 contributed, $56,000 in interest).</li>
+        <li><strong>$500/month</strong> &mdash; grows to approximately $260,000 after 20 years ($120,000 contributed, $140,000 in interest).</li>
+        <li><strong>$1,000/month</strong> &mdash; grows to approximately $520,000 after 20 years ($240,000 contributed, $280,000 in interest).</li>
+      </ul>
+      <p>Notice that in each case, the interest earned eventually exceeds the total amount contributed. That is the magic of compounding: your money starts making more money than you do.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much difference do monthly contributions make compared to a lump sum?</h3>
+        <p>Monthly contributions make an enormous difference over time. For example, a one-time $10,000 investment at 7% grows to about $40,000 in 20 years. But $500 per month at 7% (starting from zero) grows to roughly $260,000 over the same period. The key is that each monthly deposit adds to the compounding base, creating a snowball effect. While a lump sum has the advantage of time in the market from day one, regular contributions allow you to invest far more total capital over the years.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is better: a lump sum or monthly contributions?</h3>
+        <p>If you have a large sum available, investing it all at once historically produces slightly better returns about two-thirds of the time (because markets tend to go up). However, most people do not have a large lump sum sitting around. Monthly contributions are the practical and highly effective alternative. The best strategy for many people is to invest any available lump sum immediately and then continue with regular monthly contributions going forward.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much should I contribute monthly?</h3>
+        <p>A common guideline is to save and invest 15&ndash;20% of your gross income. If that feels too high initially, start with whatever you can afford, even $50 or $100 per month, and increase it over time as your income grows. The most important step is to start. Automating your contributions removes the temptation to skip months. Even increasing your contribution by $25 or $50 per year can compound into tens of thousands of dollars of additional growth over a 20-year period.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section" style="text-align:center;">
+      <h2>Explore More Compound Interest Scenarios</h2>
+      <p>Try different contribution amounts, time periods, and interest rates to build your personalized plan.</p>
+      <p>
+        <a href="compound-interest-calculator.html" class="btn">Full Compound Interest Calculator</a>
+      </p>
+      <p style="margin-top:1rem;">
+        <a href="compound-interest-calculator-5-years.html">5-Year Investment Calculator</a> &middot;
+        <a href="compound-interest-calculator-1000-per-month.html">$1,000/Month Investment Calculator</a>
+      </p>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="compound-interest-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="savings-goal-calculator.html">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+        <a href="retirement-calculator.html">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="investment-return-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+          Investment Return Calculator
+        </a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /* ---- Compound Interest Calculator – Monthly Contribution Focus ---- */
+    var growthChart = null;
+
+    /** Core calculation — monthly compounding. */
+    function calculate(P, M, r, t) {
+      var monthlyRate = r / 12 / 100;
+      var months = t * 12;
+      var balances = [], contributions = [], interestData = [];
+      var balance = P;
+
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + monthlyRate) + M;
+        if (m % 12 === 0) {
+          var contrib = P + M * m;
+          balances.push(balance);
+          contributions.push(contrib);
+          interestData.push(balance - contrib);
+        }
+      }
+
+      return {
+        finalValue: balance,
+        totalContrib: P + M * months,
+        totalInterest: balance - (P + M * months),
+        yearlyBalances: balances,
+        yearlyContributions: contributions,
+        yearlyInterest: interestData
+      };
+    }
+
+    /** Render Chart.js line chart. */
+    function renderChart(labels, balances, contribs, interest) {
+      var ctx = document.getElementById("chart").getContext("2d");
+      if (growthChart) growthChart.destroy();
+
+      growthChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Total Balance",
+              data: balances,
+              borderColor: "#2563eb",
+              backgroundColor: "rgba(37,99,235,0.06)",
+              fill: true, tension: 0.35, borderWidth: 2,
+              pointRadius: 0, pointHoverRadius: 5,
+              pointHoverBackgroundColor: "#2563eb",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            },
+            {
+              label: "Contributions",
+              data: contribs,
+              borderColor: "#94a3b8",
+              backgroundColor: "rgba(148,163,184,0.04)",
+              fill: true, tension: 0.35, borderWidth: 1.5, borderDash: [6,3],
+              pointRadius: 0, pointHoverRadius: 4,
+              pointHoverBackgroundColor: "#94a3b8",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            },
+            {
+              label: "Interest Earned",
+              data: interest,
+              borderColor: "#f59e0b",
+              backgroundColor: "rgba(245,158,11,0.04)",
+              fill: true, tension: 0.35, borderWidth: 1.5,
+              pointRadius: 0, pointHoverRadius: 4,
+              pointHoverBackgroundColor: "#f59e0b",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: true, aspectRatio: 2,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: {
+              position: "top",
+              labels: { usePointStyle: true, pointStyle: "circle", padding: 16, font: { size: 11, weight: "600" }, color: "#475569" }
+            },
+            tooltip: {
+              backgroundColor: "rgba(15,23,42,0.92)", titleFont: { size: 12, weight: "700" },
+              bodyFont: { size: 11 }, padding: 10, cornerRadius: 8, boxPadding: 4,
+              callbacks: {
+                title: function(items) { return "Year " + items[0].label; },
+                label: function(ctx) { return " " + ctx.dataset.label + ": " + formatCurrency(ctx.parsed.y); }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: "Year", color: "#64748b", font: { size: 11, weight: "600" } },
+              grid: { display: false },
+              ticks: { color: "#94a3b8", font: { size: 10 }, maxTicksLimit: 12 },
+              border: { color: "#e2e8f0" }
+            },
+            y: {
+              title: { display: true, text: "Value ($)", color: "#64748b", font: { size: 11, weight: "600" } },
+              grid: { color: "#f1f5f9" },
+              ticks: {
+                color: "#94a3b8", font: { size: 10 },
+                callback: function(v) {
+                  if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + "M";
+                  if (v >= 1e3) return "$" + (v / 1e3).toFixed(0) + "K";
+                  return "$" + v;
+                }
+              },
+              border: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    /** Populate year-by-year table. */
+    function fillTable(res, tbodySelector) {
+      var tbody = document.querySelector(tbodySelector);
+      tbody.innerHTML = "";
+      for (var i = 0; i < res.yearlyBalances.length; i++) {
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + (i + 1) + "</td>" +
+          "<td>" + formatCurrency(res.yearlyContributions[i]) + "</td>" +
+          "<td>" + formatCurrency(res.yearlyInterest[i]) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(res.yearlyBalances[i]) + "</td>";
+        tbody.appendChild(tr);
+      }
+    }
+
+    /** Build comparison table: lump sum vs monthly contributions. */
+    function buildComparisonTable() {
+      var lumpSum = calculate(10000, 0, 7, 20);
+      var monthly = calculate(0, 500, 7, 20);
+      var tbody = document.querySelector("#comparisonTable tbody");
+      tbody.innerHTML = "";
+      [5, 10, 15, 20].forEach(function(yr) {
+        var lumpBal = lumpSum.yearlyBalances[yr - 1];
+        var monthlyBal = monthly.yearlyBalances[yr - 1];
+        var diff = monthlyBal - lumpBal;
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + yr + "</td>" +
+          "<td>" + formatCurrency(lumpBal) + "</td>" +
+          "<td>" + formatCurrency(monthlyBal) + "</td>" +
+          "<td class='highlight'>" + (diff >= 0 ? "+" : "") + formatCurrency(diff) + "</td>";
+        tbody.appendChild(tr);
+      });
+    }
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var P = parseNum(document.getElementById("principal").value);
+      var M = parseNum(document.getElementById("monthly").value);
+      var r = parseNum(document.getElementById("rate").value);
+      var t = parseInt10(document.getElementById("years").value, 1);
+
+      if (P < 0) { setError("errorMsg", "Initial investment cannot be negative."); return; }
+      if (M < 0) { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (r < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      if (t < 1) { setError("errorMsg", "Investment period must be at least 1 year."); return; }
+
+      var res = calculate(P, M, r, t);
+
+      if (!isFinite(res.finalValue)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter period.");
+        return;
+      }
+
+      setText("totalValue", formatCurrency(res.finalValue));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalInterest", formatCurrency(res.totalInterest));
+      showResults("results");
+
+      fillTable(res, "#yearTable tbody");
+      document.getElementById("growth-table").style.display = "";
+
+      var labels = [];
+      for (var i = 1; i <= t; i++) labels.push("" + i);
+      document.getElementById("chartWrap").classList.add("visible");
+      renderChart(labels, res.yearlyBalances, res.yearlyContributions, res.yearlyInterest);
+    });
+
+    // Hide year table until first calculation
+    document.getElementById("growth-table").style.display = "none";
+
+    buildComparisonTable();
+  </script>
+</body>
+</html>

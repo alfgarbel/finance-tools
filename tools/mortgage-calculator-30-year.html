@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30-Year Mortgage Calculator – Monthly Payment &amp; Total Interest</title>
+  <meta name="description" content="Calculate your 30-year mortgage monthly payment and total interest. See amortization breakdowns, early payoff strategies, and compare to shorter terms.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="mortgage-payment-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="mortgage-payment-calculator.html">Mortgage Payment Calculator</a>
+      <span class="sep">/</span>
+      <span>30-Year Mortgage</span>
+    </div>
+
+    <div class="hero">
+      <h1>30-Year Mortgage Calculator</h1>
+      <p>The 30-year fixed-rate mortgage is America's most popular home loan. Calculate your monthly payment, total interest, and understand how your payments are structured over three decades.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your 30-Year Mortgage Payment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="homePrice">Home Price</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="homePrice" value="400000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="downPayment">Down Payment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="downPayment" value="80000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loanTerm">Loan Term</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Monthly Payment</div>
+          <div class="value" id="monthlyPayment">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Payment</div>
+          <div class="value" id="totalPayment">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Interest</div>
+          <div class="value" id="totalInterest">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Why 30 Years -->
+    <div class="card section">
+      <h2>Why the 30-Year Mortgage Is America's Most Popular Term</h2>
+      <p>Roughly 90% of homebuyers choose a 30-year fixed-rate mortgage, and the reasons are straightforward:</p>
+      <ul>
+        <li><strong>Lowest monthly payment</strong> &mdash; spreading the loan over 360 months keeps each payment manageable. For a $320,000 loan at 6.5%, your monthly payment is about $2,023 compared to $2,653 on a 15-year term.</li>
+        <li><strong>Predictable budgeting</strong> &mdash; the fixed rate means your principal and interest payment never changes over the entire 30-year period, shielding you from rising interest rates.</li>
+        <li><strong>Greater purchasing power</strong> &mdash; lower monthly obligations mean you may qualify for a larger loan, expanding your home search to include properties that would be out of reach with a shorter term.</li>
+        <li><strong>Investment flexibility</strong> &mdash; the difference between a 30-year and 15-year payment can be invested elsewhere. If your investment return exceeds your mortgage rate, you come out ahead financially.</li>
+      </ul>
+      <p>The primary trade-off is the total cost: over 30 years, you will pay significantly more in interest than with a 15-year or 20-year term. Understanding that trade-off is key to making the right decision for your situation.</p>
+    </div>
+
+    <!-- Amortization Snapshot -->
+    <div class="card section">
+      <h2>Amortization Snapshot: Where Your Payment Goes</h2>
+      <p>In the early years of a 30-year mortgage, the vast majority of each payment goes toward interest rather than reducing your principal balance. Here is how a <strong>$320,000 loan at 6.5%</strong> breaks down at key milestones:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Monthly Payment</th>
+              <th>Principal Portion</th>
+              <th>Interest Portion</th>
+              <th>Remaining Balance</th>
+            </tr>
+          </thead>
+          <tbody id="amortBody"></tbody>
+        </table>
+      </div>
+      <p>Notice how in Year 1, nearly 77% of your payment goes to interest. By Year 20, the split is roughly even, and by Year 30 almost all of your payment reduces the balance. This is why extra principal payments in the early years have the biggest impact on total interest saved.</p>
+    </div>
+
+    <!-- Strategies -->
+    <div class="card section">
+      <h2>Strategies to Pay Off a 30-Year Mortgage Faster</h2>
+      <p>You can enjoy the safety net of low required payments while still reducing total interest cost with these approaches:</p>
+      <ul>
+        <li><strong>Make biweekly payments</strong> &mdash; pay half your monthly amount every two weeks. This results in 26 half-payments (13 full payments) per year instead of 12, shaving roughly 4 to 5 years off the loan.</li>
+        <li><strong>Round up each payment</strong> &mdash; rounding a $2,023 payment up to $2,100 or $2,200 adds extra principal each month with minimal budget impact but significant long-term savings.</li>
+        <li><strong>Apply windfalls to principal</strong> &mdash; tax refunds, work bonuses, and inheritance money applied directly to the loan balance can shave years off your term.</li>
+        <li><strong>Refinance when rates drop</strong> &mdash; if rates fall 1% or more below your current rate, refinancing to a lower rate or a 15-year term can save tens of thousands of dollars.</li>
+        <li><strong>Make one extra payment per year</strong> &mdash; even a single extra monthly payment applied each year can cut roughly 4 years off a 30-year mortgage.</li>
+      </ul>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much total interest do you pay on a 30-year mortgage?</h3>
+        <p>The total interest depends on your loan amount and rate. For a $320,000 loan at 6.5%, you will pay approximately $408,000 in interest over 30 years &mdash; more than the original loan amount. Even a small rate reduction of 0.5% could save you over $38,000 in total interest on that same loan.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is a 30-year mortgage better than a 15-year?</h3>
+        <p>It depends on your financial goals. A 30-year mortgage gives you lower required payments and more financial flexibility, while a <a href="mortgage-calculator-15-year.html">15-year mortgage</a> saves you substantially on total interest and builds equity faster. If you can comfortably afford the higher 15-year payment and still save for retirement and emergencies, the 15-year is usually the more cost-effective choice. Many buyers choose the 30-year for its safety margin and invest the difference.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I pay extra on a 30-year mortgage?</h3>
+        <p>Making extra payments is one of the best strategies for 30-year borrowers. Even modest additional principal payments &mdash; as little as $100 per month &mdash; can save tens of thousands of dollars in interest and reduce your payoff timeline by several years. The key advantage is flexibility: with a 30-year term, extra payments are optional, so if your financial situation changes, you can always revert to the standard payment.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section" style="text-align:center;">
+      <h2>Compare Other Mortgage Options</h2>
+      <p>Use the <a href="mortgage-payment-calculator.html"><strong>full Mortgage Payment Calculator</strong></a> for any term and scenario, or explore specific loan amounts:</p>
+      <ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:1rem;">
+        <li><a href="mortgage-calculator-15-year.html" class="btn" style="display:inline-flex;">15-Year Mortgage</a></li>
+        <li><a href="mortgage-calculator-200k.html" class="btn" style="display:inline-flex;">$200K Mortgage</a></li>
+        <li><a href="mortgage-calculator-300k.html" class="btn" style="display:inline-flex;">$300K Mortgage</a></li>
+        <li><a href="mortgage-calculator-400k.html" class="btn" style="display:inline-flex;">$400K Mortgage</a></li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Mortgage Payment Calculator</a>
+        <a href="loan-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>Loan Payment Calculator</a>
+        <a href="savings-goal-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="compound-interest-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Compound Interest Calculator</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    // Amortization snapshot table
+    (function() {
+      var principal = 320000, annualRate = 6.5, years = 30;
+      var r = annualRate / 12 / 100;
+      var n = years * 12;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var balance = principal;
+      var snapshots = [1, 5, 10, 20, 30];
+      var snapData = {};
+      for (var m = 1; m <= n; m++) {
+        var intPortion = balance * r;
+        var prinPortion = monthly - intPortion;
+        balance -= prinPortion;
+        var yr = Math.ceil(m / 12);
+        if (m % 12 === 1 && snapshots.indexOf(yr) !== -1) {
+          snapData[yr] = { principal: prinPortion, interest: intPortion, balance: balance + prinPortion };
+        }
+      }
+      // Capture year 30 last payment data
+      snapData[30] = { principal: monthly - (balance + (monthly - balance * r)) * r / (1 + r), interest: 0, balance: 0 };
+      // Recalculate properly
+      balance = principal;
+      for (var m2 = 1; m2 <= n; m2++) {
+        var intP = balance * r;
+        var prinP = monthly - intP;
+        balance -= prinP;
+        if (balance < 0) balance = 0;
+        var yr2 = Math.ceil(m2 / 12);
+        if (snapshots.indexOf(yr2) !== -1 && m2 === (yr2 - 1) * 12 + 1) {
+          snapData[yr2] = { principal: prinP, interest: intP, balance: balance };
+        }
+      }
+
+      var tbody = document.getElementById("amortBody");
+      snapshots.forEach(function(y) {
+        var d = snapData[y];
+        if (!d) return;
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + y + "</td><td>" + formatCurrency(monthly) + "</td><td>" + formatCurrency(d.principal) + "</td><td>" + formatCurrency(d.interest) + "</td><td>" + formatCurrency(d.balance) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    // Calculator form
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+      var homePrice = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate = parseNum(document.getElementById("rate").value);
+      if (homePrice <= 0) { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0) { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1) { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+      if (!isFinite(res.monthly)) { setError("errorMsg", "Result is too large. Try a lower interest rate or shorter term."); return; }
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

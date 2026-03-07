@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator for 50-Year-Olds – Late Start Savings Plan</title>
+  <meta name="description" content="Plan your retirement starting at age 50. See catch-up contribution limits, the impact of delaying retirement to 67-70, and strategies for maximizing savings in 17 years.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="retirement-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="retirement-calculator.html">Retirement Calculator</a>
+      <span class="sep">/</span>
+      <span>Starting at Age 50</span>
+    </div>
+
+    <div class="hero">
+      <h1>Retirement Calculator: Starting at Age 50</h1>
+      <p>At 50, retirement planning takes on new urgency. With 17 years until age 67, every dollar and every strategy counts. The good news: catch-up contributions, peak earnings, and smart planning can still build a meaningful nest egg.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your Retirement Savings</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="50" min="18" max="80" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="67" min="30" max="90" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="100000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="1500" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="6" min="0" max="30" step="0.1" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Savings at Retirement</div>
+          <div class="value" id="totalBalance">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContrib">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Investment Growth</div>
+          <div class="value" id="totalGrowth">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- 17 Years to Go -->
+    <div class="card section">
+      <h2>17 Years to Go: Making Every Dollar Count</h2>
+      <p>Starting at 50 means less time for compound growth, but you have several advantages that younger savers do not:</p>
+      <ul>
+        <li><strong>Catch-up contributions</strong> &mdash; at 50, you can contribute an extra $7,500 per year to your 401(k) (total $31,000 in 2026) and an extra $1,000 to your IRA (total $8,000). These higher limits can add hundreds of thousands to your retirement savings over 17 years.</li>
+        <li><strong>Peak earning years</strong> &mdash; your 50s and early 60s are typically your highest-earning years. Channel raises, bonuses, and reduced expenses (children leaving home) directly into retirement savings.</li>
+        <li><strong>Existing savings matter more</strong> &mdash; with $100,000 already saved, compound growth on that base alone could produce over $270,000 by age 67 at a 6% return &mdash; without adding a single dollar.</li>
+        <li><strong>Clearer picture of needs</strong> &mdash; at 50, you have a better idea of your retirement lifestyle, health costs, and Social Security benefits, allowing for more accurate planning.</li>
+      </ul>
+    </div>
+
+    <!-- Growth by Age Milestones -->
+    <div class="card section">
+      <h2>Growth by Age: $1,500/Month Starting at 50</h2>
+      <p>This table shows projected savings at key milestones, assuming <strong>$100,000 starting balance</strong>, <strong>$1,500/month contributions</strong>, and a <strong>6% average annual return</strong>:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Age</th>
+              <th>Years Invested</th>
+              <th>Total Contributed</th>
+              <th>Projected Balance</th>
+              <th>Investment Growth</th>
+            </tr>
+          </thead>
+          <tbody id="growthBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Retirement Age Impact -->
+    <div class="card section">
+      <h2>Impact of Delaying Retirement: 65 vs. 67 vs. 70</h2>
+      <p>Delaying retirement by even a few years has an outsized impact when you are starting at 50. Each extra year means more contributions, more growth, and higher Social Security benefits:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Retirement Age</th>
+              <th>Years of Saving</th>
+              <th>Projected Balance</th>
+              <th>Social Security Boost</th>
+            </tr>
+          </thead>
+          <tbody id="delayBody"></tbody>
+        </table>
+      </div>
+      <p>Delaying Social Security from age 62 to 70 increases your monthly benefit by roughly 77%. Combined with additional years of savings and growth, working even 2 to 3 years longer can dramatically improve your retirement security.</p>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much should a 50-year-old have saved for retirement?</h3>
+        <p>A common guideline is six times your annual salary by age 50. If you earn $90,000, the target would be $540,000. Many people are behind this benchmark, but aggressive saving in your 50s and 60s &mdash; especially with catch-up contributions &mdash; can close the gap significantly. Focus on what you can control: increase savings rate, delay retirement if possible, and minimize unnecessary expenses.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What are catch-up contributions and how do they help?</h3>
+        <p>Catch-up contributions are additional amounts the IRS allows people aged 50 and older to contribute to retirement accounts above the standard limits. For 2026, you can contribute an additional $7,500 to a 401(k) and $1,000 to an IRA. Over 17 years, these extra contributions alone (invested at 6%) could grow to approximately $230,000 &mdash; a meaningful boost to your retirement savings.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I shift to more conservative investments at 50?</h3>
+        <p>A moderate shift is reasonable but avoid being too conservative. With 17 years until retirement, you still need growth to build your nest egg. A common approach is a 60/40 stock-to-bond allocation at 50, gradually shifting to 40/60 by age 65. Being too conservative too early is one of the biggest risks for late starters, as it limits the growth potential you need.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section" style="text-align:center;">
+      <h2>Explore Other Retirement Scenarios</h2>
+      <p>Use the <a href="retirement-calculator.html"><strong>full Retirement Calculator</strong></a> for custom scenarios, or see:</p>
+      <ul style="list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:1rem;">
+        <li><a href="retirement-calculator-age-30.html" class="btn" style="display:inline-flex;">Starting at 30</a></li>
+        <li><a href="retirement-calculator-age-40.html" class="btn" style="display:inline-flex;">Starting at 40</a></li>
+        <li><a href="retirement-calculator-1-million-goal.html" class="btn" style="display:inline-flex;">$1 Million Goal</a></li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="retirement-calculator.html"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Retirement Calculator</a>
+        <a href="compound-interest-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Compound Interest Calculator</a>
+        <a href="savings-goal-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="inflation-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>Inflation Calculator</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100, months = years * 12, balance = currentSavings;
+      for (var m = 1; m <= months; m++) balance = balance * (1 + r) + monthly;
+      var totalContrib = currentSavings + monthly * months;
+      return { balance: balance, totalContrib: totalContrib, growth: balance - totalContrib };
+    }
+
+    // Growth by age milestones table
+    (function() {
+      var ages = [53, 55, 58, 60, 63, 65, 67];
+      var startAge = 50, savings = 100000, monthly = 1500, rate = 6;
+      var tbody = document.getElementById("growthBody");
+      ages.forEach(function(age) {
+        var years = age - startAge;
+        var res = calcRetirement(savings, monthly, rate, years);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + age + "</td><td>" + years + "</td><td>" + formatCurrency(res.totalContrib) + "</td><td class='highlight'>" + formatCurrency(res.balance) + "</td><td>" + formatCurrency(res.growth) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    // Retirement age impact table
+    (function() {
+      var retireAges = [62, 65, 67, 70];
+      var ssBoost = {"62": "Reduced by 30%", "65": "Reduced by 13.3%", "67": "Full benefit (100%)", "70": "Increased by 24%"};
+      var savings = 100000, monthly = 1500, rate = 6, startAge = 50;
+      var tbody = document.getElementById("delayBody");
+      retireAges.forEach(function(age) {
+        var years = age - startAge;
+        var res = calcRetirement(savings, monthly, rate, years);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + age + "</td><td>" + years + "</td><td class='highlight'>" + formatCurrency(res.balance) + "</td><td>" + ssBoost[age] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    // Calculator form
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+      var currentAge = parseInt10(document.getElementById("currentAge").value, 18);
+      var retireAge = parseInt10(document.getElementById("retireAge").value, 30);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var monthly = parseNum(document.getElementById("monthly").value);
+      var rate = parseNum(document.getElementById("rate").value);
+      if (currentAge < 18) { setError("errorMsg", "Current age must be at least 18."); return; }
+      if (retireAge <= currentAge) { setError("errorMsg", "Retirement age must be greater than current age."); return; }
+      if (currentSavings < 0) { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0) { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0) { setError("errorMsg", "Expected return cannot be negative."); return; }
+      var years = retireAge - currentAge;
+      var res = calcRetirement(currentSavings, monthly, rate, years);
+      if (!isFinite(res.balance)) { setError("errorMsg", "Result is too large. Try a lower return rate or shorter period."); return; }
+      setText("totalBalance", formatCurrency(res.balance));
+      setText("totalContrib", formatCurrency(res.totalContrib));
+      setText("totalGrowth", formatCurrency(res.growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

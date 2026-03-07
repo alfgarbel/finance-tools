@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$200,000 Mortgage Calculator – Monthly Payment &amp; Interest</title>
+  <meta name="description" content="Calculate monthly payments, total cost, and interest on a $200,000 mortgage. Compare rates and see what a $200K home loan looks like over 15 or 30 years.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="mortgage-payment-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="mortgage-payment-calculator.html">Mortgage Payment Calculator</a>
+      <span class="sep">/</span>
+      <span>$200,000 Mortgage</span>
+    </div>
+
+    <div class="hero">
+      <h1>Mortgage Calculator: $200,000 Home Loan</h1>
+      <p>Find out exactly what your monthly payment, total cost, and interest will be on a $200,000 mortgage. Adjust the rate and term to match your scenario and plan for budget-friendly homeownership.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your $200K Mortgage Payment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="homePrice">Home Price</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="homePrice" value="250000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="downPayment">Down Payment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="downPayment" value="50000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loanTerm">Loan Term</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Monthly Payment</div>
+          <div class="value" id="monthlyPayment">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Payment</div>
+          <div class="value" id="totalPayment">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Interest</div>
+          <div class="value" id="totalInterest">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- What a $200K Mortgage Looks Like -->
+    <div class="card section">
+      <h2>What a $200,000 Mortgage Looks Like</h2>
+      <p>A $200,000 mortgage is one of the most common loan amounts for first-time homebuyers and those purchasing in affordable housing markets across the United States. With a standard 30-year fixed-rate loan at 6.5%, your monthly principal and interest payment comes to roughly $1,264. Over the full term you would pay approximately $255,089 in interest alone, bringing the total cost of the home well beyond the original purchase price.</p>
+      <p>Understanding these numbers ahead of time helps you budget realistically. Keep in mind that your actual monthly housing cost will also include property taxes, homeowner's insurance, and possibly private mortgage insurance (PMI) if your down payment is less than 20%.</p>
+    </div>
+
+    <!-- Rate Comparison Table -->
+    <div class="card section">
+      <h2>Monthly Payment at Different Interest Rates</h2>
+      <p>Even small changes in your interest rate have a significant impact on a $200,000 mortgage. The table below compares monthly payments and total interest for a 30-year fixed-rate loan at five common rates.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="rateComparisonTable">
+          <thead>
+            <tr>
+              <th>Interest Rate</th>
+              <th>Monthly Payment</th>
+              <th>Total Payment</th>
+              <th>Total Interest</th>
+            </tr>
+          </thead>
+          <tbody id="rateComparisonBody"></tbody>
+        </table>
+      </div>
+      <p>As you can see, the difference between a 5.5% and 7.5% rate adds over $300 per month and more than $100,000 in extra interest over 30 years. Shopping around for the best rate is one of the most impactful financial decisions you can make.</p>
+    </div>
+
+    <!-- Affordable Housing Markets -->
+    <div class="card section">
+      <h2>Affordable Housing Markets and Budget-Friendly Homeownership</h2>
+      <p>A $200,000 budget can go a long way in many parts of the country. Cities and metro areas in the Midwest and South frequently have median home prices at or below this level, making homeownership accessible without stretching your finances.</p>
+      <p>To keep a $200K mortgage manageable, financial advisors generally recommend that your total monthly housing cost should not exceed 28% of your gross monthly income. For a $1,264 monthly payment (principal and interest only), that translates to a gross annual income of roughly $54,000. When you add taxes and insurance, the income requirement rises, so be sure to factor in all costs when evaluating affordability.</p>
+      <p>Strategies to keep costs low include improving your credit score to qualify for better rates, comparing offers from multiple lenders, and considering a 15-year term if you can handle higher monthly payments in exchange for significantly less total interest.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What salary do you need for a $200K mortgage?</h3>
+        <p>Using the common 28% rule for housing expenses, you would need a gross annual income of approximately $54,000 to $65,000 to comfortably afford a $200,000 mortgage, depending on your interest rate, property taxes, insurance, and other debts. Lenders also look at your total debt-to-income ratio, which should generally stay below 36% to 43%.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is $200K a good starter home loan?</h3>
+        <p>Yes. A $200,000 mortgage is widely considered a manageable entry point into homeownership. It keeps monthly payments relatively affordable and limits total interest costs compared to larger loans. In many affordable housing markets, $200K can get you a solid single-family home or townhouse, making it an excellent option for first-time buyers building equity.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much interest will I pay on $200K over 30 years?</h3>
+        <p>At a 6.5% fixed rate over 30 years, a $200,000 mortgage will cost approximately $255,089 in total interest. That means you will pay roughly $455,089 in total for your original $200,000 loan. Choosing a shorter term like 15 years at the same rate would reduce total interest to about $105,788, saving you nearly $150,000.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section">
+      <h2>Explore More Mortgage Scenarios</h2>
+      <p>Use our main <a href="mortgage-payment-calculator.html">Mortgage Payment Calculator</a> to enter any custom loan amount and compare your options. You can also explore specific loan amounts:</p>
+      <ul>
+        <li><a href="mortgage-calculator-300k.html">$300,000 Mortgage Calculator</a> — for median-priced homes</li>
+        <li><a href="mortgage-calculator-400k.html">$400,000 Mortgage Calculator</a> — for higher-value properties</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+          Mortgage Payment Calculator
+        </a>
+        <a href="loan-payment-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
+          Loan Payment Calculator
+        </a>
+        <a href="savings-goal-calculator.html">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+        <a href="compound-interest-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /** Calculate fixed-rate mortgage payment. */
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    /* Build rate comparison table */
+    (function() {
+      var rates = [5.5, 6.0, 6.5, 7.0, 7.5];
+      var principal = 200000;
+      var years = 30;
+      var tbody = document.getElementById("rateComparisonBody");
+      rates.forEach(function(rate) {
+        var res = calcMortgage(principal, rate, years);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + rate.toFixed(1) + "%</td><td>" + formatCurrency(res.monthly) + "</td><td>" + formatCurrency(res.total) + "</td><td>" + formatCurrency(res.interest) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var homePrice   = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years       = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate        = parseNum(document.getElementById("rate").value);
+
+      if (homePrice <= 0)   { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0)  { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1)        { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0)         { setError("errorMsg", "Interest rate cannot be negative."); return; }
+
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+
+      if (!isFinite(res.monthly)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter term.");
+        return;
+      }
+
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

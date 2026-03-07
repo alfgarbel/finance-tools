@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investing $1,000 Per Month – Compound Interest Growth Calculator</title>
+  <meta name="description" content="See how investing $1,000 per month grows with compound interest. Calculate your path to millionaire status and explore realistic wealth-building milestones over 25 years.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="compound-interest-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="compound-interest-calculator.html">Compound Interest Calculator</a>
+      <span class="sep">/</span>
+      <span>$1,000 Monthly Investment</span>
+    </div>
+
+    <div class="hero">
+      <h1>Compound Interest Calculator: $1,000 Monthly Investment</h1>
+      <p>Investing $1,000 per month is one of the most reliable paths to building serious wealth. Use this calculator to see your projected growth, key milestones, and how long it takes to reach $1 million.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card" id="calculator">
+      <h2 class="card-title">Calculate Your $1,000/Month Investment Growth</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="principal">Initial Investment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="principal" value="0" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="1000" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Annual Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.1" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Investment Period</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="25" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Total Final Value</div>
+          <div class="value" id="totalValue">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Interest Earned</div>
+          <div class="value" id="totalInterest">&mdash;</div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-wrap" id="chartWrap">
+        <canvas id="chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Year-by-year table -->
+    <div class="card section" id="growth-table">
+      <h2>Year-by-Year Growth</h2>
+      <p>Detailed breakdown of your investment balance at the end of each year.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="yearTable">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Contributions</th>
+              <th>Interest Earned</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- The $1,000/Month Strategy -->
+    <div class="card section" id="strategy">
+      <h2>The $1,000/Month Wealth-Building Strategy</h2>
+      <p>Investing $1,000 per month is one of the most discussed benchmarks in personal finance, and for good reason. At a 7% average annual return, this single habit can turn you into a millionaire in roughly 25 years, starting from zero.</p>
+      <p>While $1,000 per month may sound like a lot, it is increasingly achievable for dual-income households, mid-career professionals, and anyone who prioritizes long-term wealth building. Here is what makes this strategy so effective:</p>
+      <ul>
+        <li><strong>Predictable path to wealth</strong> &mdash; unlike speculative investments, consistent monthly investing in diversified index funds has a strong historical track record of delivering 7&ndash;10% average annual returns.</li>
+        <li><strong>Compound interest does the heavy lifting</strong> &mdash; of the roughly $810,000 you will have after 25 years at 7%, only $300,000 comes from your contributions. The remaining $510,000 is pure interest earned on your growing balance.</li>
+        <li><strong>Realistic for many households</strong> &mdash; $1,000/month is $250/week or about $33/day. For a household earning $80,000&ndash;$120,000 annually, this represents 10&ndash;15% of gross income, which aligns with standard savings recommendations.</li>
+      </ul>
+    </div>
+
+    <!-- Milestone Table -->
+    <div class="card section">
+      <h2>Key Milestones: $1,000/Month at 7% Annual Return</h2>
+      <p>The table below shows your investment balance at major milestones when investing $1,000 per month starting from $0 with a 7% annual return compounded monthly.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="milestoneTable">
+          <thead>
+            <tr><th>Year</th><th>Total Contributed</th><th>Interest Earned</th><th>Balance</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- How Long to Reach $1M -->
+    <div class="card section" id="million-scenarios">
+      <h2>How Long to Reach $1,000,000 with $1,000/Month</h2>
+      <p>Your rate of return dramatically affects how quickly you reach the million-dollar milestone. The table below shows the approximate number of years needed to accumulate $1,000,000 by investing $1,000 per month at different annual return rates.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="millionTable">
+          <thead>
+            <tr><th>Annual Return</th><th>Years to $1M</th><th>Total Contributed</th><th>Interest Earned</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem;">As the table illustrates, even a 1&ndash;2% difference in annual returns can shave years off your timeline. This is why keeping investment fees low (choosing low-cost index funds over actively managed funds) can make such a significant difference in your wealth-building journey.</p>
+    </div>
+
+    <!-- What If I Can Only Start With Less -->
+    <div class="card section">
+      <h2>Start Where You Are, Scale Up Over Time</h2>
+      <p>If $1,000 per month feels out of reach right now, that is perfectly fine. The most important step is starting. Many successful investors began with $200 or $500 per month and gradually increased their contributions as their income grew.</p>
+      <p>Consider this approach:</p>
+      <ul>
+        <li><strong>Start with what you can afford</strong> &mdash; even $300/month at 7% grows to roughly $365,000 over 25 years.</li>
+        <li><strong>Increase by $50&ndash;$100 each year</strong> &mdash; as you get raises or pay off debts, redirect that money into your investment account.</li>
+        <li><strong>Target $1,000/month within 3&ndash;5 years</strong> &mdash; by gradually ramping up, you build the habit without financial strain.</li>
+        <li><strong>Automate everything</strong> &mdash; set up automatic transfers on payday so the money is invested before you can spend it.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Can investing $1,000 per month really make me a millionaire?</h3>
+        <p>Yes. At a 7% average annual return (which aligns with the long-term historical average of the U.S. stock market after inflation), investing $1,000 per month from scratch will grow to approximately $810,000 in 25 years and cross the $1,000,000 mark in about 27&ndash;28 years. At 8%, you reach $1,000,000 in roughly 25&ndash;26 years. At 10%, the timeline shortens to about 22 years. The math is straightforward and well-supported by historical market data.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I can only start with $500 per month?</h3>
+        <p>Starting with $500 per month is an excellent beginning. At 7% annual return, $500/month grows to roughly $405,000 in 25 years. If you increase your contribution by just $50 per year, you will end up much closer to the $1,000/month trajectory. The key insight is that starting earlier with a smaller amount often beats starting later with a larger amount, because of the extra years of compounding. A person who invests $500/month for 30 years will accumulate more than someone who invests $1,000/month for 20 years.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What rate of return is realistic for long-term investing?</h3>
+        <p>The S&amp;P 500 has returned an average of roughly 10% per year before inflation (about 7% after inflation) over the past several decades. However, returns vary widely from year to year. For conservative planning, 6&ndash;7% (inflation-adjusted) is a reasonable assumption for a diversified stock portfolio. If you include bonds in your allocation, expect 5&ndash;6%. The 7% default in this calculator represents a balanced, realistic projection for a primarily stock-based portfolio over 20+ years.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section" style="text-align:center;">
+      <h2>Customize Your Investment Plan</h2>
+      <p>Adjust the contribution amount, rate of return, and time horizon to match your personal financial goals.</p>
+      <p>
+        <a href="compound-interest-calculator.html" class="btn">Full Compound Interest Calculator</a>
+      </p>
+      <p style="margin-top:1rem;">
+        <a href="compound-interest-calculator-5-years.html">5-Year Investment Calculator</a> &middot;
+        <a href="compound-interest-calculator-monthly-contribution.html">Monthly Contribution Impact Calculator</a>
+      </p>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="compound-interest-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="savings-goal-calculator.html">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+        <a href="retirement-calculator.html">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="investment-return-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+          Investment Return Calculator
+        </a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /* ---- Compound Interest Calculator – $1,000/Month Focus ---- */
+    var growthChart = null;
+
+    /** Core calculation — monthly compounding. */
+    function calculate(P, M, r, t) {
+      var monthlyRate = r / 12 / 100;
+      var months = t * 12;
+      var balances = [], contributions = [], interestData = [];
+      var balance = P;
+
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + monthlyRate) + M;
+        if (m % 12 === 0) {
+          var contrib = P + M * m;
+          balances.push(balance);
+          contributions.push(contrib);
+          interestData.push(balance - contrib);
+        }
+      }
+
+      return {
+        finalValue: balance,
+        totalContrib: P + M * months,
+        totalInterest: balance - (P + M * months),
+        yearlyBalances: balances,
+        yearlyContributions: contributions,
+        yearlyInterest: interestData
+      };
+    }
+
+    /** Render Chart.js line chart. */
+    function renderChart(labels, balances, contribs, interest) {
+      var ctx = document.getElementById("chart").getContext("2d");
+      if (growthChart) growthChart.destroy();
+
+      growthChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Total Balance",
+              data: balances,
+              borderColor: "#2563eb",
+              backgroundColor: "rgba(37,99,235,0.06)",
+              fill: true, tension: 0.35, borderWidth: 2,
+              pointRadius: 0, pointHoverRadius: 5,
+              pointHoverBackgroundColor: "#2563eb",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            },
+            {
+              label: "Contributions",
+              data: contribs,
+              borderColor: "#94a3b8",
+              backgroundColor: "rgba(148,163,184,0.04)",
+              fill: true, tension: 0.35, borderWidth: 1.5, borderDash: [6,3],
+              pointRadius: 0, pointHoverRadius: 4,
+              pointHoverBackgroundColor: "#94a3b8",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            },
+            {
+              label: "Interest Earned",
+              data: interest,
+              borderColor: "#f59e0b",
+              backgroundColor: "rgba(245,158,11,0.04)",
+              fill: true, tension: 0.35, borderWidth: 1.5,
+              pointRadius: 0, pointHoverRadius: 4,
+              pointHoverBackgroundColor: "#f59e0b",
+              pointHoverBorderColor: "#fff", pointHoverBorderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: true, aspectRatio: 2,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: {
+              position: "top",
+              labels: { usePointStyle: true, pointStyle: "circle", padding: 16, font: { size: 11, weight: "600" }, color: "#475569" }
+            },
+            tooltip: {
+              backgroundColor: "rgba(15,23,42,0.92)", titleFont: { size: 12, weight: "700" },
+              bodyFont: { size: 11 }, padding: 10, cornerRadius: 8, boxPadding: 4,
+              callbacks: {
+                title: function(items) { return "Year " + items[0].label; },
+                label: function(ctx) { return " " + ctx.dataset.label + ": " + formatCurrency(ctx.parsed.y); }
+              }
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: "Year", color: "#64748b", font: { size: 11, weight: "600" } },
+              grid: { display: false },
+              ticks: { color: "#94a3b8", font: { size: 10 }, maxTicksLimit: 12 },
+              border: { color: "#e2e8f0" }
+            },
+            y: {
+              title: { display: true, text: "Value ($)", color: "#64748b", font: { size: 11, weight: "600" } },
+              grid: { color: "#f1f5f9" },
+              ticks: {
+                color: "#94a3b8", font: { size: 10 },
+                callback: function(v) {
+                  if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + "M";
+                  if (v >= 1e3) return "$" + (v / 1e3).toFixed(0) + "K";
+                  return "$" + v;
+                }
+              },
+              border: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    /** Populate year-by-year table. */
+    function fillTable(res, tbodySelector) {
+      var tbody = document.querySelector(tbodySelector);
+      tbody.innerHTML = "";
+      for (var i = 0; i < res.yearlyBalances.length; i++) {
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + (i + 1) + "</td>" +
+          "<td>" + formatCurrency(res.yearlyContributions[i]) + "</td>" +
+          "<td>" + formatCurrency(res.yearlyInterest[i]) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(res.yearlyBalances[i]) + "</td>";
+        tbody.appendChild(tr);
+      }
+    }
+
+    /** Build milestone table — years 5, 10, 15, 20, 25. */
+    function buildMilestoneTable() {
+      var res = calculate(0, 1000, 7, 25);
+      var tbody = document.querySelector("#milestoneTable tbody");
+      tbody.innerHTML = "";
+      [5, 10, 15, 20, 25].forEach(function(yr) {
+        var bal = res.yearlyBalances[yr - 1];
+        var contrib = res.yearlyContributions[yr - 1];
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + yr + "</td>" +
+          "<td>" + formatCurrency(contrib) + "</td>" +
+          "<td>" + formatCurrency(bal - contrib) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(bal) + "</td>";
+        tbody.appendChild(tr);
+      });
+    }
+
+    /** Build "How long to reach $1M" table at various rates. */
+    function buildMillionTable() {
+      var tbody = document.querySelector("#millionTable tbody");
+      tbody.innerHTML = "";
+      [5, 6, 7, 8, 9, 10].forEach(function(rate) {
+        var monthlyRate = rate / 12 / 100;
+        var balance = 0;
+        var month = 0;
+        while (balance < 1000000 && month < 1200) {
+          month++;
+          balance = balance * (1 + monthlyRate) + 1000;
+        }
+        var years = Math.ceil(month / 12);
+        var totalContrib = 1000 * month;
+        var interest = balance - totalContrib;
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + rate + "%</td>" +
+          "<td>~" + years + " years</td>" +
+          "<td>" + formatCurrency(totalContrib) + "</td>" +
+          "<td class='highlight'>" + formatCurrency(interest) + "</td>";
+        tbody.appendChild(tr);
+      });
+    }
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var P = parseNum(document.getElementById("principal").value);
+      var M = parseNum(document.getElementById("monthly").value);
+      var r = parseNum(document.getElementById("rate").value);
+      var t = parseInt10(document.getElementById("years").value, 1);
+
+      if (P < 0) { setError("errorMsg", "Initial investment cannot be negative."); return; }
+      if (M < 0) { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (r < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      if (t < 1) { setError("errorMsg", "Investment period must be at least 1 year."); return; }
+
+      var res = calculate(P, M, r, t);
+
+      if (!isFinite(res.finalValue)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter period.");
+        return;
+      }
+
+      setText("totalValue", formatCurrency(res.finalValue));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalInterest", formatCurrency(res.totalInterest));
+      showResults("results");
+
+      fillTable(res, "#yearTable tbody");
+      document.getElementById("growth-table").style.display = "";
+
+      var labels = [];
+      for (var i = 1; i <= t; i++) labels.push("" + i);
+      document.getElementById("chartWrap").classList.add("visible");
+      renderChart(labels, res.yearlyBalances, res.yearlyContributions, res.yearlyInterest);
+    });
+
+    // Hide year table until first calculation
+    document.getElementById("growth-table").style.display = "none";
+
+    buildMilestoneTable();
+    buildMillionTable();
+  </script>
+</body>
+</html>

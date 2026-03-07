@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inflation Calculator for 20 Years – Long-Term Purchasing Power Loss</title>
+  <meta name="description" content="Calculate the long-term impact of inflation over 20 years. See how purchasing power erodes over two decades and what your money will really be worth.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="inflation-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="inflation-calculator.html">Inflation Calculator</a>
+      <span class="sep">/</span>
+      <span>20 Years</span>
+    </div>
+
+    <div class="hero">
+      <h1>Inflation Calculator: 20-Year Purchasing Power Erosion</h1>
+      <p>Understand how two decades of inflation can nearly halve the real value of your savings and what it means for retirement planning.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate 20-Year Inflation Impact</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="amount">Initial Amount</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="amount" value="1000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Inflation Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="3" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Number of Years</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="20" min="1" max="200" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results cols-2" id="results">
+        <div class="result-item blue">
+          <div class="label">Future Value</div>
+          <div class="value" id="futureValue">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Loss of Purchasing Power</div>
+          <div class="value" id="lostPower">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- 20 Years Nearly Halves Your Money -->
+    <div class="card section">
+      <h2>20 Years of Inflation Nearly Halves Your Money at 3%</h2>
+      <p>At a 3% annual inflation rate, the cumulative price increase over 20 years is approximately 80.6%. That means something costing $100 today would cost about $180.61 two decades from now. Looked at from the other direction, $100 held as cash would buy only about $55.37 worth of today's goods in 20 years.</p>
+      <p>At higher rates the erosion is even more dramatic. With 4% inflation, prices roughly double in 20 years. At 5%, your purchasing power drops to just $35.85 per original $100. These are not extreme scenarios; many countries have experienced sustained inflation at these levels.</p>
+      <p>The compounding nature of inflation means every additional year matters. The loss accelerates over time, making 20-year planning fundamentally different from 5- or 10-year planning.</p>
+    </div>
+
+    <!-- Retirement Planning -->
+    <div class="card section">
+      <h2>Retirement Planning and Inflation</h2>
+      <p>If you are 45 years old and planning to retire at 65, you have a 20-year accumulation period ahead. But the impact of inflation does not stop at retirement. A 65-year-old today can expect to live another 20 years or more, meaning inflation will continue eroding their savings throughout retirement.</p>
+      <p>Financial planners often recommend that retirees maintain a portion of their portfolio in growth assets precisely because of inflation risk. A retiree who moves entirely to cash and fixed-income instruments may find their income buys significantly less by the time they reach their 80s.</p>
+      <p>When estimating how much you need to save for retirement, always use inflation-adjusted projections. A retirement fund that looks comfortable in today's dollars may fall short when future costs are considered.</p>
+    </div>
+
+    <!-- Purchasing Power Table at Different Rates -->
+    <div class="card section">
+      <h2>$100,000 Purchasing Power After 20 Years at Different Inflation Rates</h2>
+      <p>The table below illustrates how $100,000 is affected by 20 years of inflation at various annual rates. The "Future Cost" column shows what you would need to maintain equivalent purchasing power, and the "Real Value" column shows what $100,000 in cash would actually buy in today's terms.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Inflation Rate</th>
+              <th>Future Cost of $100K</th>
+              <th>Real Value of $100K Cash</th>
+              <th>Purchasing Power Lost</th>
+            </tr>
+          </thead>
+          <tbody id="rateTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Why Cash Hoarding Is Costly -->
+    <div class="card section">
+      <h2>Why Hoarding Cash Is Costly Over 20 Years</h2>
+      <p>Keeping large sums of cash at home or in a low-interest account feels safe, but it carries a hidden cost. Unlike market losses, inflation losses are invisible on your bank statement. Your balance stays the same, but the world gets more expensive around you.</p>
+      <p>Over 20 years at 3% inflation, every $100,000 you hold in cash effectively becomes worth only about $55,368 in today's purchasing power. That is a real loss of nearly $45,000, without ever seeing a negative balance or a market crash.</p>
+      <p>Emergency funds and short-term savings belong in cash, but money you will not need for a decade or more should generally be invested in assets that have historically outpaced inflation, such as diversified equity index funds, real estate, or inflation-linked bonds.</p>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much will $100,000 be worth in 20 years?</h3>
+        <p>At 3% annual inflation, $100,000 held as cash will have the purchasing power of about $55,368 in today's dollars after 20 years. You would need approximately $180,611 in 20 years to buy what $100,000 buys today. The exact figure depends on the actual inflation rate, which can vary year to year.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What inflation rate should I plan for?</h3>
+        <p>For long-term planning in the United States, 3% is a commonly used estimate that aligns with historical averages. However, recent years have shown that inflation can spike above this level. Conservative planners may use 3.5-4% to build in a safety margin. Check the Federal Reserve's targets and your country's historical data for a more tailored estimate.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does inflation affect retirement savings?</h3>
+        <p>Inflation affects retirement savings in two ways. First, it increases the amount you need to save because future expenses will be higher. Second, it reduces the real value of fixed-income sources like pensions and annuities that do not adjust for inflation. To counter this, financial advisors recommend keeping a portion of your retirement portfolio in growth assets and considering inflation-adjusted withdrawal strategies.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section">
+      <h2>See How Inflation Hits Over a Shorter Period</h2>
+      <p>Curious about the 10-year impact? Our 10-year inflation calculator shows you the near-term erosion of your money and helps with medium-term financial planning.</p>
+      <p><a href="inflation-calculator-10-years.html" class="btn">Try the 10-Year Inflation Calculator</a></p>
+      <p style="margin-top:1rem;"><a href="inflation-calculator.html">Back to the main Inflation Calculator &rarr;</a></p>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="inflation-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>Inflation Calculator</a>
+        <a href="compound-interest-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Compound Interest Calculator</a>
+        <a href="savings-goal-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="retirement-calculator.html"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Retirement Calculator</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /** Calculate compound inflation. */
+    function calcInflation(amount, annualRate, years) {
+      var futureValue = amount * Math.pow(1 + annualRate / 100, years);
+      return { futureValue: futureValue, loss: futureValue - amount };
+    }
+
+    /* Build the purchasing power table at different inflation rates */
+    (function() {
+      var rates = [2, 3, 4, 5];
+      var amount = 100000;
+      var years = 20;
+      var tbody = document.getElementById("rateTableBody");
+      rates.forEach(function(rate) {
+        var res = calcInflation(amount, rate, years);
+        var realValue = amount / Math.pow(1 + rate / 100, years);
+        var lost = amount - realValue;
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + rate + "%</td><td>" + formatCurrency(res.futureValue) + "</td><td>" + formatCurrency(realValue) + "</td><td class='highlight'>" + formatCurrency(lost) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var amount = parseNum(document.getElementById("amount").value);
+      var rate   = parseNum(document.getElementById("rate").value);
+      var years  = parseInt10(document.getElementById("years").value, 1);
+
+      if (amount <= 0) { setError("errorMsg", "Initial amount must be greater than zero."); return; }
+      if (rate < 0)    { setError("errorMsg", "Inflation rate cannot be negative."); return; }
+      if (years < 1)   { setError("errorMsg", "Number of years must be at least 1."); return; }
+
+      var res = calcInflation(amount, rate, years);
+
+      if (!isFinite(res.futureValue)) {
+        setError("errorMsg", "Result is too large. Try a lower inflation rate or fewer years.");
+        return;
+      }
+
+      setText("futureValue", formatCurrency(res.futureValue));
+      setText("lostPower", formatCurrency(res.loss));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

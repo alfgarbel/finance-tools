@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10-Year Investment Return Calculator – Measure Long-Term Growth</title>
+  <meta name="description" content="Calculate your 10-year investment return, CAGR, and total profit. Compare against the S&amp;P 500 and understand how to interpret long-term performance.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="investment-return-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="investment-return-calculator.html">Investment Return Calculator</a>
+      <span class="sep">/</span>
+      <span>10 Years</span>
+    </div>
+
+    <div class="hero">
+      <h1>Investment Return Calculator: 10-Year Performance</h1>
+      <p>Evaluate your long-term investment results with total return, annualized CAGR, and profit over a full decade.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your 10-Year Returns</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="initial">Initial Investment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="initial" value="10000" min="0.01" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="final">Final Value</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="final" value="25000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="years">Investment Period</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="years" value="10" min="0.1" max="200" step="0.1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Total Return</div>
+          <div class="value" id="totalReturn">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Annualized Return (CAGR)</div>
+          <div class="value" id="cagr">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Profit</div>
+          <div class="value" id="profit">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- 10 Years as a Benchmark -->
+    <div class="card section">
+      <h2>10 Years as a Meaningful Investment Benchmark</h2>
+      <p>A decade is widely considered the gold standard for evaluating investment performance. It is long enough to encompass at least one full market cycle, including both bull and bear phases, which makes 10-year returns far more reliable than shorter-term snapshots.</p>
+      <p>Most professional fund managers are evaluated on 10-year track records. Morningstar ratings, pension fund assessments, and academic studies all rely heavily on decade-long performance data. When you measure your own investments over 10 years, you are using the same lens that institutional investors use.</p>
+      <p>A 10-year horizon also smooths out the impact of individual bad years. Even if you invested right before a major downturn, a full decade usually provides enough recovery time for diversified portfolios to demonstrate their long-term growth potential.</p>
+    </div>
+
+    <!-- Historical S&P 500 -->
+    <div class="card section">
+      <h2>Historical S&P 500 10-Year Returns</h2>
+      <p>The S&P 500 index has delivered an average annualized return of roughly 10% over the long run (before inflation). However, individual 10-year periods vary considerably:</p>
+      <p><strong>Best 10-year periods:</strong> Some decades have produced annualized returns above 15%, particularly those starting in the early 1990s or during recovery phases after major corrections.</p>
+      <p><strong>Worst 10-year periods:</strong> The decade starting in 2000 (the "lost decade") saw the S&P 500 deliver near-zero or slightly negative annualized returns due to both the dot-com crash and the 2008 financial crisis.</p>
+      <p><strong>Typical range:</strong> Most 10-year rolling periods for the S&P 500 have produced annualized returns between 6% and 12%. After adjusting for inflation, real returns have averaged about 7% annually.</p>
+      <p>These figures assume dividends are reinvested. Without reinvesting dividends, returns are meaningfully lower, highlighting the importance of total return measurement.</p>
+    </div>
+
+    <!-- CAGR Reference Table -->
+    <div class="card section">
+      <h2>What $10,000 Becomes at Different CAGR Over 10 Years</h2>
+      <p>This reference table shows how different annualized growth rates translate into final values and profit over a ten-year period, starting with a $10,000 investment.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>CAGR</th>
+              <th>Final Value</th>
+              <th>Total Profit</th>
+              <th>Total Return</th>
+            </tr>
+          </thead>
+          <tbody id="cagrTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CAGR vs Total Return -->
+    <div class="card section">
+      <h2>How to Interpret CAGR vs. Total Return</h2>
+      <p>Total return and CAGR answer different questions, and understanding both is essential for sound investment evaluation.</p>
+      <p><strong>Total return</strong> tells you the overall percentage gain from start to finish. It is intuitive and easy to understand: "My $10,000 became $25,000, so my total return is 150%." However, total return does not account for time. A 150% return over 10 years is very different from 150% over 30 years.</p>
+      <p><strong>CAGR</strong> normalizes returns to an annual basis, making it possible to compare investments held for different durations. A 150% total return over 10 years corresponds to a 9.6% CAGR. The same total return over 20 years would be only a 4.7% CAGR.</p>
+      <p>When comparing your investment to benchmarks like the S&P 500, always use CAGR. When communicating your gains in absolute terms, total return is more straightforward. Both numbers appear in the calculator above.</p>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What's a good 10-year CAGR?</h3>
+        <p>For a diversified stock portfolio, a 10-year CAGR of 7-10% is generally considered good, as it aligns with long-term historical market averages. A CAGR above 10% over a full decade is excellent and suggests either strong stock selection, favorable market conditions, or both. For bonds, a 10-year CAGR of 3-5% is typical. Any return that exceeds inflation (roughly 3%) means you are building real wealth.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does the S&P 500 perform over 10 years?</h3>
+        <p>The S&P 500 has delivered a median 10-year annualized return of approximately 10% (nominal) or about 7% after inflation. However, specific 10-year windows have ranged from slightly negative (2000-2009) to over 15% annually (2010-2019). Past performance does not guarantee future results, but the historical record shows that patient investors in diversified U.S. equities have been rewarded more often than not over decade-long periods.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I compare total return or CAGR?</h3>
+        <p>Use CAGR when comparing investments held for different time periods, as it provides a standardized annual rate. Use total return when you want to understand the absolute gain on a specific investment. For example, comparing a 5-year investment to a 10-year one requires CAGR. Evaluating whether a single investment met your goal is better served by total return. Ideally, look at both metrics together for a complete picture.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section">
+      <h2>Evaluate Shorter Investment Periods</h2>
+      <p>Not every investment is held for a full decade. Use our 5-year investment return calculator to measure medium-term performance and see how your results stack up against shorter-horizon benchmarks.</p>
+      <p><a href="investment-return-calculator-5-years.html" class="btn">Try the 5-Year Investment Return Calculator</a></p>
+      <p style="margin-top:1rem;"><a href="investment-return-calculator.html">Back to the main Investment Return Calculator &rarr;</a></p>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="investment-return-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>Investment Return Calculator</a>
+        <a href="compound-interest-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Compound Interest Calculator</a>
+        <a href="dividend-yield-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Dividend Yield Calculator</a>
+        <a href="retirement-calculator.html"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Retirement Calculator</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /* Build the CAGR reference table */
+    (function() {
+      var cagrs = [5, 7, 8, 10, 12];
+      var initial = 10000;
+      var years = 10;
+      var tbody = document.getElementById("cagrTableBody");
+      cagrs.forEach(function(rate) {
+        var finalVal = initial * Math.pow(1 + rate / 100, years);
+        var profit = finalVal - initial;
+        var totalReturn = (profit / initial) * 100;
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + rate + "%</td><td>" + formatCurrency(finalVal) + "</td><td class='highlight'>" + formatCurrency(profit) + "</td><td>" + formatPercent(totalReturn) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var initial = parseNum(document.getElementById("initial").value);
+      var final_  = parseNum(document.getElementById("final").value);
+      var years   = parseNum(document.getElementById("years").value, 1);
+
+      if (initial <= 0) { setError("errorMsg", "Initial investment must be greater than zero."); return; }
+      if (years <= 0)   { setError("errorMsg", "Investment period must be greater than zero."); return; }
+
+      var totalReturn = ((final_ - initial) / initial) * 100;
+      var profit = final_ - initial;
+
+      var cagr;
+      if (final_ <= 0) {
+        cagr = -100;
+      } else {
+        cagr = (Math.pow(final_ / initial, 1 / years) - 1) * 100;
+      }
+
+      var trEl = document.getElementById("totalReturn");
+      var trSign = totalReturn > 0 ? "+" : totalReturn < 0 ? "\u2212" : "";
+      trEl.textContent = trSign + formatPercent(Math.abs(totalReturn));
+      trEl.style.color = totalReturn >= 0 ? "" : "var(--red-500)";
+
+      var cagrEl = document.getElementById("cagr");
+      var cagrSign = cagr > 0 ? "+" : cagr < 0 ? "\u2212" : "";
+      cagrEl.textContent = cagrSign + formatPercent(Math.abs(cagr));
+      cagrEl.style.color = cagr >= 0 ? "" : "var(--red-500)";
+
+      var profEl = document.getElementById("profit");
+      var profSign = profit > 0 ? "+" : profit < 0 ? "\u2212" : "";
+      profEl.textContent = profSign + formatCurrency(Math.abs(profit));
+      profEl.style.color = profit >= 0 ? "" : "var(--red-500)";
+
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
