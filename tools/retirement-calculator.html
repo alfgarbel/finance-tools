@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator – Free Retirement Savings Projector</title>
+  <meta name="description" content="Estimate how much you will have saved by retirement. Enter your age, savings, monthly contribution, and expected return to project your retirement balance.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#what-is">What Is This</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Retirement Calculator</span>
+    </div>
+
+    <div class="hero">
+      <h1>Retirement Calculator</h1>
+      <p>Project how much you could have saved by retirement based on your current savings, contributions, and expected returns.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Estimate Your Retirement Savings</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="30" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="65" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="25000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="500" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Savings at Retirement</div>
+          <div class="value" id="savingsAtRetirement">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Investment Growth</div>
+          <div class="value" id="totalGrowth">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Is a Retirement Calculator -->
+    <div class="card section" id="what-is">
+      <h2>What Is a Retirement Calculator?</h2>
+      <p>A retirement calculator estimates how much money you will have accumulated by the time you stop working. It combines three key inputs to project your future balance:</p>
+      <ul>
+        <li><strong>Current savings</strong> — the money you have already set aside for retirement.</li>
+        <li><strong>Monthly contributions</strong> — the amount you plan to add each month until you retire.</li>
+        <li><strong>Expected return</strong> — the annual rate of return you expect from your investments, compounded monthly.</li>
+      </ul>
+      <p>The calculator uses these inputs along with the number of years until retirement to simulate month-by-month growth, showing you the power of consistent saving combined with compound returns over long time horizons.</p>
+    </div>
+
+    <!-- Planning -->
+    <div class="card section">
+      <h2>Planning for Retirement Savings</h2>
+      <p>Successful retirement planning depends on starting early and staying consistent. Consider these guidelines:</p>
+      <ul>
+        <li><strong>Start as soon as possible</strong> — even small contributions in your 20s can grow dramatically thanks to decades of compounding.</li>
+        <li><strong>Increase contributions over time</strong> — as your income grows, try to save a larger percentage each year.</li>
+        <li><strong>Use conservative estimates</strong> — a 6%–7% annual return is a common assumption for a diversified stock portfolio after inflation. Using a lower rate gives you a more cautious projection.</li>
+        <li><strong>Account for inflation</strong> — if you want results in today's purchasing power, subtract the expected inflation rate (around 2%–3%) from your expected return.</li>
+      </ul>
+      <p>This calculator does not account for taxes, employer matching, Social Security, or withdrawals during retirement. Use it as a starting point, then consult a financial advisor for a comprehensive plan.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Retirement Projection</h2>
+      <p>Suppose you are <strong>30 years old</strong>, plan to retire at <strong>65</strong>, have <strong>$25,000 saved</strong>, contribute <strong>$500 per month</strong>, and expect a <strong>7% annual return</strong>.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What rate of return should I use?</h3>
+        <p>The long-term average annual return of the S&amp;P 500 is roughly 10% before inflation, or about 7% after inflation. A conservative estimate of 6%–7% is a reasonable starting point for a diversified portfolio. If your investments are more conservative (bonds, savings accounts), use a lower rate such as 3%–5%.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this calculator include employer matching?</h3>
+        <p>No. If your employer matches contributions, add the match amount to your monthly contribution for a more accurate projection. For example, if you contribute $500 and your employer matches 50%, enter $750 as your monthly contribution.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much do I need to retire?</h3>
+        <p>A common guideline is to have 25 times your expected annual expenses saved by retirement (the "4% rule"). For example, if you expect to spend $50,000 per year, aim for $1,250,000. However, the right number depends on your lifestyle, healthcare needs, and other income sources like Social Security or pensions.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /**
+     * Simulate month-by-month retirement savings growth.
+     */
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var months = years * 12;
+      var balance = currentSavings;
+
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + r) + monthly;
+      }
+
+      var totalContrib = currentSavings + monthly * months;
+      return {
+        balance: balance,
+        totalContrib: totalContrib,
+        growth: balance - totalContrib
+      };
+    }
+
+    /* Build static example table */
+    (function() {
+      var res = calcRetirement(25000, 500, 7, 35);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Current Age", "30"],
+        ["Retirement Age", "65"],
+        ["Years Until Retirement", "35"],
+        ["Current Savings", "$25,000.00"],
+        ["Monthly Contribution", "$500.00"],
+        ["Expected Annual Return", "7.00%"],
+        ["Savings at Retirement", formatCurrency(res.balance)],
+        ["Total Contributions", formatCurrency(res.totalContrib)],
+        ["Investment Growth", formatCurrency(res.growth)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Savings at Retirement" || row[0] === "Total Contributions" || row[0] === "Investment Growth";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var currentAge     = parseInt10(document.getElementById("currentAge").value, 0);
+      var retireAge      = parseInt10(document.getElementById("retireAge").value, 0);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var monthly        = parseNum(document.getElementById("monthly").value);
+      var rate           = parseNum(document.getElementById("rate").value);
+
+      if (currentAge < 1 || currentAge > 100)  { setError("errorMsg", "Current age must be between 1 and 100."); return; }
+      if (retireAge < 1 || retireAge > 100)    { setError("errorMsg", "Retirement age must be between 1 and 100."); return; }
+      if (retireAge <= currentAge)              { setError("errorMsg", "Retirement age must be greater than your current age."); return; }
+      if (currentSavings < 0)                  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0)                         { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0)                            { setError("errorMsg", "Expected return cannot be negative."); return; }
+
+      var years = retireAge - currentAge;
+      var res = calcRetirement(currentSavings, monthly, rate, years);
+
+      if (!isFinite(res.balance)) {
+        setError("errorMsg", "Result is too large. Try a lower return rate or shorter time horizon.");
+        return;
+      }
+
+      setText("savingsAtRetirement", formatCurrency(res.balance));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalGrowth", formatCurrency(res.growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
