@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Goal Calculator – How Long to Reach Your Target</title>
+  <meta name="description" content="Find out how long it takes to reach your savings goal with monthly contributions and compound interest. See total contributions and interest earned.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Savings Goal Calculator</span>
+    </div>
+
+    <div class="hero">
+      <h1>Savings Goal Calculator</h1>
+      <p>Find out how long it will take to reach your savings target with regular contributions and compound interest.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your Savings Timeline</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="goal">Savings Goal</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="goal" value="50000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="current">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="current" value="5000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="500" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="5" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Time to Reach Goal</div>
+          <div class="value" id="timeRequired">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Interest Earned</div>
+          <div class="value" id="interestEarned">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How Savings Goals Work -->
+    <div class="card section" id="how-it-works">
+      <h2>How Savings Goals Work</h2>
+      <p>A savings goal is a target amount you want to accumulate over time. Reaching it depends on three factors:</p>
+      <ul>
+        <li><strong>Starting balance</strong> — money you have already saved gives you a head start.</li>
+        <li><strong>Monthly contributions</strong> — regular deposits are the engine that drives progress toward your goal.</li>
+        <li><strong>Interest rate</strong> — earning interest on your balance (and on previously earned interest) accelerates growth through compounding.</li>
+      </ul>
+      <p>The higher your contributions and interest rate, the faster you reach your target. Even a modest rate of return can shave months or years off your timeline because each month's interest is added to the balance before the next month's interest is calculated.</p>
+    </div>
+
+    <!-- Formula -->
+    <div class="card section">
+      <h2>How Long It Takes to Reach a Savings Goal</h2>
+      <p>When interest is compounded monthly, the number of months needed to grow from a current balance to a target goal is:</p>
+      <div class="formula-block">
+        n = log( (G &times; r + M) / (C &times; r + M) ) / log(1 + r)
+        <span class="var-label">n = months, G = goal amount, C = current savings, M = monthly contribution, r = monthly interest rate (annual rate / 12)</span>
+      </div>
+      <p>When the interest rate is 0%, the formula simplifies to: n = (G &minus; C) / M (the remaining amount divided by the monthly deposit).</p>
+      <p>This calculator uses a month-by-month simulation to determine the exact month your balance reaches or exceeds the goal, which handles rounding and edge cases more accurately than the closed-form formula above.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Savings Plan</h2>
+      <p>Suppose you want to save <strong>$50,000</strong>, you currently have <strong>$5,000</strong>, you can contribute <strong>$500 per month</strong>, and your savings earn <strong>5% annual interest</strong>.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What if I can never reach my goal?</h3>
+        <p>If your monthly contribution is zero and your current savings are below the goal with a 0% interest rate, the goal is unreachable. The calculator will let you know. To fix this, increase your monthly contribution or aim for a higher return through investing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this calculator account for inflation?</h3>
+        <p>No. The results are in nominal (today's) dollars. If you want to account for inflation, subtract the expected inflation rate from your interest rate. For example, use 3% instead of 5% if you expect 2% annual inflation.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What interest rate should I use?</h3>
+        <p>Use the annual percentage yield (APY) of the account where you plan to save. High-yield savings accounts typically offer 3%–5%, while diversified investment portfolios have historically averaged 7%–10% before inflation. Use a conservative estimate to avoid overestimating your timeline.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /**
+     * Simulate month-by-month savings growth until the goal is reached.
+     * Returns null if the goal is unreachable within 1200 months (100 years).
+     */
+    function calcSavingsGoal(goal, current, monthly, annualRate) {
+      var r = annualRate / 12 / 100;
+      var balance = current;
+      var maxMonths = 1200;
+
+      for (var m = 1; m <= maxMonths; m++) {
+        balance = balance * (1 + r) + monthly;
+        if (balance >= goal) {
+          var totalContrib = current + monthly * m;
+          return {
+            months: m,
+            totalContrib: totalContrib,
+            interest: balance - totalContrib
+          };
+        }
+      }
+      return null;
+    }
+
+    /** Format months as "X years Y months" or just "Y months". */
+    function formatTime(months) {
+      var y = Math.floor(months / 12);
+      var m = months % 12;
+      if (y === 0) return m + (m === 1 ? " month" : " months");
+      var parts = y + (y === 1 ? " year" : " years");
+      if (m > 0) parts += " " + m + (m === 1 ? " month" : " months");
+      return parts;
+    }
+
+    /* Build static example table */
+    (function() {
+      var res = calcSavingsGoal(50000, 5000, 500, 5);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Savings Goal", "$50,000.00"],
+        ["Current Savings", "$5,000.00"],
+        ["Monthly Contribution", "$500.00"],
+        ["Interest Rate", "5.00%"],
+        ["Time to Reach Goal", formatTime(res.months)],
+        ["Total Contributions", formatCurrency(res.totalContrib)],
+        ["Interest Earned", formatCurrency(res.interest)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Time to Reach Goal" || row[0] === "Total Contributions" || row[0] === "Interest Earned";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var goal    = parseNum(document.getElementById("goal").value);
+      var current = parseNum(document.getElementById("current").value);
+      var monthly = parseNum(document.getElementById("monthly").value);
+      var rate    = parseNum(document.getElementById("rate").value);
+
+      if (goal <= 0)    { setError("errorMsg", "Savings goal must be greater than zero."); return; }
+      if (current < 0)  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0)  { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0)     { setError("errorMsg", "Interest rate cannot be negative."); return; }
+
+      if (current >= goal) {
+        setText("timeRequired", "0 months");
+        setText("totalContributions", formatCurrency(current));
+        setText("interestEarned", formatCurrency(0));
+        showResults("results");
+        return;
+      }
+
+      if (monthly === 0 && rate === 0) {
+        setError("errorMsg", "With no contributions and 0% interest, your goal cannot be reached.");
+        return;
+      }
+
+      var res = calcSavingsGoal(goal, current, monthly, rate);
+
+      if (!res) {
+        setError("errorMsg", "Goal cannot be reached within 100 years. Try increasing your monthly contribution or interest rate.");
+        return;
+      }
+
+      setText("timeRequired", formatTime(res.months));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("interestEarned", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
