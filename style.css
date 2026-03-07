@@ -163,7 +163,7 @@ body {
   gap: 0.4rem;
   font-size: 0.8125rem;
   color: var(--slate-400);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .breadcrumb a {
@@ -198,11 +198,18 @@ body {
   border-bottom: 1px solid var(--slate-100);
 }
 
+/* Secondary content cards — lighter than the primary calculator card */
+.card.section {
+  background: var(--slate-50);
+  box-shadow: none;
+  border-color: var(--slate-100);
+}
+
 /* ---------- Tool grid (homepage) ---------- */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.125rem;
 }
 
 .tool-card {
@@ -212,13 +219,14 @@ body {
   padding: 1.5rem 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.25s, border-color 0.25s;
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
   position: relative;
 }
 
 .tool-card:hover {
   box-shadow: var(--shadow-lg);
   border-color: var(--blue-500);
+  transform: translateY(-2px);
 }
 
 .tool-card .tool-icon {
@@ -624,8 +632,8 @@ body {
 
 /* ---------- Homepage: Hero ---------- */
 .hp-hero {
-  background: linear-gradient(170deg, var(--blue-50) 0%, #fff 60%);
-  padding: 5rem 1.5rem 3.5rem;
+  background: linear-gradient(170deg, var(--blue-50) 0%, #fff 65%);
+  padding: 5rem 1.5rem 4rem;
   text-align: center;
 }
 
@@ -692,7 +700,7 @@ body {
 .hp-trust-item svg { color: var(--blue-500); flex-shrink: 0; }
 
 /* ---------- Homepage: Featured tool ---------- */
-.hp-featured { margin-bottom: 2.5rem; }
+.hp-featured { margin-bottom: 3rem; }
 
 .hp-featured-card {
   display: flex;
@@ -761,8 +769,8 @@ body {
 
 /* ---------- Homepage: Section styles ---------- */
 .hp-section {
-  margin-top: 3rem;
-  padding-top: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 3rem;
   border-top: 1px solid var(--slate-200);
 }
 
@@ -934,28 +942,31 @@ body {
   background: var(--slate-50);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius);
-  padding: 1.75rem 2rem;
+  padding: 2rem 2.25rem;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .related-tools h2 {
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--slate-800);
+  color: var(--slate-400);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
 .related-tools-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+  gap: 0.625rem;
 }
 
 .related-tools-grid a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
   background: #fff;
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-xs);
@@ -963,13 +974,14 @@ body {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--slate-700);
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.2s;
 }
 
 .related-tools-grid a:hover {
   border-color: var(--blue-500);
   box-shadow: var(--shadow-sm);
   color: var(--blue-600);
+  transform: translateY(-1px);
 }
 
 .related-tools-grid .rt-icon {
@@ -990,7 +1002,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  margin-top: 1rem;
+  margin-top: 1.125rem;
+  padding-top: 0.875rem;
+  border-top: 1px solid var(--slate-200);
+  width: 100%;
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--blue-600);
@@ -1002,18 +1017,18 @@ body {
 
 /* ---------- All Calculators directory ---------- */
 .dir-category {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .dir-category-title {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--slate-400);
-  letter-spacing: 0.08em;
+  color: var(--slate-500);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--slate-200);
+  margin-bottom: 1rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 2px solid var(--slate-200);
 }
 
 /* ---------- Expanded footer (all pages) ---------- */
@@ -1136,7 +1151,6 @@ body {
   .hp-why-grid { grid-template-columns: 1fr; }
   .hp-footer-inner { flex-direction: column; gap: 1.5rem; }
   .site-footer-inner { flex-direction: column; gap: 1.5rem; }
-  .related-tools-grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- Responsive — Mobile ---------- */
@@ -1149,11 +1163,29 @@ body {
   .hero p  { font-size: 0.9375rem; }
   .card { padding: 1.25rem; border-radius: 12px; }
   .card-title { font-size: 1rem; }
-  .nav-links { display: none; }
+
+  /* Compact scrollable nav instead of hiding it */
+  .nav-links {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.125rem;
+    scrollbar-width: none;
+    mask-image: linear-gradient(to right, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 90%, transparent);
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    white-space: nowrap;
+  }
+
   .tool-grid { grid-template-columns: 1fr; }
   .result-item .value { font-size: 1.25rem; }
   .data-table { font-size: 0.8125rem; }
   .data-table th, .data-table td { padding: 0.5rem; }
+  .related-tools { padding: 1.5rem; }
+  .related-tools-grid { grid-template-columns: 1fr; }
 
   .hp-hero { padding: 2.5rem 1rem 2rem; }
   .hp-hero h1 { font-size: 1.75rem; }
