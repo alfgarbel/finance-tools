@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Payment Calculator – Free Monthly Payment Estimator</title>
+  <meta name="description" content="Calculate your monthly loan payment, total interest paid, and total amount paid. Enter loan amount, interest rate, and loan term to get instant results.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#what-is">What Is a Loan Payment</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Loan Payment Calculator</span>
+    </div>
+
+    <div class="hero">
+      <h1>Loan Payment Calculator</h1>
+      <p>Find out your monthly payment, total interest, and total cost for any fixed-rate loan.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your Loan Payment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="loanAmount">Loan Amount</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="loanAmount" value="25000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loanTerm">Loan Term</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="loanTerm" value="5" min="1" max="50" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Monthly Payment</div>
+          <div class="value" id="monthlyPayment">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Interest Paid</div>
+          <div class="value" id="totalInterest">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Amount Paid</div>
+          <div class="value" id="totalAmount">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What Is a Loan Payment -->
+    <div class="card section" id="what-is">
+      <h2>What Is a Loan Payment?</h2>
+      <p>A loan payment is the fixed amount you pay each month to repay borrowed money plus the cost of borrowing (interest). With a standard fixed-rate loan, every payment is the same size for the entire term.</p>
+      <p>Each payment is split into two parts:</p>
+      <ul>
+        <li><strong>Principal</strong> — the portion that reduces the outstanding balance of the loan.</li>
+        <li><strong>Interest</strong> — the fee the lender charges for use of their money, calculated on the remaining balance.</li>
+      </ul>
+      <p>Early in the loan most of your payment covers interest. Over time the balance decreases, so the interest portion shrinks and more of each payment goes toward principal. This gradual payoff process is called amortization.</p>
+    </div>
+
+    <!-- Formula -->
+    <div class="card section">
+      <h2>Loan Payment Formula</h2>
+      <p>The standard formula for a fixed-rate loan payment is:</p>
+      <div class="formula-block">
+        M = P &times; [ r(1 + r)^n ] / [ (1 + r)^n &minus; 1 ]
+        <span class="var-label">M = monthly payment, P = loan amount, r = monthly interest rate (annual rate / 12), n = total number of payments (years &times; 12)</span>
+      </div>
+      <p>When the interest rate is 0%, the formula simplifies to: M = P / n (the loan amount divided evenly across all payments).</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Loan Calculation</h2>
+      <p>Suppose you take out a <strong>$25,000 loan</strong> at a <strong>7% annual interest rate</strong> for a <strong>5-year term</strong>.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What types of loans does this calculator work for?</h3>
+        <p>This calculator works for any fixed-rate, fully amortizing loan, including personal loans, auto loans, and student loans. It assumes equal monthly payments over the entire term. It does not account for variable rates, interest-only periods, or balloon payments.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does the loan term affect total interest?</h3>
+        <p>A longer loan term lowers your monthly payment but increases the total interest you pay because the balance accrues interest for more months. A shorter term raises monthly payments but saves a significant amount in interest over the life of the loan. Choose the shortest term you can comfortably afford to minimize total cost.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does this calculator include fees or insurance?</h3>
+        <p>No. This calculator computes principal and interest only. Actual loan costs may include origination fees, closing costs, or required insurance. Check with your lender for a full cost breakdown before committing to a loan.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /** Calculate fixed-rate loan payment. */
+    function calcLoan(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) {
+        return { monthly: principal / n, total: principal, interest: 0 };
+      }
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    /* Build static example table */
+    (function() {
+      var res = calcLoan(25000, 7, 5);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Loan Amount", formatCurrency(25000)],
+        ["Interest Rate", "7.00%"],
+        ["Loan Term", "5 years"],
+        ["Monthly Payment", formatCurrency(res.monthly)],
+        ["Total Interest Paid", formatCurrency(res.interest)],
+        ["Total Amount Paid", formatCurrency(res.total)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Monthly Payment" || row[0] === "Total Interest Paid" || row[0] === "Total Amount Paid";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var principal = parseNum(document.getElementById("loanAmount").value);
+      var rate      = parseNum(document.getElementById("rate").value);
+      var years     = parseInt10(document.getElementById("loanTerm").value, 1);
+
+      if (principal <= 0) { setError("errorMsg", "Loan amount must be greater than zero."); return; }
+      if (rate < 0)       { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      if (years < 1)      { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+
+      var res = calcLoan(principal, rate, years);
+
+      if (!isFinite(res.monthly)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter term.");
+        return;
+      }
+
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalInterest", formatCurrency(res.interest));
+      setText("totalAmount", formatCurrency(res.total));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
