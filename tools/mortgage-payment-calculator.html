@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Payment Calculator – Free Monthly Payment Estimator</title>
+  <meta name="description" content="Calculate your monthly mortgage payment, total payment, and total interest paid. Enter home price, down payment, loan term, and interest rate.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>Mortgage Payment Calculator</span>
+    </div>
+
+    <div class="hero">
+      <h1>Mortgage Payment Calculator</h1>
+      <p>Estimate your monthly mortgage payment and see how much you'll pay in total over the life of the loan.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your Mortgage Payment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="homePrice">Home Price</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="downPayment">Down Payment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="downPayment" value="70000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loanTerm">Loan Term</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Monthly Payment</div>
+          <div class="value" id="monthlyPayment">—</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Payment</div>
+          <div class="value" id="totalPayment">—</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Interest</div>
+          <div class="value" id="totalInterest">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- How Mortgage Payments Work -->
+    <div class="card section" id="how-it-works">
+      <h2>How Mortgage Payments Work</h2>
+      <p>A fixed-rate mortgage divides the total cost of a loan into equal monthly payments over the loan term. Each payment covers two components:</p>
+      <ul>
+        <li><strong>Principal</strong> — the portion that reduces your remaining loan balance.</li>
+        <li><strong>Interest</strong> — the cost charged by the lender for borrowing the money.</li>
+      </ul>
+      <p>In the early years most of your payment goes toward interest. As the balance shrinks, a larger share of each payment reduces the principal. This process is called amortization.</p>
+      <p>Your monthly payment stays the same for the entire loan term, but the split between principal and interest shifts over time. A larger down payment reduces the loan amount, which lowers both your monthly payment and total interest paid.</p>
+    </div>
+
+    <!-- Formula -->
+    <div class="card section">
+      <h2>Mortgage Payment Formula</h2>
+      <p>The standard formula for a fixed-rate mortgage payment is:</p>
+      <div class="formula-block">
+        M = P &times; [ r(1 + r)^n ] / [ (1 + r)^n &minus; 1 ]
+        <span class="var-label">M = monthly payment, P = loan principal, r = monthly interest rate (annual rate / 12), n = total number of payments (years &times; 12)</span>
+      </div>
+      <p>When the interest rate is 0%, the formula simplifies to dividing the principal evenly across all payments: M = P / n.</p>
+    </div>
+
+    <!-- Example -->
+    <div class="card section">
+      <h2>Example Mortgage Calculation</h2>
+      <p>Suppose you buy a home for <strong>$350,000</strong> with a <strong>$70,000 down payment</strong> (20%), a <strong>30-year term</strong>, and a <strong>6.5% interest rate</strong>.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is included in a mortgage payment?</h3>
+        <p>This calculator shows the principal and interest portion of a mortgage payment. In practice, your actual monthly payment may also include property taxes, homeowner's insurance, and private mortgage insurance (PMI) if your down payment is less than 20%. These additional costs vary by location and lender.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does the loan term affect my payment?</h3>
+        <p>A shorter loan term (e.g., 15 years) results in higher monthly payments but significantly less total interest paid over the life of the loan. A longer term (e.g., 30 years) lowers monthly payments but increases total interest. Choose a term that balances affordable monthly payments with your goal to minimize interest costs.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I make a larger down payment?</h3>
+        <p>A larger down payment reduces the loan principal, which lowers both your monthly payment and total interest. Putting down at least 20% also eliminates the need for private mortgage insurance (PMI), saving you additional monthly costs. However, you should balance a larger down payment against maintaining an adequate emergency fund.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 Finance Tools. For educational purposes only.</footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /** Calculate fixed-rate mortgage payment. */
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) {
+        return { monthly: principal / n, total: principal, interest: 0 };
+      }
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    /* Build static example table */
+    (function() {
+      var res = calcMortgage(280000, 6.5, 30);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Home Price", "$350,000.00"],
+        ["Down Payment (20%)", "$70,000.00"],
+        ["Loan Amount", formatCurrency(280000)],
+        ["Interest Rate", "6.50%"],
+        ["Loan Term", "30 years"],
+        ["Monthly Payment", formatCurrency(res.monthly)],
+        ["Total Payment", formatCurrency(res.total)],
+        ["Total Interest Paid", formatCurrency(res.interest)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Monthly Payment" || row[0] === "Total Payment" || row[0] === "Total Interest Paid";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var homePrice   = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years       = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate        = parseNum(document.getElementById("rate").value);
+
+      if (homePrice <= 0)   { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0)  { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1)        { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0)         { setError("errorMsg", "Interest rate cannot be negative."); return; }
+
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+
+      if (!isFinite(res.monthly)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter term.");
+        return;
+      }
+
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
