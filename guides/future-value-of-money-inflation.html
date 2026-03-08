@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Value of Money with Inflation – Multi-Horizon Reference Guide</title>
+  <meta name="description" content="What will your money really be worth in the future? Comprehensive reference tables showing the inflation-adjusted future value of common dollar amounts across 5, 10, 20, and 30 years at every major inflation rate.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finance-tools.example.com/guides/future-value-of-money-inflation.html">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="../tools/inflation-calculator.html">Inflation Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="../inflation-and-money-tools.html">Inflation &amp; Money</a>
+      <span class="sep">/</span>
+      <span>Future Value of Money with Inflation</span>
+    </div>
+
+    <div class="hero">
+      <h1>Future Value of Money with Inflation: Complete Reference Tables</h1>
+      <p>What will your dollar actually buy in 5, 10, 20, or 30 years? Inflation converts today's purchasing power into tomorrow's smaller reality. This page gives you a comprehensive set of reference tables — every major inflation rate, every major time horizon, across common dollar amounts — so you can see at a glance what money is really worth over time.</p>
+    </div>
+
+    <!-- Concept -->
+    <div class="card section">
+      <h2>How Inflation Determines the Future Value of Money</h2>
+      <p>The future value of money under inflation works inversely to compound interest: where compound interest grows your money, inflation shrinks its purchasing power. The formula is:</p>
+      <div class="formula-block">
+        Real Value = Present Value ÷ (1 + r)^t
+        <span class="var-label">r = annual inflation rate (as decimal), t = number of years</span>
+      </div>
+      <p>Equivalently, you can express it as: what amount today would equal $1,000 in future purchasing power?</p>
+      <div class="formula-block">
+        Future Cost = Present Value × (1 + r)^t
+        <span class="var-label">The cost of today's $1,000 item in t years at inflation rate r</span>
+      </div>
+      <p>Both perspectives matter. For savers: the first formula shows how much real value cash loses. For planners: the second shows how much more expensive future goals will be in nominal terms. Use the <a href="../tools/inflation-calculator.html"><strong>Inflation Calculator</strong></a> to compute any specific scenario.</p>
+    </div>
+
+    <!-- Master reference table: real value of $1,000 -->
+    <div class="card section">
+      <h2>Real Value of $1,000 After Inflation (What It Can Buy in Today's Terms)</h2>
+      <p>The table shows what <strong>$1,000 in nominal cash</strong> is worth in today's purchasing power, after each inflation rate and time horizon. This is what idling money in a zero-yield account actually costs you:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Inflation Rate</th><th>After 5 Years</th><th>After 10 Years</th><th>After 20 Years</th><th>After 30 Years</th></tr>
+          </thead>
+          <tbody id="realValueTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Ad slot -->
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <!-- Future cost table: $1,000 item -->
+    <div class="card section">
+      <h2>Future Cost of Today's $1,000 Item After Inflation</h2>
+      <p>The reverse view: how much will a <strong>$1,000 purchase today</strong> cost in future nominal dollars at each rate and horizon?</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Inflation Rate</th><th>In 5 Years</th><th>In 10 Years</th><th>In 20 Years</th><th>In 30 Years</th></tr>
+          </thead>
+          <tbody id="futureCostTable"></tbody>
+        </table>
+      </div>
+      <p>At 3% — the U.S. historical average — a $1,000 item today will cost <strong>$1,344</strong> in 10 years and <strong>$2,427</strong> in 30 years. Every long-term savings goal should be stated in future nominal dollars, not today's dollars, to ensure you are saving enough.</p>
+    </div>
+
+    <!-- Worked example: planning a future goal -->
+    <div class="card section">
+      <h2>Worked Example: Planning a Future Goal in Inflation-Adjusted Terms</h2>
+      <p>Elena is 35 and wants to accumulate enough to fund a <strong>$30,000-per-year retirement income</strong> (in today's dollars) for 25 years starting at 65. She needs to know what $30,000/year will actually cost in nominal terms when she retires — and therefore how large her portfolio needs to be.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Inflation Assumption</th><th>$30K/yr in 30 Years (Nominal)</th><th>Portfolio Needed (4% Rule)</th><th>vs. Simply Saving $750K</th></tr>
+          </thead>
+          <tbody id="planTable"></tbody>
+        </table>
+      </div>
+      <p>At 3% inflation, Elena's $30,000/year income target requires a portfolio of nearly <strong>$1.83 million</strong> — not the $750,000 that naive 4%-rule thinking suggests. Most retirement shortfalls trace back to this error: planning in today's dollars without accounting for the inflated costs of future spending. Use the <a href="../tools/retirement-calculator.html"><strong>Retirement Calculator</strong></a> to build an inflation-aware savings plan.</p>
+    </div>
+
+    <!-- Break-even returns table -->
+    <div class="card section">
+      <h2>Break-Even Investment Returns Against Inflation</h2>
+      <p>To preserve real purchasing power, your investments must match the inflation rate. To grow real wealth, they must exceed it. This table shows the required nominal return to double real purchasing power over each horizon:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Goal</th><th>Inflation 2%</th><th>Inflation 3%</th><th>Inflation 5%</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Break even (preserve purchasing power)</td><td>2.0%/yr</td><td>3.0%/yr</td><td>5.0%/yr</td></tr>
+            <tr><td>Grow real wealth by 50% in 20 years</td><td>4.1%/yr</td><td>5.1%/yr</td><td>7.2%/yr</td></tr>
+            <tr><td class="highlight">Double real wealth in 20 years</td><td class="highlight">5.5%/yr</td><td class="highlight">6.5%/yr</td><td class="highlight">8.7%/yr</td></tr>
+            <tr><td>Double real wealth in 10 years</td><td>9.1%/yr</td><td>10.2%/yr</td><td>12.4%/yr</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A diversified stock portfolio has historically returned 7%–10% annually before inflation — enough to double real wealth in 15–20 years at typical inflation rates. This is why long-term investors consistently favour equities over cash for multi-decade goals.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is the difference between nominal and real value of money?</h3>
+        <p>Nominal value is the face-value amount — $1,000 is always nominally $1,000. Real value adjusts for purchasing power — $1,000 today can buy more than $1,000 in 10 years if inflation has risen 3% annually. Real value is what matters for financial planning because it reflects what money can actually do in the economy, not just the number on the bill.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I calculate the future value of money with inflation?</h3>
+        <p>Multiply the present amount by (1 + inflation rate)^years. For example: $10,000 × (1.03)^10 = $13,439 — meaning a $10,000 item today will cost $13,439 in 10 years at 3% inflation. To find the real value of future cash in today's terms, divide instead: $13,439 ÷ (1.03)^10 = $10,000. The <a href="../tools/inflation-calculator.html">Inflation Calculator</a> does this instantly for any inputs.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I set savings goals in today's dollars or future dollars?</h3>
+        <p>Set them in future nominal dollars — what you will actually need to have in your account on the target date. If you want $30,000/year in today's purchasing power in 30 years at 3% inflation, your actual annual draw will need to be $72,817 ($30,000 × 1.03^30). Your portfolio target should be based on that future amount (approximately $1.82 million at 4% withdrawal), not the $750,000 that $30,000 × 25 suggests.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon amber">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>Calculate the Future Value of Any Amount</h3>
+        <p>Use the <a href="../tools/inflation-calculator.html"><strong>Inflation Calculator</strong></a> to enter any dollar amount, inflation rate, and time horizon — and see the exact future purchasing power lost.</p>
+      </div>
+    </div>
+
+    <!-- Related guides -->
+    <div class="card section">
+      <h2>Related Inflation &amp; Investment Guides</h2>
+      <ul>
+        <li><a href="inflation-impact-10-years.html"><strong>Inflation Impact Over 10 Years</strong> — detailed 10-year analysis</a></li>
+        <li><a href="inflation-impact-20-years.html">Inflation Impact Over 20 Years — worked two-saver comparison</a></li>
+        <li><a href="inflation-impact-30-years.html">Inflation Impact Over 30 Years — retirement-length perspective</a></li>
+        <li><a href="average-stock-market-return-10-years.html">Average Stock Market Return Over 10 Years — beating inflation with equities</a></li>
+        <li><a href="how-inflation-affects-money.html">How Inflation Affects Your Money — complete foundational guide</a></li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="../tools/inflation-calculator.html">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+          Inflation Calculator
+        </a>
+        <a href="../tools/compound-interest-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="../tools/retirement-calculator.html">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="../tools/investment-return-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Investment Return Calculator
+        </a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function fv(pv, r, t) { return pv * Math.pow(1 + r / 100, t); }
+    function rv(pv, r, t) { return pv / Math.pow(1 + r / 100, t); }
+
+    var rates = [1, 2, 3, 4, 5, 7, 8];
+    var horizons = [5, 10, 20, 30];
+
+    // Real value of $1,000 table
+    (function() {
+      var tbody = document.getElementById("realValueTable");
+      rates.forEach(function(r) {
+        var cells = horizons.map(function(t) { return formatCurrency(rv(1000, r, t)); });
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + r + "%</td>" + cells.map(function(c, i) {
+          return "<td" + (i === 1 ? " class='highlight'" : "") + ">" + c + "</td>";
+        }).join("");
+        tbody.appendChild(tr);
+      });
+    })();
+
+    // Future cost of $1,000 item table
+    (function() {
+      var tbody = document.getElementById("futureCostTable");
+      rates.forEach(function(r) {
+        var cells = horizons.map(function(t) { return formatCurrency(fv(1000, r, t)); });
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + r + "%</td>" + cells.map(function(c, i) {
+          return "<td" + (i === 1 ? " class='highlight'" : "") + ">" + c + "</td>";
+        }).join("");
+        tbody.appendChild(tr);
+      });
+    })();
+
+    // Retirement planning table: $30K/yr in today's dollars, 30 years out
+    (function() {
+      var inflRates = [2, 3, 5];
+      var tbody = document.getElementById("planTable");
+      inflRates.forEach(function(r) {
+        var futureIncome = fv(30000, r, 30);
+        var portfolio = futureIncome / 0.04; // 4% rule
+        var today750k = 750000;
+        var diff = portfolio - today750k;
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + r + "% inflation</td><td>" + formatCurrency(futureIncome) + "/yr</td><td class='highlight'>" + formatCurrency(portfolio) + "</td><td>+" + formatCurrency(diff) + " more needed</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+  </script>
+</body>
+</html>
