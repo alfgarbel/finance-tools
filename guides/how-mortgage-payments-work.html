@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Mortgage Payments Work – Understanding Principal, Interest &amp; Amortization</title>
+  <meta name="description" content="Learn how mortgage payments are calculated, how amortization works, and why most of your early payments go to interest. Includes formulas, examples, and tips.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="#how-to-calculate">Formula</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <span>How Mortgage Payments Work</span>
+    </div>
+
+    <div class="hero">
+      <h1>How Mortgage Payments Work</h1>
+      <p>Understand exactly where your money goes each month and why a 30-year mortgage can cost you more than double the home's price.</p>
+    </div>
+
+    <!-- What Is a Mortgage -->
+    <div class="card section">
+      <h2>What Is a Mortgage Payment?</h2>
+      <p>A mortgage payment is the monthly amount you pay to your lender to repay your home loan. Each payment is divided into two parts: <strong>principal</strong> (the amount that reduces your loan balance) and <strong>interest</strong> (the cost of borrowing the money).</p>
+      <p>In a standard fixed-rate mortgage, your monthly payment stays the same for the entire loan term. However, the split between principal and interest changes dramatically over time. In the early years, most of your payment goes to interest. By the final years, most of it goes to principal. This gradual shift is called <strong>amortization</strong>.</p>
+      <p>Beyond principal and interest, your actual monthly housing cost may also include property taxes, homeowner's insurance, and private mortgage insurance (PMI). These are often collected together in an escrow account, but the core mortgage payment is always the principal plus interest component.</p>
+    </div>
+
+    <!-- How Amortization Works -->
+    <div class="card section">
+      <h2>How Amortization Works</h2>
+      <p>Amortization is the schedule by which a mortgage is paid off over time through equal monthly payments. Here is a simplified look at how a <strong>$300,000 mortgage at 6.5% over 30 years</strong> breaks down:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Payment</th><th>Monthly Payment</th><th>To Interest</th><th>To Principal</th><th>Remaining Balance</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Month 1</td><td>$1,896</td><td>$1,625</td><td>$271</td><td>$299,729</td></tr>
+            <tr><td>Month 60</td><td>$1,896</td><td>$1,529</td><td>$367</td><td>$281,235</td></tr>
+            <tr><td>Month 180</td><td>$1,896</td><td>$1,199</td><td>$697</td><td>$220,846</td></tr>
+            <tr><td>Month 300</td><td>$1,896</td><td>$598</td><td>$1,298</td><td>$109,408</td></tr>
+            <tr><td>Month 360</td><td>$1,896</td><td>$10</td><td class="highlight">$1,886</td><td class="highlight">$0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>In month 1, 86% of the payment goes to interest and only 14% to principal. By the last payment, nearly 100% goes to principal. The total interest paid over 30 years is approximately $382,633 — more than the original loan amount.</p>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- How to Calculate -->
+    <div class="card section" id="how-to-calculate">
+      <h2>How to Calculate Your Monthly Mortgage Payment</h2>
+      <p>The standard formula for a fixed-rate mortgage payment is:</p>
+      <div class="formula-block">
+        M = P &times; [r(1 + r)^n] / [(1 + r)^n &minus; 1]
+        <span class="var-label">M = monthly payment, P = loan principal, r = monthly interest rate (annual rate / 12), n = total number of payments (years &times; 12)</span>
+      </div>
+      <p>For a $300,000 loan at 6.5% annual rate for 30 years: r = 0.065 / 12 = 0.005417, n = 360. Plugging in: M = $300,000 &times; [0.005417 &times; (1.005417)^360] / [(1.005417)^360 &minus; 1] = <strong>$1,896 per month</strong>.</p>
+      <p>Each month, interest is calculated as: Balance &times; r. The remainder of the payment reduces the principal. As the balance shrinks, less goes to interest and more to principal — that is amortization in action.</p>
+    </div>
+
+    <!-- 15 vs 30 Year -->
+    <div class="card section">
+      <h2>15-Year vs. 30-Year Mortgage: A Comparison</h2>
+      <p>Choosing between a 15-year and 30-year mortgage is one of the most impactful financial decisions you can make. Here is how the same $300,000 loan at 6.5% compares:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Metric</th><th>15-Year</th><th>30-Year</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monthly Payment</td><td class="highlight">$2,613</td><td>$1,896</td></tr>
+            <tr><td>Total Interest Paid</td><td class="highlight">$170,389</td><td>$382,633</td></tr>
+            <tr><td>Total Cost</td><td class="highlight">$470,389</td><td>$682,633</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The 15-year mortgage costs $717 more per month but saves over $212,000 in total interest. If your budget can handle the higher payment, the 15-year option builds equity much faster and costs far less overall.</p>
+    </div>
+
+    <!-- Tips -->
+    <div class="card section">
+      <h2>Strategies to Pay Less Interest</h2>
+      <ul>
+        <li><strong>Make extra principal payments</strong> — even $100 extra per month can shave years off a 30-year mortgage and save tens of thousands in interest.</li>
+        <li><strong>Choose a shorter loan term</strong> — 15-year mortgages typically have lower interest rates and dramatically less total interest paid.</li>
+        <li><strong>Refinance when rates drop</strong> — if rates fall 1% or more below your current rate, refinancing can save significant money over the remaining term.</li>
+        <li><strong>Make biweekly payments</strong> — by paying half your monthly payment every two weeks, you make 26 half-payments (13 full payments) per year instead of 12, accelerating payoff.</li>
+      </ul>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Why does so much of my payment go to interest at first?</h3>
+        <p>Interest is calculated on the remaining balance each month. When your balance is highest (at the start), the interest charge is largest. As you pay down the principal, the interest portion shrinks and more of each payment goes toward reducing the balance. This is the natural consequence of the amortization formula.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the difference between interest rate and APR?</h3>
+        <p>The interest rate is the annual cost of borrowing the principal. The APR (Annual Percentage Rate) includes the interest rate plus other loan costs like origination fees, discount points, and closing costs, expressed as a single annual rate. APR gives a more complete picture of the true cost of the loan.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do extra payments affect my mortgage?</h3>
+        <p>Extra payments go directly toward reducing the principal balance. Since future interest is calculated on a lower balance, each extra payment reduces total interest paid and shortens the loan. For example, adding $200/month to a $300,000/30-year mortgage at 6.5% saves roughly $108,000 in interest and pays off the loan about 7 years early.</p>
+      </div>
+    </div>
+
+    <!-- Related Guides -->
+    <div class="card section">
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="how-compound-interest-works.html">How Compound Interest Works</a> — understand the math behind interest calculations</li>
+        <li><a href="how-retirement-savings-work.html">How Retirement Savings Work</a> — plan your savings alongside your mortgage payments</li>
+        <li><a href="how-inflation-affects-money.html">How Inflation Affects Your Money</a> — see why a fixed mortgage payment becomes cheaper in real terms over time</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-banner">
+      <h2>Calculate your mortgage payment</h2>
+      <p>Enter your loan amount, interest rate, and term to see your monthly payment and full amortization schedule.</p>
+      <a href="../tools/mortgage-payment-calculator.html" class="btn">Try the Mortgage Payment Calculator &rarr;</a>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="../tools/mortgage-payment-calculator.html">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          Mortgage Payment Calculator
+        </a>
+        <a href="../tools/loan-payment-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
+          Loan Payment Calculator
+        </a>
+        <a href="../tools/compound-interest-calculator.html">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="../tools/savings-goal-calculator.html">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="../index.html" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../all-calculators.html">All Calculators</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
