@@ -11,7 +11,8 @@
  */
 function formatCurrency(value) {
   if (!isFinite(value)) return "$0.00";
-  return "$" + Math.abs(value).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  var sign = value < 0 ? "-" : "";
+  return sign + "$" + Math.abs(value).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 /**
@@ -21,7 +22,8 @@ function formatCurrency(value) {
  */
 function formatEUR(value) {
   if (!isFinite(value)) return "€0.00";
-  return "€" + Math.abs(value).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  var sign = value < 0 ? "-" : "";
+  return sign + "€" + Math.abs(value).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 /**
