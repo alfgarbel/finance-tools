@@ -274,6 +274,25 @@ body {
 
 .tool-card .tool-link:hover { gap: 0.55rem; }
 
+.tool-sub-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+.tool-sub-links li a {
+  font-size: 0.75rem;
+  color: var(--slate-500);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.tool-sub-links li a:hover {
+  color: var(--blue-600);
+  text-decoration: underline;
+}
+
 /* Feature the last card spanning full width when odd count */
 .tool-grid .tool-card:last-child:nth-child(odd) {
   grid-column: 1 / -1;
