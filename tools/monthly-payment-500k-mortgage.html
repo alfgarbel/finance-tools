@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Payment on a $500K Mortgage – Budget &amp; Planning</title>
+  <meta name="description" content="Calculate the monthly payment on a $500,000 mortgage. At 6.5% over 30 years, expect about $3,160/month. See rate impacts, income requirements, and affordability tips.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finance-tools.example.com/tools/monthly-payment-500k-mortgage.html">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="mortgage-payment-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="mortgage-payment-calculator.html">Mortgage Payment Calculator</a><span class="sep">/</span>
+      <span>$500K Monthly Payment</span>
+    </div>
+
+    <div class="hero">
+      <h1>What Does a $500,000 Mortgage Really Cost Per Month?</h1>
+      <p>Half a million dollars is a major commitment. See the true monthly cost, how rates change the picture, and what income level you need to qualify.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Calculate Your $500K Mortgage Payment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="625000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="125000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="loanTerm">Loan Term</label><div class="input-wrap has-suffix"><input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required><span class="suffix">yrs</span></div></div>
+          <div class="form-group"><label for="rate">Interest Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required><span class="suffix">%</span></div></div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+      <div class="results" id="results">
+        <div class="result-item blue"><div class="label">Monthly Payment</div><div class="value" id="monthlyPayment">&mdash;</div></div>
+        <div class="result-item green"><div class="label">Total Payment</div><div class="value" id="totalPayment">&mdash;</div></div>
+        <div class="result-item amber"><div class="label">Total Interest</div><div class="value" id="totalInterest">&mdash;</div></div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>The True Cost of a $500,000 Mortgage</h2>
+      <p>At 6.5% interest over 30 years, a $500,000 mortgage carries a monthly principal and interest payment of approximately <strong>$3,160</strong>. Total interest over the loan&rsquo;s lifetime reaches about $637,722, meaning you pay $1,137,722 in total for a $500,000 loan.</p>
+      <p>This loan amount is common in competitive housing markets and typically corresponds to homes priced between $555,000 and $625,000. At this level, you are likely purchasing:</p>
+      <ul>
+        <li><strong>Family homes</strong> in desirable suburban neighborhoods with strong schools</li>
+        <li><strong>Urban condos or townhouses</strong> in major metropolitan areas</li>
+        <li><strong>New construction</strong> in growing cities and suburbs</li>
+      </ul>
+      <p>The income requirement for a $500K mortgage is substantial. Using the 28% housing expense ratio, you need a gross annual income of at least <strong>$135,000</strong> for principal and interest alone. Adding taxes, insurance, and potential HOA fees, a household income of $150,000&ndash;$180,000 is more realistic.</p>
+    </div>
+
+    <div class="card section">
+      <h2>$500K Mortgage at Different Interest Rates</h2>
+      <p>At this loan size, rate differences have a dramatic impact. Here is how a $500,000 loan over 30 years looks across common rates.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="rateTable">
+          <thead><tr><th>Interest Rate</th><th>Monthly Payment</th><th>Total Payment</th><th>Total Interest</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>The difference between 5.5% and 7.5% is <strong>$708 per month</strong> and over <strong>$255,000 in total interest</strong>. On a $500K loan, even a quarter-point rate improvement can save $50,000+ over the life of the mortgage.</p>
+    </div>
+
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is the monthly payment on a $500K mortgage?</h3>
+        <p>At 6.5% interest over 30 years, the monthly principal and interest payment on a $500,000 mortgage is approximately $3,160. A 15-year term at the same rate increases the monthly payment to about $4,355 but saves over $371,000 in total interest. Your actual monthly cost will also include property taxes, homeowners insurance, and potentially PMI or HOA dues.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What salary do I need for a $500K mortgage?</h3>
+        <p>To comfortably afford a $500,000 mortgage, expect to need a gross annual income of $135,000 to $180,000, depending on your rate, property taxes, insurance, and existing debts. In high-tax states, income requirements skew toward the higher end. Dual-income households often find this range more achievable, particularly in markets where $500K loans are common.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How can I reduce the cost of a $500K mortgage?</h3>
+        <p>Several strategies can lower your cost: (1) Make a larger down payment to reduce the loan principal and eliminate PMI. (2) Shop aggressively for rates&mdash;even 0.25% lower saves tens of thousands. (3) Consider a 15 or 20-year term if your income supports it. (4) Make one extra payment per year, which can shave 4&ndash;5 years off a 30-year mortgage. (5) Refinance if rates drop significantly after you buy.</p>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Compare Other Mortgage Amounts</h2>
+      <p>Use our main <a href="mortgage-payment-calculator.html">Mortgage Payment Calculator</a> for any custom amount, or explore:</p>
+      <ul>
+        <li><a href="monthly-payment-200k-mortgage.html">$200,000 Mortgage Monthly Payment</a></li>
+        <li><a href="monthly-payment-300k-mortgage.html">$300,000 Mortgage Monthly Payment</a></li>
+        <li><a href="monthly-payment-400k-mortgage.html">$400,000 Mortgage Monthly Payment</a></li>
+      </ul>
+    </div>
+
+    <div class="info-cta">
+      <div class="info-cta-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="info-cta-body">
+        <h3>Learn About Mortgage Amortization</h3>
+        <p>Understand why early mortgage payments are mostly interest and how you can build equity faster with strategic payment approaches.</p>
+        <a href="../guides/how-mortgage-payments-work.html">Read the guide &rarr;</a>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Mortgage Payment Calculator</a>
+        <a href="loan-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>Loan Payment Calculator</a>
+        <a href="savings-goal-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="mortgage-vs-rent-comparison.html"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mortgage vs Rent</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand"><a href="../index.html" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a><p>Free, private financial calculators.</p></div>
+      <div class="site-footer-col"><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../all-calculators.html">All Calculators</a></li></ul></div>
+    </div>
+    <div class="site-footer-bottom"><p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p></div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    (function() {
+      var rates = [5.5, 6.0, 6.5, 7.0, 7.5];
+      var principal = 500000;
+      var tbody = document.querySelector("#rateTable tbody");
+      rates.forEach(function(rate) {
+        var res = calcMortgage(principal, rate, 30);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + rate.toFixed(1) + "%</td><td>" + formatCurrency(res.monthly) + "</td><td>" + formatCurrency(res.total) + "</td><td>" + formatCurrency(res.interest) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+      var homePrice = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate = parseNum(document.getElementById("rate").value);
+      if (homePrice <= 0) { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0) { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1) { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+      if (!isFinite(res.monthly)) { setError("errorMsg", "Result is too large."); return; }
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

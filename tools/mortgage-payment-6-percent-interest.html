@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Payment at 6% Interest Rate – Cost Breakdown</title>
+  <meta name="description" content="Calculate your mortgage payment at 6% interest. See monthly payments for different loan amounts and compare total costs against 5% and 7% rates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finance-tools.example.com/tools/mortgage-payment-6-percent-interest.html">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="mortgage-payment-calculator.html">Main Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="mortgage-payment-calculator.html">Mortgage Payment Calculator</a><span class="sep">/</span>
+      <span>6% Interest Rate</span>
+    </div>
+
+    <div class="hero">
+      <h1>What Does a Mortgage Cost at 6% Interest?</h1>
+      <p>A 6% mortgage rate sits between recent lows and highs. See the monthly payment for your loan amount and understand where 6% falls in the bigger picture.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Calculate Your Mortgage Payment at 6%</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="400000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="80000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="loanTerm">Loan Term</label><div class="input-wrap has-suffix"><input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required><span class="suffix">yrs</span></div></div>
+          <div class="form-group"><label for="rate">Interest Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="6.0" min="0" max="100" step="0.01" required><span class="suffix">%</span></div></div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+      <div class="results" id="results">
+        <div class="result-item blue"><div class="label">Monthly Payment</div><div class="value" id="monthlyPayment">&mdash;</div></div>
+        <div class="result-item green"><div class="label">Total Payment</div><div class="value" id="totalPayment">&mdash;</div></div>
+        <div class="result-item amber"><div class="label">Total Interest</div><div class="value" id="totalInterest">&mdash;</div></div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Understanding a 6% Mortgage Rate</h2>
+      <p>A 6% mortgage rate represents a middle ground in the current rate environment. For a $320,000 loan over 30 years, the monthly principal and interest payment at 6% is approximately <strong>$1,918</strong>, with total interest of about $370,622.</p>
+      <p>At 6%, you pay notably less than at 7% ($211/month less on a $320K loan), but more than at 5% ($200/month more). The 50-year historical average for 30-year fixed mortgages is approximately 7.7%, which means 6% is actually below average by historical standards.</p>
+      <p>Key context for a 6% rate:</p>
+      <ul>
+        <li><strong>Better than the 2023&ndash;2024 peak</strong> when rates frequently exceeded 7%</li>
+        <li><strong>Higher than the 2020&ndash;2021 lows</strong> when sub-3% rates were available</li>
+        <li><strong>Roughly in line</strong> with the 2000&ndash;2005 era rates</li>
+        <li><strong>Below the historical average</strong> of ~7.7% since 1971</li>
+      </ul>
+    </div>
+
+    <div class="card section">
+      <h2>Monthly Payment at 6% by Loan Amount</h2>
+      <p>Here is what you would pay monthly at 6% for different loan sizes on a 30-year fixed mortgage.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="loanTable">
+          <thead><tr><th>Loan Amount</th><th>Monthly Payment</th><th>Total Interest</th><th>Total Cost</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is 6% a good mortgage rate right now?</h3>
+        <p>Whether 6% is "good" depends on the current market. In 2023&ndash;2024, when rates often exceeded 7%, a 6% rate would have been excellent. Compared to the sub-3% rates of 2020&ndash;2021, it seems high. The key question is whether rates are likely to go lower. If they are, you might lock in now and refinance later. If not, 6% is still below the 50-year historical average of approximately 7.7%.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much more do I pay at 6% vs 5%?</h3>
+        <p>On a $320,000 loan over 30 years, the difference between 5% and 6% is about $200 per month and roughly $72,000 in total interest. On a $500K loan, the difference grows to $313/month and $112,700 in total interest. Each percentage point adds significantly to your total cost, especially on larger loans.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I wait for rates to drop below 6%?</h3>
+        <p>Timing the market is risky. While waiting, home prices may rise, potentially offsetting any rate savings. Many advisors suggest the approach of "marry the house, date the rate"&mdash;buy when you find the right home and can afford the payment, then refinance if rates drop later. A 6% rate on the right home is better than waiting indefinitely for a rate that may not materialize.</p>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Compare Other Interest Rates</h2>
+      <p>See how payments change at different rate levels:</p>
+      <ul>
+        <li><a href="mortgage-payment-5-percent-interest.html">Mortgage Payment at 5% Interest</a></li>
+        <li><a href="mortgage-payment-7-percent-interest.html">Mortgage Payment at 7% Interest</a></li>
+      </ul>
+      <p>Or use the <a href="mortgage-payment-calculator.html">full Mortgage Payment Calculator</a> to enter any rate.</p>
+    </div>
+
+    <div class="info-cta">
+      <div class="info-cta-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="info-cta-body">
+        <h3>How Mortgage Payments Work</h3>
+        <p>Understand amortization schedules, how your payment splits between principal and interest, and strategies to save.</p>
+        <a href="../guides/how-mortgage-payments-work.html">Read the guide &rarr;</a>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Mortgage Payment Calculator</a>
+        <a href="loan-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>Loan Payment Calculator</a>
+        <a href="compound-interest-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Compound Interest Calculator</a>
+        <a href="mortgage-vs-rent-comparison.html"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mortgage vs Rent</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand"><a href="../index.html" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a><p>Free, private financial calculators.</p></div>
+      <div class="site-footer-col"><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../all-calculators.html">All Calculators</a></li></ul></div>
+    </div>
+    <div class="site-footer-bottom"><p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p></div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    (function() {
+      var loans = [200000, 300000, 400000, 500000];
+      var tbody = document.querySelector("#loanTable tbody");
+      loans.forEach(function(principal) {
+        var res = calcMortgage(principal, 6, 30);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + formatCurrency(principal) + "</td><td>" + formatCurrency(res.monthly) + "</td><td>" + formatCurrency(res.interest) + "</td><td>" + formatCurrency(res.total) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+      var homePrice = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate = parseNum(document.getElementById("rate").value);
+      if (homePrice <= 0) { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0) { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1) { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+      if (!isFinite(res.monthly)) { setError("errorMsg", "Result is too large."); return; }
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

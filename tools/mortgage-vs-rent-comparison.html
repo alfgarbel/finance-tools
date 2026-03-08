@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage vs Rent Calculator – Which Is Cheaper?</title>
+  <meta name="description" content="Compare the true cost of buying vs renting over 5, 10, and 20 years. Factor in mortgage payments, rent increases, and opportunity costs to make the right decision.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://finance-tools.example.com/tools/mortgage-vs-rent-comparison.html">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="../index.html" class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../all-calculators.html">All Calculators</a></li>
+        <li><a href="mortgage-payment-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="../mortgage-and-loan-calculators.html">Mortgage &amp; Loan Calculators</a><span class="sep">/</span>
+      <span>Mortgage vs Rent</span>
+    </div>
+
+    <div class="hero">
+      <h1>Mortgage vs. Rent: Which Costs Less Over Time?</h1>
+      <p>Compare the total cost of buying a home versus renting over different time horizons. Factor in mortgage payments, rent increases, and down payment opportunity costs.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Compare Buying vs. Renting</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="400000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="80000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="rate">Mortgage Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required><span class="suffix">%</span></div></div>
+          <div class="form-group"><label for="loanTerm">Loan Term</label><div class="input-wrap has-suffix"><input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required><span class="suffix">yrs</span></div></div>
+          <div class="form-group"><label for="monthlyRent">Monthly Rent</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="monthlyRent" value="2000" min="0" step="50" required></div></div>
+          <div class="form-group"><label for="rentIncrease">Annual Rent Increase</label><div class="input-wrap has-suffix"><input type="number" id="rentIncrease" value="3" min="0" max="20" step="0.1" required><span class="suffix">%</span></div></div>
+        </div>
+        <button type="submit" class="btn">Compare</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue"><div class="label">Monthly Mortgage (P&amp;I)</div><div class="value" id="monthlyMortgage">&mdash;</div></div>
+        <div class="result-item green"><div class="label">Current Monthly Rent</div><div class="value" id="currentRent">&mdash;</div></div>
+        <div class="result-item amber"><div class="label">Monthly Difference</div><div class="value" id="monthlyDiff">&mdash;</div></div>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="card section" id="comparison-table">
+      <h2>Total Cost Comparison Over Time</h2>
+      <p>See how buying and renting costs compare at key milestones, factoring in rent increases.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="compareTable">
+          <thead><tr><th>Time Period</th><th>Total Mortgage Cost</th><th>Total Rent Cost</th><th>Difference</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>The Buy vs. Rent Decision: Key Factors</h2>
+      <p>The mortgage-vs-rent question is one of the most common financial dilemmas. While buying builds equity, renting offers flexibility. Here are the critical factors to consider:</p>
+      <h3>Advantages of Buying</h3>
+      <ul>
+        <li><strong>Equity building</strong> &mdash; each mortgage payment increases your ownership stake in the home</li>
+        <li><strong>Fixed payments</strong> &mdash; a fixed-rate mortgage locks in your principal and interest payment for the life of the loan, while rent increases annually</li>
+        <li><strong>Tax benefits</strong> &mdash; mortgage interest and property taxes are tax-deductible for many homeowners</li>
+        <li><strong>Home appreciation</strong> &mdash; historically, homes appreciate 3&ndash;5% per year, building additional wealth</li>
+      </ul>
+      <h3>Advantages of Renting</h3>
+      <ul>
+        <li><strong>Flexibility</strong> &mdash; easier to relocate for career opportunities or lifestyle changes</li>
+        <li><strong>Lower upfront costs</strong> &mdash; no down payment, closing costs, or home inspection fees</li>
+        <li><strong>No maintenance responsibility</strong> &mdash; the landlord handles repairs, which average 1&ndash;2% of home value annually</li>
+        <li><strong>Investment opportunity</strong> &mdash; the down payment money could be invested in the stock market instead</li>
+      </ul>
+    </div>
+
+    <div class="card section">
+      <h2>The Break-Even Point</h2>
+      <p>Most homebuyers need to stay in their home for <strong>5&ndash;7 years</strong> to break even on the transaction costs of buying (closing costs, realtor fees when selling, etc.). If you plan to move sooner, renting is often the financially safer choice.</p>
+      <p>The break-even timeline is influenced by:</p>
+      <ul>
+        <li><strong>Closing costs</strong> (2&ndash;5% of purchase price when buying, 6&ndash;8% when selling)</li>
+        <li><strong>Home price appreciation rate</strong> in your market</li>
+        <li><strong>Rent growth rate</strong> in your area</li>
+        <li><strong>Your mortgage interest rate</strong> vs potential investment returns on the down payment</li>
+      </ul>
+      <p>In markets with rapid rent growth (4&ndash;5% annually), buying breaks even faster. In stable or declining markets, the break-even period stretches longer.</p>
+    </div>
+
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is it always better to buy than rent?</h3>
+        <p>No. Buying makes more financial sense when you plan to stay 5+ years, have a stable income, can afford the down payment without draining your savings, and local home prices are not in a speculative bubble. Renting is often better for people who may relocate within a few years, prefer not to handle home maintenance, or live in markets where home prices are extremely high relative to rents.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does rent growth affect the comparison?</h3>
+        <p>Rent growth is one of the most powerful factors favoring homeownership. At 3% annual increases, $2,000/month rent becomes $2,688 after 10 years and $3,612 after 20 years. A fixed-rate mortgage payment stays the same throughout. Over 20 years, the cumulative effect of rent increases can add $100,000+ to your total housing cost compared to a fixed mortgage.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What about the opportunity cost of a down payment?</h3>
+        <p>An $80,000 down payment invested in the stock market at 7% would grow to approximately $160,000 in 10 years or $320,000 in 20 years. However, homeowners benefit from leveraged appreciation&mdash;if a $400,000 home appreciates 3% annually, it gains $12,000/year on a $80,000 investment, a 15% leveraged return. Both paths can build wealth; the right choice depends on your risk tolerance and life plans.</p>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Explore Mortgage Scenarios</h2>
+      <p>If buying looks right for you, see how different loan amounts and rates affect your payment:</p>
+      <ul>
+        <li><a href="monthly-payment-200k-mortgage.html">$200K Mortgage Payment</a></li>
+        <li><a href="monthly-payment-300k-mortgage.html">$300K Mortgage Payment</a></li>
+        <li><a href="monthly-payment-400k-mortgage.html">$400K Mortgage Payment</a></li>
+        <li><a href="monthly-payment-500k-mortgage.html">$500K Mortgage Payment</a></li>
+      </ul>
+      <p>Or use the <a href="mortgage-payment-calculator.html">full Mortgage Payment Calculator</a> for custom scenarios.</p>
+    </div>
+
+    <div class="info-cta">
+      <div class="info-cta-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="info-cta-body">
+        <h3>How Mortgage Payments Work</h3>
+        <p>Understand the mechanics of mortgage amortization, how your payment splits between principal and interest, and how to build equity faster.</p>
+        <a href="../guides/how-mortgage-payments-work.html">Read the guide &rarr;</a>
+      </div>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Mortgage Payment Calculator</a>
+        <a href="savings-goal-calculator.html"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="compound-interest-calculator.html"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>Compound Interest Calculator</a>
+        <a href="inflation-calculator.html"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>Inflation Calculator</a>
+      </div>
+      <a href="../all-calculators.html" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand"><a href="../index.html" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a><p>Free, private financial calculators.</p></div>
+      <div class="site-footer-col"><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../all-calculators.html">All Calculators</a></li></ul></div>
+    </div>
+    <div class="site-footer-bottom"><p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p></div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    /** Calculate total rent paid over N years with annual increases. */
+    function totalRent(monthlyRent, annualIncrease, years) {
+      var total = 0;
+      var rent = monthlyRent;
+      for (var y = 0; y < years; y++) {
+        total += rent * 12;
+        rent *= (1 + annualIncrease / 100);
+      }
+      return total;
+    }
+
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+
+      var homePrice = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var rate = parseNum(document.getElementById("rate").value);
+      var years = parseInt10(document.getElementById("loanTerm").value, 1);
+      var monthlyRent = parseNum(document.getElementById("monthlyRent").value);
+      var rentIncrease = parseNum(document.getElementById("rentIncrease").value);
+
+      if (homePrice <= 0) { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0) { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1) { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      if (monthlyRent <= 0) { setError("errorMsg", "Monthly rent must be greater than zero."); return; }
+      if (rentIncrease < 0) { setError("errorMsg", "Rent increase cannot be negative."); return; }
+
+      var principal = homePrice - downPayment;
+      var mortgage = calcMortgage(principal, rate, years);
+
+      if (!isFinite(mortgage.monthly)) { setError("errorMsg", "Result is too large."); return; }
+
+      var diff = mortgage.monthly - monthlyRent;
+      setText("monthlyMortgage", formatCurrency(mortgage.monthly));
+      setText("currentRent", formatCurrency(monthlyRent));
+      setText("monthlyDiff", (diff >= 0 ? "+" : "") + formatCurrency(diff));
+      showResults("results");
+
+      // Build comparison table
+      var milestones = [5, 10, 15, 20, 25, 30].filter(function(y) { return y <= years; });
+      var tbody = document.querySelector("#compareTable tbody");
+      tbody.innerHTML = "";
+      milestones.forEach(function(yr) {
+        var mortgageCost = mortgage.monthly * yr * 12;
+        var rentCost = totalRent(monthlyRent, rentIncrease, yr);
+        var diff = mortgageCost - rentCost;
+        var diffLabel = diff > 0 ? "Buying costs " + formatCurrency(diff) + " more" : "Renting costs " + formatCurrency(Math.abs(diff)) + " more";
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + yr + " years</td><td>" + formatCurrency(mortgageCost) + "</td><td>" + formatCurrency(rentCost) + "</td><td class='highlight'>" + diffLabel + "</td>";
+        tbody.appendChild(tr);
+      });
+      document.getElementById("comparison-table").style.display = "";
+    });
+
+    document.getElementById("comparison-table").style.display = "none";
+  </script>
+</body>
+</html>
