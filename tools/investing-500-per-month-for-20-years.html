@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investing $500 Per Month for 20 Years – Long-Term Growth Projection</title>
-  <meta name="description" content="Calculate what $500 invested monthly for 20 years becomes with compound interest. At 7% annual return, you could accumulate over $260,000 from just $120,000 in contributions.">
+  <title>Investing $500 Per Month for 20 Years – Growth Projections &amp; Rate Comparisons</title>
+  <meta name="description" content="See exactly what $500/month invested for 20 years produces at 5%, 6%, 7%, 8%, and 9% returns. At 7%, your $120,000 in contributions grows to over $260,000 through compound interest.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://finance-tools.example.com/tools/investing-500-per-month-for-20-years.html">
   <link rel="stylesheet" href="../style.css">
@@ -116,13 +116,26 @@
     <div class="card section">
       <h2>Why 20 Years of $500/Month Is a Wealth-Building Sweet Spot</h2>
       <p>Twenty years is where compound interest truly starts to show its power. During the first decade, your contributions do most of the heavy lifting. But in the second decade, your accumulated interest begins generating its own returns, creating an accelerating growth curve.</p>
-      <p>With $500 per month at a 7% annual return, your total contributions over 20 years are $120,000. Yet your ending balance reaches approximately <strong>$260,464</strong>&mdash;meaning you earn over $140,000 in interest alone. That is more money earned from compounding than from your own deposits.</p>
+      <p>With $500 per month at a 7% annual return, your total contributions over 20 years are $120,000. Yet your ending balance reaches approximately <strong>$260,464</strong>&mdash;meaning you earn over $140,000 in interest alone. That is more money earned from compounding than from your own deposits. The critical milestone arrives around year 14: from that point forward, your annual interest earnings exceed your $6,000 in yearly contributions.</p>
       <p>This scenario works well for:</p>
       <ul>
-        <li><strong>Early retirement planning</strong> &mdash; $260,000 is a strong foundation for early retirement, especially combined with employer-matched accounts.</li>
-        <li><strong>Children&rsquo;s education funds</strong> &mdash; start when they are born and have a substantial education fund by the time they reach college age.</li>
-        <li><strong>Financial independence</strong> &mdash; reaching a quarter million in investments puts passive income within realistic reach.</li>
+        <li><strong>Early retirement planning</strong> &mdash; $260,000 is a strong foundation, especially combined with employer-matched 401(k) accounts and IRA savings invested in parallel.</li>
+        <li><strong>Children&rsquo;s education funds</strong> &mdash; start when they are born and reach a substantial education nest egg by the time they start college. At 7% return, $500/month started at birth produces over $200,000 by age 18.</li>
+        <li><strong>Financial independence</strong> &mdash; $260,000 invested in dividend-paying index funds at a 4% withdrawal rate generates approximately $10,400/year in passive income — a meaningful contribution to an early retirement income plan.</li>
       </ul>
+    </div>
+
+    <!-- Return Rate Comparison -->
+    <div class="card section">
+      <h2>$500/Month for 20 Years: Results at Different Return Rates</h2>
+      <p>Your ending balance is highly sensitive to average annual return. Here is what $500/month for 20 years produces across five realistic return scenarios, all starting from $0:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Annual Return</th><th>Total Contributions</th><th>Interest Earned</th><th>Final Balance</th></tr></thead>
+          <tbody id="rateCompTable"></tbody>
+        </table>
+      </div>
+      <p>A 2% difference in average return (from 6% to 8%) adds nearly $60,000 to your final balance — all from the same $120,000 in contributions. This is why minimising fund expense ratios matters: a 0.5% drag on returns is the difference between 7% and 6.5%, costing over $18,000 on this scenario alone. See the <a href="../guides/average-stock-market-return-20-years.html">average stock market return over 20 years</a> for historical context.</p>
     </div>
 
     <!-- Worked Example -->
@@ -157,6 +170,10 @@
         <h3>Should I use a tax-advantaged account for this?</h3>
         <p>Yes. A Roth IRA or traditional IRA shields your gains from annual taxes, letting compound interest work more efficiently. If your employer offers a 401(k) match, contributing enough to capture the full match should be your first priority, as it is essentially free money that amplifies your returns.</p>
       </div>
+      <div class="faq-item">
+        <h3>Is investing $500/month better than keeping it in a savings account?</h3>
+        <p>Over 20 years, significantly better — but with meaningfully more risk. A high-yield savings account at 4.5% APY would turn $120,000 in contributions into approximately $184,000 — about $76,000 less than a 7% investment return. The trade-off is volatility: a savings account balance never drops, while an investment portfolio will fall 20%–40% in bear markets. For money you will not need for 20+ years, the historical case for accepting market risk is very strong. The answer changes for money you may need within 5 years — savings accounts are the right choice for those funds.</p>
+      </div>
     </div>
 
     <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
@@ -170,6 +187,7 @@
         <a href="investing-1000-per-month-for-20-years.html">$1,000/Month for 20 Years</a> &middot;
         <a href="investing-2000-per-month-for-30-years.html">$2,000/Month for 30 Years</a>
       </p>
+      <p style="margin-top:0.75rem;"><a href="../guides/average-stock-market-return-20-years.html">Read: Average Stock Market Return Over 20 Years &rarr;</a></p>
     </div>
 
     <div class="info-cta">
@@ -318,6 +336,19 @@
 
     document.getElementById("growth-table").style.display = "none";
     buildExampleTable();
+
+    // Rate comparison table
+    (function() {
+      var rates = [5, 6, 7, 8, 9];
+      var tbody = document.querySelector("#rateCompTable");
+      if (!tbody) return;
+      rates.forEach(function(rate) {
+        var res = calculate(0, 500, rate, 20);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + rate + "%</td><td>" + formatCurrency(res.totalContrib) + "</td><td>" + formatCurrency(res.totalInterest) + "</td><td class='highlight'>" + formatCurrency(res.finalValue) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
   </script>
 </body>
 </html>
