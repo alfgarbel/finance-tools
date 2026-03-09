@@ -480,7 +480,7 @@ body {
 /* Two-column results variant */
 .results.cols-2 { grid-template-columns: 1fr 1fr; }
 
-/* Four-column results variant */
+/* Four-item results: displayed as a 2×2 grid */
 .results.cols-4 { grid-template-columns: repeat(2, 1fr); }
 
 /* ---------- Chart wrapper ---------- */
