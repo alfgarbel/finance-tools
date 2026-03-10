@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://finance-tools.example.com/</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,31 +12,31 @@
   <!-- Hub pages & directory -->
   <url>
     <loc>https://finance-tools.example.com/all-calculators.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/investing-calculators.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/mortgage-and-loan-calculators.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/savings-and-financial-planning.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/inflation-and-money-tools.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -44,61 +44,61 @@
   <!-- Main calculators -->
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-payment-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/retirement-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/savings-goal-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/inflation-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/investment-return-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/dividend-yield-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/loan-payment-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/percentage-increase-calculator.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/salary-after-tax-spain.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -106,37 +106,37 @@
   <!-- Core educational guides -->
   <url>
     <loc>https://finance-tools.example.com/guides/how-compound-interest-works.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-mortgage-payments-work.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-retirement-savings-work.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-inflation-affects-money.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-dividend-investing-works.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-much-to-save-for-retirement.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -144,37 +144,37 @@
   <!-- SEO landing pages: Compound interest -->
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-calculator-5-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-calculator-monthly-contribution.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-calculator-1000-per-month.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-10000-for-20-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-50000-for-30-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/compound-interest-100k-investment-growth.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -182,13 +182,13 @@
   <!-- SEO landing pages: Inflation -->
   <url>
     <loc>https://finance-tools.example.com/tools/inflation-calculator-10-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/inflation-calculator-20-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,13 +196,13 @@
   <!-- SEO landing pages: Investment return -->
   <url>
     <loc>https://finance-tools.example.com/tools/investment-return-calculator-5-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/investment-return-calculator-10-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -210,79 +210,79 @@
   <!-- SEO landing pages: Mortgage -->
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-calculator-15-year.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-calculator-30-year.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-calculator-200k.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-calculator-300k.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-calculator-400k.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-payment-5-percent-interest.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-payment-6-percent-interest.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-payment-7-percent-interest.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/monthly-payment-200k-mortgage.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/monthly-payment-300k-mortgage.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/monthly-payment-400k-mortgage.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/monthly-payment-500k-mortgage.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/mortgage-vs-rent-comparison.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -290,25 +290,25 @@
   <!-- SEO landing pages: Retirement -->
   <url>
     <loc>https://finance-tools.example.com/tools/retirement-calculator-age-30.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/retirement-calculator-age-40.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/retirement-calculator-age-50.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/retirement-calculator-1-million-goal.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -316,19 +316,19 @@
   <!-- SEO landing pages: Savings goal -->
   <url>
     <loc>https://finance-tools.example.com/tools/savings-goal-calculator-10000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/savings-goal-calculator-50000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/savings-goal-calculator-100000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -336,43 +336,43 @@
   <!-- SEO landing pages: Investing monthly -->
   <url>
     <loc>https://finance-tools.example.com/tools/investing-500-per-month-for-10-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/investing-500-per-month-for-20-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/investing-1000-per-month-for-10-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/investing-1000-per-month-for-20-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/investing-2000-per-month-for-30-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/how-long-to-double-money-7-percent.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/tools/how-long-to-double-money-10-percent.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -380,37 +380,37 @@
   <!-- Scenario guides: Savings -->
   <url>
     <loc>https://finance-tools.example.com/guides/how-to-save-10000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-to-save-50000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-to-save-100000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-long-to-save-20000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/monthly-savings-plan-10000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/monthly-savings-plan-50000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -418,43 +418,43 @@
   <!-- Scenario guides: Retirement -->
   <url>
     <loc>https://finance-tools.example.com/guides/retirement-savings-by-age-30.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/retirement-savings-by-age-40.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/retirement-savings-by-age-50.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/retirement-with-500k-savings.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/retirement-with-1m-savings.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-to-reach-1-million-retirement.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/how-to-reach-2-million-retirement.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -462,25 +462,25 @@
   <!-- Scenario guides: Investing -->
   <url>
     <loc>https://finance-tools.example.com/guides/investment-growth-50000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/investment-growth-100000.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/average-stock-market-return-10-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/average-stock-market-return-20-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -488,25 +488,25 @@
   <!-- Scenario guides: Inflation -->
   <url>
     <loc>https://finance-tools.example.com/guides/inflation-impact-10-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/inflation-impact-20-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/inflation-impact-30-years.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://finance-tools.example.com/guides/future-value-of-money-inflation.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
