@@ -922,7 +922,7 @@ body {
   line-height: 1.5;
 }
 
-.hp-footer-links h4 {
+.hp-footer-links h3 {
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1075,7 +1075,7 @@ body {
   line-height: 1.5;
 }
 
-.site-footer-col h4 {
+.site-footer-col h3 {
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
