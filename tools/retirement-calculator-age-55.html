@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator Age 55 – Project Your Balance in 10 Years</title>
+  <meta name="description" content="At 55, retirement is 10 years away. See how much your savings can grow by 65, what you can realistically accumulate, and how to maximize your final decade of savings.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/retirement-calculator-age-55">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Retirement Calculator Age 55 – Project Your Balance in 10 Years",
+  "url": "https://financialtoolkit.net/tools/retirement-calculator-age-55",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "At 55, retirement is 10 years away. See how much your savings can grow by 65, what you can realistically accumulate, and how to maximize your final decade of savings."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I have saved by age 55?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most financial guidelines suggest having 7–10 times your annual salary saved by age 55. If you earn $80,000, the target range is $560,000–$800,000. If you are below that range, prioritize maximum 401(k) contributions including catch-up contributions ($31,000 total in 2025 for those 50+), and consider delaying retirement by a few years to extend your savings runway."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Rule of 55 for 401(k) withdrawals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Rule of 55 allows you to withdraw from your current employer's 401(k) without the 10% early withdrawal penalty if you leave that job in or after the year you turn 55 (age 50 for some public safety workers). Income taxes still apply. This rule only applies to your most recent employer's plan, not IRAs or old 401(k)s from previous employers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I shift to more conservative investments at 55?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A moderate shift toward less volatility is reasonable at 55, but avoid going too conservative. With a 30+ year retirement potential life span, your portfolio still needs growth. A common approach is a 60% equity / 40% bond allocation at 55, gradually shifting to 50/50 by retirement and 40/60 in your 70s. Moving entirely to bonds or cash at 55 risks inflation eroding your purchasing power over a long retirement."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../all-calculators">All Calculators</a>
+      <span class="sep">/</span>
+      <a href="retirement-calculator">Retirement Calculator</a>
+      <span class="sep">/</span>
+      <span>Starting at Age 55</span>
+    </div>
+
+    <div class="hero">
+      <h1>Retirement Calculator: Starting at Age 55</h1>
+      <p>At 55, you are 10 years from a typical retirement at 65. This is your final high-contribution decade — maximize savings now, take advantage of catch-up contributions, and see exactly what you can build.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Project Your Retirement Savings from Age 55</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="55" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="65" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="150000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="1500" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="6" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Savings at Retirement</div>
+          <div class="value" id="savingsAtRetirement">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Investment Growth</div>
+          <div class="value" id="totalGrowth">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Explanation -->
+    <div class="card section">
+      <h2>Making the Most of Your Final Decade Before Retirement</h2>
+      <p>The decade from 55 to 65 is often the highest-income period in a career. It is also the final window to make substantial contributions before shifting to the distribution phase.</p>
+      <ul>
+        <li><strong>Catch-up contributions</strong> — already eligible at 50+, you can contribute up to $31,000 annually to a 401(k) and $8,000 to an IRA in 2025.</li>
+        <li><strong>SUPER catch-up at 60–63</strong> — the SECURE 2.0 Act introduced a higher catch-up limit of $11,250 to 401(k)s for those aged 60–63 (instead of $7,500), available starting in 2025.</li>
+        <li><strong>Downsize expenses</strong> — with children often financially independent, consider directing freed-up cash flow to retirement savings.</li>
+        <li><strong>Use a conservative return assumption</strong> — a 6% return is more appropriate at 55 than 7–8%, as your portfolio may begin shifting toward less volatile allocations.</li>
+      </ul>
+      <p>With $150,000 saved, $1,500/month contributions, and 6% returns, a 55-year-old can accumulate approximately <strong>$519,000</strong> by age 65 — a meaningful foundation, especially alongside Social Security.</p>
+    </div>
+
+    <!-- Worked Example Table -->
+    <div class="card section">
+      <h2>Worked Example: Age 55 → 65, $1,500/month, 6%</h2>
+      <p>Using $150,000 in current savings, $1,500 monthly contributions, and a 6% annual return over 10 years:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Contribution Comparison Table -->
+    <div class="card section">
+      <h2>Monthly Contribution Scenarios (Age 55 → 65, 6%)</h2>
+      <p>Starting with $150,000 saved, here is the impact of different contribution levels over 10 years at 6%:</p>
+      <div class="table-wrap">
+        <table class="data-table" id="compTable">
+          <thead><tr><th>Monthly Contribution</th><th>Savings at 65</th><th>Total Contributed</th><th>Investment Growth</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>At 55, the starting balance matters enormously. The $150,000 already saved will grow to approximately $270,000 on its own at 6% — every dollar you have already saved is working hard in your final decade.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much should I have saved by age 55?</h3>
+        <p>Most financial guidelines suggest having 7–10 times your annual salary saved by age 55. If you earn $80,000, the target range is $560,000–$800,000. If you are below that range, prioritize maximum 401(k) contributions including catch-up contributions ($31,000 total in 2025 for those 50+), and consider delaying retirement by a few years to extend your savings runway.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the Rule of 55 for 401(k) withdrawals?</h3>
+        <p>The Rule of 55 allows you to withdraw from your current employer's 401(k) without the 10% early withdrawal penalty if you leave that job in or after the year you turn 55 (age 50 for some public safety workers). Income taxes still apply. This rule only applies to your most recent employer's plan, not IRAs or old 401(k)s from previous employers.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I shift to more conservative investments at 55?</h3>
+        <p>A moderate shift toward less volatility is reasonable at 55, but avoid going too conservative. With a 30+ year retirement potential life span, your portfolio still needs growth. A common approach is a 60% equity / 40% bond allocation at 55, gradually shifting to 50/50 by retirement. Moving entirely to bonds or cash at 55 risks inflation eroding your purchasing power over a long retirement.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Info CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon blue">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>Every Year You Delay Retirement Adds Significantly</h3>
+        <p>Working until 67 instead of 65 adds 2 more years of contributions and growth — plus it increases your Social Security benefit by approximately 8% per year of delay. For those behind on savings at 55, working 2–3 extra years can have a larger impact than any investment decision.</p>
+      </div>
+    </div>
+
+    <!-- Affiliate note -->
+    <div class="affiliate-note">
+      <h3>Pre-Retirement Checklist at 55</h3>
+      <p>The decade before retirement involves planning that goes beyond contribution amounts:</p>
+      <ul>
+        <li><strong>Social Security strategy</strong> — claiming at 62 locks in a permanently reduced benefit; delaying to 70 maximizes your monthly income and reduces longevity risk</li>
+        <li><strong>Healthcare bridge</strong> — Medicare begins at 65; if you retire at 62–64, plan for 1–3 years of private health coverage, which can cost $600–$1,200/month per person</li>
+        <li><strong>Required Minimum Distributions (RMDs)</strong> — traditional IRA and 401(k) RMDs begin at age 73; a financial advisor can help you plan Roth conversions before RMDs begin to reduce future tax burden</li>
+        <li><strong>Sequence-of-returns risk</strong> — a major market downturn in the first few years of retirement can permanently impair your portfolio; consider a cash or short-bond buffer of 1–2 years of expenses</li>
+        <li><strong>Estate documents</strong> — at 55, ensure your will, healthcare directives, power of attorney, and beneficiary designations are current</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="retirement-calculator">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="retirement-calculator-age-45">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Starting at Age 45
+        </a>
+        <a href="retirement-with-500k-at-60">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          Retiring with $500K at 60
+        </a>
+        <a href="how-much-to-invest-to-retire">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          How Much to Invest to Retire
+        </a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="../tools/retirement-calculator">Retirement</a></li>
+          <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+          <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+          <li><a href="../all-calculators">All Calculators &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+          <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+          <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+          <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var months = years * 12;
+      var balance = currentSavings;
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + r) + monthly;
+      }
+      var totalContrib = currentSavings + monthly * months;
+      return { balance: balance, totalContrib: totalContrib, growth: balance - totalContrib };
+    }
+
+    /* Worked example table */
+    (function() {
+      var res = calcRetirement(150000, 1500, 6, 10);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Current Age", "55"],
+        ["Retirement Age", "65"],
+        ["Years Until Retirement", "10"],
+        ["Current Savings", "$150,000"],
+        ["Monthly Contribution", "$1,500"],
+        ["Expected Annual Return", "6.00%"],
+        ["Savings at Retirement", formatCurrency(res.balance)],
+        ["Total Contributions", formatCurrency(res.totalContrib)],
+        ["Investment Growth", formatCurrency(res.growth)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Savings at Retirement" || row[0] === "Total Contributions" || row[0] === "Investment Growth";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Contribution comparison table */
+    (function() {
+      var contribs = [500, 1000, 1500, 2000, 2500, 3000];
+      var tbody = document.querySelector("#compTable tbody");
+      contribs.forEach(function(c) {
+        var res = calcRetirement(150000, c, 6, 10);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>$" + c.toLocaleString() + "/mo</td><td>" + formatCurrency(res.balance) + "</td><td>" + formatCurrency(res.totalContrib) + "</td><td>" + formatCurrency(res.growth) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+      var currentAge     = parseInt10(document.getElementById("currentAge").value, 0);
+      var retireAge      = parseInt10(document.getElementById("retireAge").value, 0);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var monthly        = parseNum(document.getElementById("monthly").value);
+      var rate           = parseNum(document.getElementById("rate").value);
+      if (currentAge < 1 || currentAge > 100)  { setError("errorMsg", "Current age must be between 1 and 100."); return; }
+      if (retireAge < 1 || retireAge > 100)    { setError("errorMsg", "Retirement age must be between 1 and 100."); return; }
+      if (retireAge <= currentAge)              { setError("errorMsg", "Retirement age must be greater than your current age."); return; }
+      if (currentSavings < 0)                  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0)                         { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0)                            { setError("errorMsg", "Expected return cannot be negative."); return; }
+      var years = retireAge - currentAge;
+      var res = calcRetirement(currentSavings, monthly, rate, years);
+      if (!isFinite(res.balance)) { setError("errorMsg", "Result is too large. Try a lower return rate or shorter time horizon."); return; }
+      setText("savingsAtRetirement", formatCurrency(res.balance));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalGrowth", formatCurrency(res.growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator Age 35 – How Much Will You Have at 65?</title>
+  <meta name="description" content="Starting retirement savings at 35? You still have 30 years of compound growth. See how much you can accumulate by 65 with our retirement calculator for 35-year-olds.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/retirement-calculator-age-35">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Retirement Calculator Age 35 – How Much Will You Have at 65?",
+  "url": "https://financialtoolkit.net/tools/retirement-calculator-age-35",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Starting retirement savings at 35? You still have 30 years of compound growth. See how much you can accumulate by 65 with our retirement calculator for 35-year-olds."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it too late to start saving for retirement at 35?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — 35 is not too late. You still have 30 years until a typical retirement age of 65, and 30 years of compounding is substantial. Contributing $500 per month starting at 35 at a 7% annual return can grow to roughly $567,000 by age 65. The key is to start now and increase contributions as your income allows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should I have saved by 35?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common benchmark is to have approximately 1–2 times your annual salary saved by age 35. If you earn $70,000, aim for $70,000–$140,000. If you are behind that benchmark, prioritize maximizing contributions to tax-advantaged accounts like a 401(k) and IRA before investing in taxable accounts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best retirement account to open at 35?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prioritize in this order: (1) 401(k) up to the employer match, (2) Roth IRA (if income eligible) up to the annual limit, (3) back to the 401(k) up to the annual contribution limit, (4) taxable brokerage for additional investing. At 35, a Roth IRA is attractive because you have 30 years of tax-free compounding ahead and may be in a moderate tax bracket now."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../all-calculators">All Calculators</a>
+      <span class="sep">/</span>
+      <a href="retirement-calculator">Retirement Calculator</a>
+      <span class="sep">/</span>
+      <span>Starting at Age 35</span>
+    </div>
+
+    <div class="hero">
+      <h1>Retirement Calculator: Starting at Age 35</h1>
+      <p>Starting at 35 gives you 30 years of compound growth — enough time to build significant wealth if you commit to consistent contributions. Project your retirement balance now.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Project Your Retirement Savings from Age 35</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="35" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="65" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="20000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="500" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Savings at Retirement</div>
+          <div class="value" id="savingsAtRetirement">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Investment Growth</div>
+          <div class="value" id="totalGrowth">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Explanation -->
+    <div class="card section">
+      <h2>Retirement Outlook at Age 35</h2>
+      <p>At 35, you are likely earning more than you were at 25 and may have more capacity to save. While you have 10 fewer years than a 25-year-old, 30 years of compounding still produces remarkable results.</p>
+      <p>Key realities for 35-year-olds building toward retirement:</p>
+      <ul>
+        <li><strong>Catch up if behind</strong> — if you have little saved, the IRS catch-up contribution rules at 50 allow extra contributions to 401(k)s and IRAs; plan to take advantage of them.</li>
+        <li><strong>Income is typically higher</strong> — mid-career often means higher earnings, so aim to save 15–20% of gross income rather than the minimum.</li>
+        <li><strong>Avoid lifestyle inflation</strong> — as income rises, it is tempting to increase spending proportionally; direct raises and bonuses to retirement savings first.</li>
+        <li><strong>30 years is still substantial</strong> — $500/month at 7% for 30 years from a $20,000 starting point grows to approximately <strong>$773,000</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Worked Example Table -->
+    <div class="card section">
+      <h2>Worked Example: Age 35 → 65, $500/month, 7%</h2>
+      <p>Using $20,000 in current savings, $500 monthly contributions, and a 7% annual return over 30 years:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Contribution Comparison Table -->
+    <div class="card section">
+      <h2>Monthly Contribution Scenarios (Age 35 → 65, 7%)</h2>
+      <p>Starting with $20,000 saved, here is how different monthly contribution levels affect your balance at 65:</p>
+      <div class="table-wrap">
+        <table class="data-table" id="compTable">
+          <thead><tr><th>Monthly Contribution</th><th>Savings at 65</th><th>Total Contributed</th><th>Investment Growth</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Increasing from $500 to $1,000 per month adds roughly $600,000 to your retirement balance — demonstrating that contribution amount matters as much as starting age.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is it too late to start saving for retirement at 35?</h3>
+        <p>No — 35 is not too late. You still have 30 years until a typical retirement age of 65, and 30 years of compounding is substantial. Contributing $500 per month starting at 35 at a 7% annual return can grow to roughly $567,000 from contributions alone. The key is to start now and increase contributions as your income allows.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much should I have saved by 35?</h3>
+        <p>A common benchmark is to have approximately 1–2 times your annual salary saved by age 35. If you earn $70,000, aim for $70,000–$140,000. If you are behind that benchmark, prioritize maximizing contributions to tax-advantaged accounts like a 401(k) and IRA before investing in taxable accounts.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the best retirement account to open at 35?</h3>
+        <p>Prioritize in this order: (1) 401(k) up to the employer match, (2) Roth IRA (if income eligible) up to the annual limit, (3) back to the 401(k) up to the annual contribution limit, (4) taxable brokerage for additional investing. At 35, a Roth IRA is attractive because you have 30 years of tax-free compounding ahead.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Info CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon blue">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>30 Years Is Still a Long Runway</h3>
+        <p>If you are 35 and feel behind, the most important step is to maximize contributions now. Increasing your monthly contribution by just $200 today can add over $240,000 to your retirement balance at 65. Start now and increase contributions with every raise.</p>
+      </div>
+    </div>
+
+    <!-- Affiliate note -->
+    <div class="affiliate-note">
+      <h3>What to Look For in a Retirement Account at 35</h3>
+      <p>At 35, you are likely earning more and may be consolidating old accounts from earlier employers. Key considerations:</p>
+      <ul>
+        <li><strong>401(k) rollover support</strong> — if you have old 401(k)s from previous jobs, rolling them into an IRA simplifies management and often improves investment options</li>
+        <li><strong>Roth vs. Traditional</strong> — if your income is in the 22–24% bracket, a traditional 401(k) or IRA may offer immediate tax savings; a Roth makes more sense if you expect higher income in retirement</li>
+        <li><strong>Fee transparency</strong> — review your 401(k) plan document for expense ratios and administrative fees; even 0.5% in annual fees compounds to a meaningful reduction in your final balance</li>
+        <li><strong>Rebalancing tools</strong> — look for platforms that offer automatic rebalancing to keep your asset allocation aligned with your risk tolerance as you approach retirement</li>
+        <li><strong>Beneficiary designations</strong> — at 35 you may have a spouse, children, or other dependents; ensure all retirement accounts have current, correct beneficiaries named</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="retirement-calculator">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="retirement-calculator-age-25">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Starting at Age 25
+        </a>
+        <a href="retirement-calculator-age-45">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Starting at Age 45
+        </a>
+        <a href="compound-interest-calculator">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="../tools/retirement-calculator">Retirement</a></li>
+          <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+          <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+          <li><a href="../all-calculators">All Calculators &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+          <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+          <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+          <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var months = years * 12;
+      var balance = currentSavings;
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + r) + monthly;
+      }
+      var totalContrib = currentSavings + monthly * months;
+      return { balance: balance, totalContrib: totalContrib, growth: balance - totalContrib };
+    }
+
+    /* Worked example table */
+    (function() {
+      var res = calcRetirement(20000, 500, 7, 30);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Current Age", "35"],
+        ["Retirement Age", "65"],
+        ["Years Until Retirement", "30"],
+        ["Current Savings", "$20,000"],
+        ["Monthly Contribution", "$500"],
+        ["Expected Annual Return", "7.00%"],
+        ["Savings at Retirement", formatCurrency(res.balance)],
+        ["Total Contributions", formatCurrency(res.totalContrib)],
+        ["Investment Growth", formatCurrency(res.growth)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Savings at Retirement" || row[0] === "Total Contributions" || row[0] === "Investment Growth";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Contribution comparison table */
+    (function() {
+      var contribs = [200, 500, 750, 1000, 1500, 2000];
+      var tbody = document.querySelector("#compTable tbody");
+      contribs.forEach(function(c) {
+        var res = calcRetirement(20000, c, 7, 30);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>$" + c.toLocaleString() + "/mo</td><td>" + formatCurrency(res.balance) + "</td><td>" + formatCurrency(res.totalContrib) + "</td><td>" + formatCurrency(res.growth) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+      var currentAge     = parseInt10(document.getElementById("currentAge").value, 0);
+      var retireAge      = parseInt10(document.getElementById("retireAge").value, 0);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var monthly        = parseNum(document.getElementById("monthly").value);
+      var rate           = parseNum(document.getElementById("rate").value);
+      if (currentAge < 1 || currentAge > 100)  { setError("errorMsg", "Current age must be between 1 and 100."); return; }
+      if (retireAge < 1 || retireAge > 100)    { setError("errorMsg", "Retirement age must be between 1 and 100."); return; }
+      if (retireAge <= currentAge)              { setError("errorMsg", "Retirement age must be greater than your current age."); return; }
+      if (currentSavings < 0)                  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0)                         { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0)                            { setError("errorMsg", "Expected return cannot be negative."); return; }
+      var years = retireAge - currentAge;
+      var res = calcRetirement(currentSavings, monthly, rate, years);
+      if (!isFinite(res.balance)) { setError("errorMsg", "Result is too large. Try a lower return rate or shorter time horizon."); return; }
+      setText("savingsAtRetirement", formatCurrency(res.balance));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalGrowth", formatCurrency(res.growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

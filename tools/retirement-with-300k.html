@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retiring with $300K Saved – How Far Will It Grow?</title>
+  <meta name="description" content="Have $300,000 saved for retirement? See how far it can grow over the next 10–30 years with our retirement calculator, and what annual income it can support in retirement.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/retirement-with-300k">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Retiring with $300K Saved – How Far Will It Grow?",
+  "url": "https://financialtoolkit.net/tools/retirement-with-300k",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Have $300,000 saved for retirement? See how far it can grow over the next 10–30 years with our retirement calculator, and what annual income it can support in retirement."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I retire on $300,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Retiring on $300,000 alone is difficult for most people. Using the 4% rule, $300,000 supports approximately $12,000 per year in withdrawals — well below average living expenses. However, combined with Social Security ($1,500–$2,500/month for many retirees) and low living costs, it may be sufficient. Most people with $300,000 saved continue working and contributing to grow their balance before retirement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much will $300,000 grow in 20 years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At 7% annual return, $300,000 grows to approximately $1,161,000 in 20 years without any additional contributions. Add $500/month in contributions and the balance reaches roughly $2,123,000. The power of having $300,000 already saved is that compound growth does the heavy lifting — even modest additional contributions dramatically increase the final balance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What income does $300,000 generate in retirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using the 4% withdrawal rule, $300,000 generates $12,000 per year ($1,000/month). If your $300,000 grows to $1,000,000 before retirement, the same 4% rule produces $40,000 per year. The key is to continue contributing and allow the balance to grow before transitioning to the withdrawal phase."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../all-calculators">All Calculators</a>
+      <span class="sep">/</span>
+      <a href="retirement-calculator">Retirement Calculator</a>
+      <span class="sep">/</span>
+      <span>Retiring with $300K</span>
+    </div>
+
+    <div class="hero">
+      <h1>Retiring with $300,000 Saved</h1>
+      <p>$300,000 is a meaningful head start — but how far will it go? See how your $300K grows with continued contributions over the years remaining before retirement.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Project Growth from Your $300,000 Starting Point</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="40" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="65" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="300000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="500" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Savings at Retirement</div>
+          <div class="value" id="savingsAtRetirement">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Investment Growth</div>
+          <div class="value" id="totalGrowth">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Explanation -->
+    <div class="card section">
+      <h2>How Far Does $300,000 Go?</h2>
+      <p>$300,000 is a significant milestone, but the outcome at retirement depends heavily on how many years remain and how much you continue to contribute.</p>
+      <ul>
+        <li><strong>Growth alone</strong> — at 7% annual return, $300,000 with no additional contributions becomes approximately $1,161,000 in 20 years and $2,260,000 in 30 years.</li>
+        <li><strong>With $500/month added</strong> — $300,000 plus $500/month at 7% over 25 years reaches roughly <strong>$2,123,000</strong>.</li>
+        <li><strong>4% withdrawal income</strong> — at $2.1M, the 4% rule provides $84,000/year in retirement income. At $1.1M, it provides $44,000/year.</li>
+      </ul>
+      <p>The message is clear: $300,000 already saved puts compound growth firmly in your favor. Even modest continued contributions produce excellent retirement outcomes.</p>
+    </div>
+
+    <!-- Worked Example Table -->
+    <div class="card section">
+      <h2>Worked Example: $300,000 at 40, Retiring at 65</h2>
+      <p>Age 40, $300,000 saved, $500/month contributions, 7% annual return over 25 years:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Growth Scenarios by Time Horizon -->
+    <div class="card section">
+      <h2>$300,000 Growth by Time Horizon (7%, $500/month)</h2>
+      <p>How $300,000 grows at different time horizons with $500/month in contributions at 7%:</p>
+      <div class="table-wrap">
+        <table class="data-table" id="horizonTable">
+          <thead><tr><th>Years to Retirement</th><th>Retirement Balance</th><th>4% Annual Income</th><th>Investment Growth</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Even 10 years with $300,000 invested at 7% produces a balance of over $650,000 — enough to generate $26,000/year in portfolio income alongside Social Security.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Can I retire on $300,000?</h3>
+        <p>Retiring on $300,000 alone is difficult for most people. Using the 4% rule, $300,000 supports approximately $12,000 per year in withdrawals — well below average living expenses. However, combined with Social Security ($1,500–$2,500/month for many retirees) and low living costs, it may be sufficient. Most people with $300,000 saved continue working and contributing to grow their balance before retirement.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much will $300,000 grow in 20 years?</h3>
+        <p>At 7% annual return, $300,000 grows to approximately $1,161,000 in 20 years without any additional contributions. Add $500/month in contributions and the balance reaches roughly $2,123,000. The power of having $300,000 already saved is that compound growth does the heavy lifting — even modest additional contributions dramatically increase the final balance.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What income does $300,000 generate in retirement?</h3>
+        <p>Using the 4% withdrawal rule, $300,000 generates $12,000 per year ($1,000/month). If your $300,000 grows to $1,000,000 before retirement, the same 4% rule produces $40,000 per year. The key is to continue contributing and allow the balance to grow before transitioning to the withdrawal phase.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Info CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon green">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>$300K Is a Strong Foundation — Keep Building</h3>
+        <p>With $300,000 already invested, your money is working for you every day. The most important action is to keep contributing consistently and avoid withdrawing from the account. Even maintaining the balance without new contributions can produce a seven-figure outcome given enough time.</p>
+      </div>
+    </div>
+
+    <!-- Affiliate note -->
+    <div class="affiliate-note">
+      <h3>Managing a $300,000 Retirement Portfolio</h3>
+      <p>At $300,000, your account balance is large enough that investment costs and account structure have a meaningful impact on your final outcome:</p>
+      <ul>
+        <li><strong>Consolidate accounts</strong> — if your $300K is spread across multiple old 401(k)s and IRAs, consolidating simplifies management and may reduce fees</li>
+        <li><strong>Asset allocation review</strong> — confirm your equity-to-bond mix aligns with your time horizon; a 40-year-old with 25 years to retirement can afford significant equity exposure</li>
+        <li><strong>Expense ratio impact</strong> — on a $300,000 portfolio, a 0.5% annual fee costs $1,500/year and compounds significantly over decades; favor low-cost index funds</li>
+        <li><strong>Tax location strategy</strong> — place tax-inefficient investments (bonds, REITs) in tax-advantaged accounts and tax-efficient investments (index funds) in taxable accounts</li>
+        <li><strong>Rebalancing schedule</strong> — review your allocation annually or when it drifts 5%+ from target; many brokerages offer automatic rebalancing for free</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="retirement-calculator">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="retirement-with-750k">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          Retiring with $750K
+        </a>
+        <a href="compound-interest-calculator">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="how-much-to-invest-to-retire">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          How Much to Invest to Retire
+        </a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="../tools/retirement-calculator">Retirement</a></li>
+          <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+          <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+          <li><a href="../all-calculators">All Calculators &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+          <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+          <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+          <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var months = years * 12;
+      var balance = currentSavings;
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + r) + monthly;
+      }
+      var totalContrib = currentSavings + monthly * months;
+      return { balance: balance, totalContrib: totalContrib, growth: balance - totalContrib };
+    }
+
+    /* Worked example table */
+    (function() {
+      var res = calcRetirement(300000, 500, 7, 25);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Current Age", "40"],
+        ["Retirement Age", "65"],
+        ["Years Until Retirement", "25"],
+        ["Current Savings", "$300,000"],
+        ["Monthly Contribution", "$500"],
+        ["Expected Annual Return", "7.00%"],
+        ["Savings at Retirement", formatCurrency(res.balance)],
+        ["Total Contributions", formatCurrency(res.totalContrib)],
+        ["Investment Growth", formatCurrency(res.growth)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Savings at Retirement" || row[0] === "Total Contributions" || row[0] === "Investment Growth";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Horizon comparison table */
+    (function() {
+      var horizons = [10, 15, 20, 25, 30];
+      var tbody = document.querySelector("#horizonTable tbody");
+      horizons.forEach(function(yrs) {
+        var res = calcRetirement(300000, 500, 7, yrs);
+        var income = res.balance * 0.04;
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + yrs + " years</td><td>" + formatCurrency(res.balance) + "</td><td>" + formatCurrency(income) + "/yr</td><td>" + formatCurrency(res.growth) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+      var currentAge     = parseInt10(document.getElementById("currentAge").value, 0);
+      var retireAge      = parseInt10(document.getElementById("retireAge").value, 0);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var monthly        = parseNum(document.getElementById("monthly").value);
+      var rate           = parseNum(document.getElementById("rate").value);
+      if (currentAge < 1 || currentAge > 100)  { setError("errorMsg", "Current age must be between 1 and 100."); return; }
+      if (retireAge < 1 || retireAge > 100)    { setError("errorMsg", "Retirement age must be between 1 and 100."); return; }
+      if (retireAge <= currentAge)              { setError("errorMsg", "Retirement age must be greater than your current age."); return; }
+      if (currentSavings < 0)                  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0)                         { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0)                            { setError("errorMsg", "Expected return cannot be negative."); return; }
+      var years = retireAge - currentAge;
+      var res = calcRetirement(currentSavings, monthly, rate, years);
+      if (!isFinite(res.balance)) { setError("errorMsg", "Result is too large. Try a lower return rate or shorter time horizon."); return; }
+      setText("savingsAtRetirement", formatCurrency(res.balance));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalGrowth", formatCurrency(res.growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
