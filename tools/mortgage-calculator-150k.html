@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$150,000 Mortgage Calculator – Monthly Payment Breakdown</title>
+  <meta name="description" content="Calculate your monthly payment on a $150,000 mortgage. Compare 15-year vs 30-year terms, see total interest costs, and plan your affordable home purchase.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/mortgage-calculator-150k">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "$150,000 Mortgage Calculator – Monthly Payment Breakdown",
+  "url": "https://financialtoolkit.net/tools/mortgage-calculator-150k",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Calculate your monthly payment on a $150,000 mortgage. Compare 15-year vs 30-year terms, see total interest costs, and plan your affordable home purchase."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the monthly payment on a $150K mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At a 6.5% fixed interest rate over 30 years, the monthly principal and interest payment on a $150,000 mortgage is approximately $948. With a 15-year term at the same rate, the monthly payment rises to about $1,307, but you save roughly $106,000 in total interest. Your actual payment will also include property taxes and insurance, which vary by location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What income do you need for a $150K mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using the 28% housing-cost guideline, you need roughly $40,000 to $48,000 per year in gross income to comfortably afford a $150,000 mortgage, depending on your interest rate, local property taxes, and insurance costs. Lenders also consider your total debt-to-income ratio, which should generally stay below 43%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it worth putting 20% down on a $150K loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — on a $150,000 loan, 20% down ($37,500 on a $187,500 home) eliminates private mortgage insurance (PMI), which typically costs $750 to $1,500 per year on a loan of this size, and starts you with more equity immediately. However, if making a 20% down payment would deplete your emergency savings, a smaller down payment with PMI may still be a sound financial choice."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../mortgage-and-loan-calculators">Mortgages &amp; Loans</a>
+      <span class="sep">/</span>
+      <a href="mortgage-payment-calculator">Mortgage Payment Calculator</a>
+      <span class="sep">/</span>
+      <span>$150,000 Mortgage</span>
+    </div>
+
+    <div class="hero">
+      <h1>Mortgage Calculator: $150,000 Home Loan</h1>
+      <p>Break down your monthly payment on a $150,000 mortgage. Compare loan terms, see how interest adds up, and find the right balance for budget-friendly homeownership.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Calculate Your $150K Mortgage Payment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="homePrice">Home Price</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="homePrice" value="187500" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="downPayment">Down Payment</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="downPayment" value="37500" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="loanTerm">Loan Term</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Monthly Payment</div>
+          <div class="value" id="monthlyPayment">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Payment</div>
+          <div class="value" id="totalPayment">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Total Interest</div>
+          <div class="value" id="totalInterest">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- The Entry-Level Mortgage -->
+    <div class="card section">
+      <h2>The Entry-Level Mortgage: What $150K Buys You</h2>
+      <p>A $150,000 mortgage represents an accessible entry point into homeownership. At a 6.5% fixed rate over 30 years, the monthly principal and interest payment is approximately $948. Over the full 30-year term, total interest costs reach roughly $191,280, meaning you would pay about $341,280 in total for your $150,000 loan.</p>
+      <p>A $150,000 mortgage typically covers starter homes and condos in affordable regions, rural properties with land, or fixer-uppers in moderate-cost areas. To qualify comfortably, most financial advisors recommend a gross annual income of at least $41,000 using the 28% housing-cost guideline — though you should also budget for property taxes, homeowner's insurance, and potentially private mortgage insurance (PMI) if your down payment is below 20%.</p>
+    </div>
+
+    <!-- Term Comparison Table -->
+    <div class="card section">
+      <h2>15-Year vs 20-Year vs 30-Year: $150K at 6.5%</h2>
+      <p>Choosing a shorter loan term increases your monthly payment but dramatically reduces total interest. The table below compares three popular terms for a $150,000 mortgage at 6.5%.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="termComparisonTable">
+          <thead>
+            <tr>
+              <th>Loan Term</th>
+              <th>Monthly Payment</th>
+              <th>Total Payment</th>
+              <th>Total Interest</th>
+              <th>Interest Saved vs 30yr</th>
+            </tr>
+          </thead>
+          <tbody id="termComparisonBody"></tbody>
+        </table>
+      </div>
+      <p>Switching from a 30-year to a 15-year term saves over $106,000 in interest on a $150,000 loan. Even a 20-year term saves more than $72,000. The trade-off is a higher monthly payment, so choose the term that fits your budget while maximizing long-term savings.</p>
+    </div>
+
+    <!-- Affordable Homeownership Strategies -->
+    <div class="card section">
+      <h2>Affordable Homeownership Strategies</h2>
+      <p>A $150,000 mortgage is one of the most budget-friendly loan amounts available, but smart planning still makes a significant difference in your long-term financial health. Consider these strategies:</p>
+      <ul>
+        <li><strong>Shop for the best rate</strong> — even a 0.25% rate difference saves thousands over the life of a $150K loan. Get quotes from at least three lenders before committing.</li>
+        <li><strong>Put down 20% to avoid PMI</strong> — on a $187,500 home, a $37,500 down payment eliminates PMI, which typically costs $750 to $1,500 per year on a loan this size.</li>
+        <li><strong>Keep your DTI below 43%</strong> — lenders look at your total debt-to-income ratio, including car loans, student debt, and credit cards, in addition to your new mortgage payment.</li>
+        <li><strong>Build an emergency fund alongside your mortgage</strong> — homeownership comes with unexpected repair costs. Aim to keep three to six months of expenses in reserve even after your down payment.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What's the monthly payment on a $150K mortgage?</h3>
+        <p>At a 6.5% fixed interest rate over 30 years, the monthly principal and interest payment on a $150,000 mortgage is approximately $948. With a 15-year term at the same rate, the monthly payment rises to about $1,307, but you save roughly $106,000 in total interest. Your actual payment will also include property taxes and insurance, which vary by location.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What income do you need for a $150K mortgage?</h3>
+        <p>Using the 28% housing-cost guideline, you need roughly $40,000 to $48,000 per year in gross income to comfortably afford a $150,000 mortgage, depending on your interest rate, local property taxes, and insurance costs. Lenders also consider your total debt-to-income ratio, which should generally stay below 43%.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it worth putting 20% down on a $150K loan?</h3>
+        <p>Yes — on a $150,000 loan, 20% down ($37,500 on a $187,500 home) eliminates private mortgage insurance (PMI), which typically costs $750 to $1,500 per year on a loan of this size, and starts you with more equity immediately. However, if making a 20% down payment would deplete your emergency savings, a smaller down payment with PMI may still be a sound financial choice.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- CTA -->
+    <div class="card section">
+      <h2>Explore More Mortgage Scenarios</h2>
+      <p>Use our main <a href="mortgage-payment-calculator">Mortgage Payment Calculator</a> to enter any custom loan amount. You can also explore specific loan amounts:</p>
+      <ul>
+        <li><a href="mortgage-calculator-200k">$200,000 Mortgage Calculator</a> — for the next step up in home value</li>
+        <li><a href="mortgage-calculator-250k">$250,000 Mortgage Calculator</a> — for mid-range suburban properties</li>
+      </ul>
+    </div>
+
+    <!-- Informational CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon blue">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>Learn How Mortgage Payments Work</h3>
+        <p>Understand amortization, how your payment splits between principal and interest, and strategies to pay off your mortgage faster.</p>
+        <a href="../guides/how-mortgage-payments-work">Read the guide &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Affiliate note: mortgage rates -->
+    <div class="affiliate-note">
+      <h3>What to Look For When Comparing Mortgage Rates</h3>
+      <p>Even a 0.25% difference in your mortgage rate changes your total interest paid by tens of thousands of dollars over a 30-year term. When evaluating lenders, consider these factors alongside the headline rate:</p>
+      <ul>
+        <li><strong>APR vs. interest rate</strong> — the APR includes origination fees and gives a more accurate total-cost comparison across lenders</li>
+        <li><strong>Points</strong> — paying discount points upfront lowers your rate but extends the break-even period; worthwhile only if you stay in the home long enough</li>
+        <li><strong>Fixed vs. adjustable</strong> — ARMs start lower but carry rate-reset risk after the initial period; fixed rates offer long-term payment certainty</li>
+        <li><strong>Lender type</strong> — banks, credit unions, and online lenders each offer different rate structures, underwriting timelines, and service models</li>
+        <li><strong>Rate lock period</strong> — confirm how long the quoted rate is guaranteed during the underwriting process before you are committed</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+          Mortgage Payment Calculator
+        </a>
+        <a href="loan-payment-calculator">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
+          Loan Payment Calculator
+        </a>
+        <a href="savings-goal-calculator">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+        <a href="mortgage-vs-rent-comparison">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Mortgage vs. Rent Calculator
+        </a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="../tools/retirement-calculator">Retirement</a></li>
+          <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+          <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+          <li><a href="../all-calculators">All Calculators →</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+          <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+          <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+          <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /** Calculate fixed-rate mortgage payment. */
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    /* Build term comparison table */
+    (function() {
+      var terms = [15, 20, 30];
+      var principal = 150000;
+      var rate = 6.5;
+      var tbody = document.getElementById("termComparisonBody");
+      var baseline = calcMortgage(principal, rate, 30);
+      terms.forEach(function(term) {
+        var res = calcMortgage(principal, rate, term);
+        var saved = baseline.interest - res.interest;
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + term + " years</td><td>" + formatCurrency(res.monthly) + "</td><td>" + formatCurrency(res.total) + "</td><td>" + formatCurrency(res.interest) + "</td><td>" + (saved > 0 ? formatCurrency(saved) : "—") + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+
+      var homePrice   = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years       = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate        = parseNum(document.getElementById("rate").value);
+
+      if (homePrice <= 0)   { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0)  { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1)        { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0)         { setError("errorMsg", "Interest rate cannot be negative."); return; }
+
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+
+      if (!isFinite(res.monthly)) {
+        setError("errorMsg", "Result is too large. Try a lower interest rate or shorter term.");
+        return;
+      }
+
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

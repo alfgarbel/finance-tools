@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Payment at 3% Interest Rate – Monthly Cost Breakdown</title>
+  <meta name="description" content="Calculate your mortgage payment at 3% interest. See monthly payments for common loan amounts and understand what historically low rates mean for long-term costs.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/mortgage-payment-3-percent-interest">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mortgage Payment at 3% Interest Rate – Monthly Cost Breakdown",
+  "url": "https://financialtoolkit.net/tools/mortgage-payment-3-percent-interest",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Calculate your mortgage payment at 3% interest. See monthly payments for common loan amounts and understand what historically low rates mean for long-term costs."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a 3% mortgage rate still available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2024&ndash;2025, 3% fixed-rate mortgages are essentially unavailable for new originations. Rates rose sharply from 2022 onwards. Existing borrowers with 3% rates should consider carefully before refinancing or selling, as their rate is very unlikely to be replicated in the near term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much cheaper is 3% vs 6% on a $300K mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On a $300,000 loan over 30 years, 3% costs $1,265/mo and $155,332 total interest vs. 6% at $1,799/mo and $347,515 total interest &mdash; a difference of $534/mo or $192,183 in total interest over the loan life."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I refinance out of a 3% mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost never, unless you have a compelling reason (e.g., shortening to 15yr, cash-out for very high-return investment, or rate is adjustable). A 3% fixed rate is extremely valuable. Refinancing to a higher rate, even to pull equity, is almost always financially harmful. The &ldquo;golden handcuff&rdquo; effect &mdash; where owners keep 3% mortgages &mdash; is real and rational."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../mortgage-and-loan-calculators">Mortgages &amp; Loans</a>
+      <span class="sep">/</span>
+      <a href="mortgage-payment-calculator">Mortgage Payment Calculator</a>
+      <span class="sep">/</span>
+      <span>3% Interest Rate</span>
+    </div>
+
+    <div class="hero">
+      <h1>What Does a Mortgage Cost at 3% Interest?</h1>
+      <p>A 3% mortgage rate is one of the lowest in modern history. See exactly what it costs per month, how it compares to today's rates, and why holders of 3% mortgages rarely want to give them up.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Calculate Your Mortgage Payment at 3%</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="400000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="80000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="loanTerm">Loan Term</label><div class="input-wrap has-suffix"><input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required><span class="suffix">yrs</span></div></div>
+          <div class="form-group"><label for="rate">Interest Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="3.0" min="0" max="100" step="0.01" required><span class="suffix">%</span></div></div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+      <div class="results" id="results">
+        <div class="result-item blue"><div class="label">Monthly Payment</div><div class="value" id="monthlyPayment">&mdash;</div></div>
+        <div class="result-item green"><div class="label">Total Payment</div><div class="value" id="totalPayment">&mdash;</div></div>
+        <div class="result-item amber"><div class="label">Total Interest</div><div class="value" id="totalInterest">&mdash;</div></div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Understanding a 3% Mortgage Rate</h2>
+      <p>3% is a historically rare low rate, seen in 2020&ndash;2021 during pandemic-era monetary policy. At 3% on a $320,000 30-year loan, the monthly payment is approximately <strong>$1,349</strong>, with total interest of $165,640 and a total cost of $485,640.</p>
+      <p>Compare that to a 6.5% rate on the same loan: the monthly payment jumps to $2,023 &mdash; <strong>$674 more per month</strong> and $242,640 more in total interest over 30 years.</p>
+      <ul>
+        <li><strong>Monthly at 3%:</strong> $1,349 &mdash; a payment that is almost impossible to replicate today</li>
+        <li><strong>Monthly at 6.5%:</strong> $2,023 &mdash; the approximate market rate in 2023&ndash;2024</li>
+        <li><strong>Total interest savings at 3%:</strong> over $242,000 compared to 6.5%</li>
+      </ul>
+      <p>Borrowers who locked in 3% rates have enormous payment advantages and a level of housing affordability that is essentially unavailable to new buyers in the current rate environment.</p>
+    </div>
+
+    <div class="card section">
+      <h2>Monthly Payment at 3% by Loan Amount (30-Year Term)</h2>
+      <p>See your monthly principal and interest payment at 3% across common loan sizes, along with total interest paid over the full 30-year term.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="loanTable">
+          <thead><tr><th>Loan Amount</th><th>Monthly Payment</th><th>Total Interest</th><th>Total Cost</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Even on a $500,000 loan, a 3% rate keeps the monthly payment under $2,110 &mdash; a figure that would require a loan of only about $330,000 at 7%.</p>
+    </div>
+
+    <div class="card section">
+      <h2>15-Year vs. 30-Year at 3% &mdash; The Trade-off Changes</h2>
+      <p>At 3%, the spread between 15-year and 30-year payments is much smaller in absolute dollar terms than it is at 7%+. Here is the comparison for a $320,000 loan:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Term</th><th>Monthly Payment</th><th>Total Interest</th><th>Interest Savings vs. 30yr</th></tr></thead>
+          <tbody>
+            <tr><td>30-year at 3%</td><td>$1,349</td><td>$165,640</td><td>&mdash;</td></tr>
+            <tr><td>15-year at 3%</td><td>$2,210</td><td>$77,800</td><td>$87,840 saved</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The monthly difference is $861. At 3%, the case for choosing the 30-year term is stronger than at higher rates &mdash; the interest savings from a 15-year term are real but smaller in proportional terms, while the cash flow flexibility of a 30-year term remains intact. Many 3% borrowers chose the 30-year specifically to maximize monthly flexibility while investing the difference.</p>
+    </div>
+
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is a 3% mortgage rate still available?</h3>
+        <p>As of 2024&ndash;2025, 3% fixed-rate mortgages are essentially unavailable for new originations. Rates rose sharply from 2022 onwards. Existing borrowers with 3% rates should consider carefully before refinancing or selling, as their rate is very unlikely to be replicated in the near term.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much cheaper is 3% vs 6% on a $300K mortgage?</h3>
+        <p>On a $300,000 loan over 30 years, 3% costs $1,265/mo and $155,332 total interest vs. 6% at $1,799/mo and $347,515 total interest &mdash; a difference of $534/mo or $192,183 in total interest over the loan life.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Should I refinance out of a 3% mortgage?</h3>
+        <p>Almost never, unless you have a compelling reason (e.g., shortening to 15yr, cash-out for a very high-return investment, or the rate is adjustable). A 3% fixed rate is extremely valuable. Refinancing to a higher rate, even to pull equity, is almost always financially harmful. The &ldquo;golden handcuff&rdquo; effect &mdash; where owners keep 3% mortgages &mdash; is real and rational.</p>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Compare Other Interest Rates</h2>
+      <p>Use the <a href="mortgage-payment-calculator">full Mortgage Payment Calculator</a> to model any scenario, or compare adjacent rates:</p>
+      <ul>
+        <li><a href="mortgage-payment-4-percent-interest">Mortgage Payment at 4% Interest</a></li>
+        <li><a href="mortgage-payment-5-percent-interest">Mortgage Payment at 5% Interest</a></li>
+      </ul>
+    </div>
+
+    <div class="info-cta">
+      <div class="info-cta-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="info-cta-body">
+        <h3>Learn How Mortgage Payments Work</h3>
+        <p>Understand amortization, how your payment splits between principal and interest, and strategies to pay off your mortgage faster.</p>
+        <a href="../guides/how-mortgage-payments-work">Read the guide &rarr;</a>
+      </div>
+    </div>
+
+    <div class="affiliate-note">
+      <h3>What to Look For When Comparing Mortgage Rates</h3>
+      <p>Even a 0.25% difference in your mortgage rate changes your total interest paid by tens of thousands of dollars over a 30-year term. When evaluating lenders, consider these factors alongside the headline rate:</p>
+      <ul>
+        <li><strong>APR vs. interest rate</strong> — the APR includes origination fees and gives a more accurate total-cost comparison across lenders</li>
+        <li><strong>Points</strong> — paying discount points upfront lowers your rate but extends the break-even period; worthwhile only if you stay in the home long enough</li>
+        <li><strong>Fixed vs. adjustable</strong> — ARMs start lower but carry rate-reset risk after the initial period; fixed rates offer long-term payment certainty</li>
+        <li><strong>Lender type</strong> — banks, credit unions, and online lenders each offer different rate structures, underwriting timelines, and service models</li>
+        <li><strong>Rate lock period</strong> — confirm how long the quoted rate is guaranteed during the underwriting process before you are committed</li>
+      </ul>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Mortgage Payment Calculator</a>
+        <a href="loan-payment-calculator"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>Loan Payment Calculator</a>
+        <a href="savings-goal-calculator"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="mortgage-vs-rent-comparison"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mortgage vs. Rent Calculator</a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col"><h3>Calculators</h3><ul>
+        <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+        <li><a href="../tools/retirement-calculator">Retirement</a></li>
+        <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+        <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+        <li><a href="../all-calculators">All Calculators →</a></li>
+      </ul></div>
+      <div class="site-footer-col"><h3>Guides</h3><ul>
+        <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+        <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+        <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+        <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+      </ul></div>
+      <div class="site-footer-col"><h3>About</h3><ul><li><a href="../about">About</a></li></ul></div>
+    </div>
+    <div class="site-footer-bottom"><p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p></div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    (function() {
+      var loans = [200000, 300000, 400000, 500000];
+      var tbody = document.querySelector("#loanTable tbody");
+      loans.forEach(function(principal) {
+        var res = calcMortgage(principal, 3.0, 30);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + formatCurrency(principal) + "</td><td>" + formatCurrency(res.monthly) + "</td><td>" + formatCurrency(res.interest) + "</td><td>" + formatCurrency(res.total) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+      var homePrice = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate = parseNum(document.getElementById("rate").value);
+      if (homePrice <= 0) { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0) { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1) { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+      if (!isFinite(res.monthly)) { setError("errorMsg", "Result is too large."); return; }
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

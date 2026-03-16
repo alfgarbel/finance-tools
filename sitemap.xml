@@ -281,8 +281,20 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-calculator-150k</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/mortgage-calculator-200k</loc>
     <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-calculator-250k</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -293,8 +305,38 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-calculator-350k</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/mortgage-calculator-400k</loc>
     <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-calculator-450k</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-calculator-600k</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-payment-3-percent-interest</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-payment-4-percent-interest</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -317,6 +359,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/mortgage-payment-8-percent-interest</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/monthly-payment-200k-mortgage</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -329,8 +377,20 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/monthly-payment-350k-mortgage</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/monthly-payment-400k-mortgage</loc>
     <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/monthly-payment-450k-mortgage</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
