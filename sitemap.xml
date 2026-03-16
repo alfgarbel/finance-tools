@@ -44,7 +44,7 @@
   <!-- Main calculators -->
   <url>
     <loc>https://financialtoolkit.net/tools/compound-interest-calculator</loc>
-    <lastmod>2026-03-10</lastmod>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -161,14 +161,74 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-1000-for-10-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-5000-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-10000-for-10-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/compound-interest-10000-for-20-years</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-20000-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-50000-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/compound-interest-50000-for-30-years</loc>
     <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-100000-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-100000-for-30-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-200000-for-30-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-500000-for-30-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/compound-interest-1000-per-month-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -335,6 +395,24 @@
 
   <!-- SEO landing pages: Investing monthly -->
   <url>
+    <loc>https://financialtoolkit.net/tools/investing-200-per-month-for-10-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-200-per-month-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-300-per-month-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/investing-500-per-month-for-10-years</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -343,6 +421,18 @@
   <url>
     <loc>https://financialtoolkit.net/tools/investing-500-per-month-for-20-years</loc>
     <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-500-per-month-for-30-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-750-per-month-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -359,8 +449,38 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://financialtoolkit.net/tools/investing-1000-per-month-for-30-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-1500-per-month-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-2000-per-month-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://financialtoolkit.net/tools/investing-2000-per-month-for-30-years</loc>
     <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-3000-per-month-for-30-years</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://financialtoolkit.net/tools/investing-5000-per-month-for-20-years</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
