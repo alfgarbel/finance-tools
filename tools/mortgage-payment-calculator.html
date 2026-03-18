@@ -10,20 +10,38 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mortgage Payment Calculator – Free Monthly Payment Estimator</title>
-  <meta name="description" content="Calculate your monthly mortgage payment, total payment, and total interest paid. Enter home price, down payment, loan term, and interest rate.">
+  <title>Mortgage Payment Calculator – Estimate Your Monthly Payment</title>
+  <meta name="description" content="Use our free mortgage payment calculator to estimate your monthly mortgage cost. Fast, accurate, and easy to use.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://financialtoolkit.net/tools/mortgage-payment-calculator">
   <link rel="stylesheet" href="../style.css">
+  <style>
+    .field-hint {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--slate-400, #94a3b8);
+      margin-top: 0.2rem;
+      margin-bottom: 0.35rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+  </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Mortgage Payment Calculator – Free Monthly Payment Estimator",
+  "name": "Mortgage Payment Calculator – Estimate Your Monthly Payment",
   "url": "https://financialtoolkit.net/tools/mortgage-payment-calculator",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "All",
-  "description": "Calculate your monthly mortgage payment, total payment, and total interest paid. Enter home price, down payment, loan term, and interest rate."
+  "description": "Use our free mortgage payment calculator to estimate your monthly mortgage cost. Fast, accurate, and easy to use."
 }
 </script>
 <script type="application/ld+json">
@@ -33,26 +51,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is included in a mortgage payment?",
+      "name": "How much mortgage can I afford?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "This calculator shows the principal and interest portion of a mortgage payment. In practice, your actual monthly payment may also include property taxes, homeowner's insurance, and private mortgage insurance (PMI) if your down payment is less than 20%. These additional costs vary by location and lender."
+        "text": "A widely used rule of thumb is to keep total monthly housing costs — principal, interest, taxes, and insurance — below 28% of your gross monthly income. On an $80,000 annual salary (~$6,667/month), that means a maximum housing payment of around $1,867. Use this calculator to test different home prices and down payments until the monthly payment fits comfortably within that threshold."
       }
     },
     {
       "@type": "Question",
-      "name": "How does the loan term affect my payment?",
+      "name": "What is a good mortgage interest rate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A shorter loan term (e.g., 15 years) results in higher monthly payments but significantly less total interest paid over the life of the loan. A longer term (e.g., 30 years) lowers monthly payments but increases total interest. Choose a term that balances affordable monthly payments with your goal to minimize interest costs."
+        "text": "A 'good' mortgage rate is one at or below the current market average for your loan type and credit profile. Rates shift constantly with economic conditions. Borrowers with credit scores above 740, a down payment of 20% or more, and stable income typically qualify for the lowest available rates. Getting quotes from at least three lenders and comparing the APR — not just the headline rate — is the most reliable way to confirm you are getting a competitive deal."
       }
     },
     {
       "@type": "Question",
-      "name": "Should I make a larger down payment?",
+      "name": "Does a longer loan term reduce monthly payments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A larger down payment reduces the loan principal, which lowers both your monthly payment and total interest. Putting down at least 20% also eliminates the need for private mortgage insurance (PMI), saving you additional monthly costs. However, you should balance a larger down payment against maintaining an adequate emergency fund."
+        "text": "Yes — but at a steep long-term cost. Spreading the same loan over more years lowers each monthly payment, but significantly increases total interest paid. A $300,000 loan at 6.5% has a monthly payment of about $1,896 over 30 years versus $2,613 over 15 years — but the 30-year borrower pays nearly $182,000 more in interest over the life of the loan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much interest will I pay over the life of my mortgage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The total interest depends on your loan amount, interest rate, and term. On a $280,000 loan at 6.5% for 30 years, total payments come to roughly $357,000 — meaning about $77,000 goes to interest. This calculator shows your total interest figure automatically once you enter your details. Try adjusting the loan term or rate to see how the total cost changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pay off my mortgage early?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Making extra payments toward the principal reduces your balance faster, cutting total interest and shortening the loan term. Even an extra $100–$200 per month on a 30-year mortgage can shave several years off the loan. Before sending extra payments, check your mortgage agreement for any prepayment penalties, and confirm with your lender that the additional funds are applied directly to principal."
       }
     }
   ]
@@ -86,7 +120,12 @@
 
     <div class="hero">
       <h1>Mortgage Payment Calculator</h1>
-      <p>Estimate your monthly mortgage payment and see how much you'll pay in total over the life of the loan.</p>
+      <p>Enter your home price, down payment, loan term, and interest rate to instantly calculate your monthly mortgage payment and see exactly how much you'll pay in total over the life of the loan.</p>
+      <div class="hero-badges">
+        <span class="badge blue">Free</span>
+        <span class="badge green">Instant results</span>
+        <span class="badge blue">No signup required</span>
+      </div>
     </div>
 
     <!-- Calculator -->
@@ -96,6 +135,7 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="homePrice">Home Price</label>
+            <small class="field-hint">Total purchase price of the property</small>
             <div class="input-wrap has-prefix">
               <span class="prefix">$</span>
               <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
@@ -103,6 +143,7 @@
           </div>
           <div class="form-group">
             <label for="downPayment">Down Payment</label>
+            <small class="field-hint">Amount you're paying upfront (20% or more avoids PMI)</small>
             <div class="input-wrap has-prefix">
               <span class="prefix">$</span>
               <input type="number" id="downPayment" value="70000" min="0" step="1000" required>
@@ -110,6 +151,7 @@
           </div>
           <div class="form-group">
             <label for="loanTerm">Loan Term</label>
+            <small class="field-hint">Length of the mortgage in years (typically 15 or 30)</small>
             <div class="input-wrap has-suffix">
               <input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required>
               <span class="suffix">yrs</span>
@@ -117,6 +159,7 @@
           </div>
           <div class="form-group">
             <label for="rate">Interest Rate</label>
+            <small class="field-hint">Annual interest rate offered by your lender (e.g. 6.5%)</small>
             <div class="input-wrap has-suffix">
               <input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required>
               <span class="suffix">%</span>
@@ -143,32 +186,59 @@
       </div>
     </div>
 
+    <!-- Understanding Your Mortgage Payment -->
+    <div class="card section" id="understanding">
+      <h2>Understanding Your Mortgage Payment</h2>
+      <p>Your monthly mortgage payment is made up of two core components:</p>
+      <ul>
+        <li><strong>Principal</strong> — the portion that directly reduces your outstanding loan balance. Early payments contain very little principal; later payments contain much more.</li>
+        <li><strong>Interest</strong> — the cost your lender charges for borrowing the money. It is calculated on your remaining balance, so it decreases each month as you pay the loan down.</li>
+      </ul>
+      <p>In practice, your lender may also collect property taxes, homeowner's insurance, and private mortgage insurance (PMI) through an escrow account. This calculator shows the principal and interest portion only — your actual payment quoted by a lender will likely be higher once those costs are included.</p>
+      <p><strong>How interest rate affects total cost:</strong> On a $300,000 loan over 30 years, moving from a 6% to a 7% rate raises your monthly payment by roughly $200 and adds over $72,000 to the total interest you pay. Even a 0.5% rate difference is worth shopping for before you sign.</p>
+    </div>
+
     <!-- Ad Placeholder -->
     <div class="ad-slot" aria-hidden="true">
       <span class="ad-slot-label">Advertisement</span>
     </div>
 
-    <!-- How Mortgage Payments Work -->
-    <div class="card section" id="how-it-works">
-      <h2>How Mortgage Payments Work</h2>
-      <p>A fixed-rate mortgage divides the total cost of a loan into equal monthly payments over the loan term. Each payment covers two components:</p>
-      <ul>
-        <li><strong>Principal</strong> — the portion that reduces your remaining loan balance.</li>
-        <li><strong>Interest</strong> — the cost charged by the lender for borrowing the money.</li>
-      </ul>
-      <p>In the early years most of your payment goes toward interest. As the balance shrinks, a larger share of each payment reduces the principal. This process is called amortization.</p>
-      <p>Your monthly payment stays the same for the entire loan term, but the split between principal and interest shifts over time. A larger down payment reduces the loan amount, which lowers both your monthly payment and total interest paid.</p>
-    </div>
-
-    <!-- Formula -->
-    <div class="card section">
-      <h2>Mortgage Payment Formula</h2>
-      <p>The standard formula for a fixed-rate mortgage payment is:</p>
+    <!-- How to Calculate a Mortgage Payment -->
+    <div class="card section" id="how-to-calculate">
+      <h2>How to Calculate a Mortgage Payment</h2>
+      <p>A fixed-rate mortgage uses the following formula to divide your loan into equal monthly payments:</p>
       <div class="formula-block">
         M = P &times; [ r(1 + r)^n ] / [ (1 + r)^n &minus; 1 ]
-        <span class="var-label">M = monthly payment, P = loan principal, r = monthly interest rate (annual rate / 12), n = total number of payments (years &times; 12)</span>
+        <span class="var-label">M = monthly payment &nbsp;|&nbsp; P = loan principal (home price minus down payment) &nbsp;|&nbsp; r = monthly interest rate (annual rate &divide; 12) &nbsp;|&nbsp; n = total number of payments (years &times; 12)</span>
       </div>
-      <p>When the interest rate is 0%, the formula simplifies to dividing the principal evenly across all payments: M = P / n.</p>
+      <p>When the interest rate is 0%, this simplifies to <strong>M = P / n</strong>. For a 6.5% rate on a $280,000 loan over 30 years, the monthly payment works out to approximately $1,770.</p>
+      <p>This process — where each equal payment gradually shifts from being mostly interest to mostly principal — is called <strong>amortization</strong>. In the first years of a 30-year mortgage, up to 85% of each payment goes to interest. By year 25, the split reverses and most of each payment reduces the principal balance.</p>
+    </div>
+
+    <!-- Factors That Affect Your Monthly Mortgage -->
+    <div class="card section" id="factors">
+      <h2>Factors That Affect Your Monthly Mortgage</h2>
+      <ul>
+        <li><strong>Loan amount</strong> — the larger the loan, the higher the monthly mortgage payment. A larger down payment directly reduces the amount you need to finance.</li>
+        <li><strong>Interest rate</strong> — even a 0.25% difference compounds significantly over 30 years. Your rate depends on the market, your credit score, the loan type, and the lender.</li>
+        <li><strong>Loan term</strong> — a 15-year term has higher monthly payments than a 30-year term for the same loan, but total interest paid is dramatically lower.</li>
+        <li><strong>Property taxes &amp; insurance</strong> — lenders typically collect these through an escrow account, increasing your effective monthly payment beyond principal and interest alone.</li>
+        <li><strong>PMI (Private Mortgage Insurance)</strong> — required when your down payment is below 20%, adding 0.5%–1.5% of the loan amount per year until your equity reaches 20%.</li>
+        <li><strong>Credit score</strong> — higher scores unlock lower interest rates. Improving your score by 40–50 points before applying can save thousands over the loan term.</li>
+      </ul>
+    </div>
+
+    <!-- Tips to Reduce Your Mortgage Cost -->
+    <div class="card section" id="tips">
+      <h2>Tips to Reduce Your Mortgage Cost</h2>
+      <ul>
+        <li><strong>Increase your down payment.</strong> Every extra dollar reduces the principal, lowers your monthly payment, and shrinks the total interest you pay. Reaching 20% also eliminates PMI.</li>
+        <li><strong>Compare multiple lenders.</strong> Getting rate quotes from three or more lenders — banks, credit unions, and online lenders — typically surfaces better offers than going with your first option.</li>
+        <li><strong>Improve your credit score before applying.</strong> Pay down existing debt, dispute errors on your credit report, and avoid opening new credit lines in the 6–12 months before you apply.</li>
+        <li><strong>Choose a shorter loan term if you can afford it.</strong> A 15-year mortgage costs more per month but saves a substantial amount in total interest compared to a 30-year loan.</li>
+        <li><strong>Make extra principal payments.</strong> Even $100/month extra on a 30-year mortgage can eliminate years from your term and save tens of thousands in interest.</li>
+        <li><strong>Refinance when rates drop meaningfully.</strong> If market rates fall significantly below your current rate, refinancing can lock in a lower monthly payment and reduce total interest — though closing costs need to be factored in.</li>
+      </ul>
     </div>
 
     <!-- Example -->
@@ -187,22 +257,42 @@
     <div class="card section" id="faq">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
-        <h3>What is included in a mortgage payment?</h3>
-        <p>This calculator shows the principal and interest portion of a mortgage payment. In practice, your actual monthly payment may also include property taxes, homeowner's insurance, and private mortgage insurance (PMI) if your down payment is less than 20%. These additional costs vary by location and lender.</p>
+        <h3>How much mortgage can I afford?</h3>
+        <p>A widely used rule is to keep total monthly housing costs — principal, interest, taxes, and insurance — below <strong>28% of your gross monthly income</strong>. On an $80,000 annual salary (~$6,667/month), that means a maximum housing payment of roughly $1,867. Use this mortgage payment calculator to test different home prices and down payments until the number fits comfortably within your budget.</p>
       </div>
       <div class="faq-item">
-        <h3>How does the loan term affect my payment?</h3>
-        <p>A shorter loan term (e.g., 15 years) results in higher monthly payments but significantly less total interest paid over the life of the loan. A longer term (e.g., 30 years) lowers monthly payments but increases total interest. Choose a term that balances affordable monthly payments with your goal to minimize interest costs.</p>
+        <h3>What is a good mortgage interest rate?</h3>
+        <p>A "good" rate is one at or below the current market average for your loan type and credit profile. Rates shift constantly with broader economic conditions. Borrowers with credit scores above 740, a 20%+ down payment, and stable income typically qualify for the lowest available rates. The most reliable approach: get quotes from at least three lenders and compare the <strong>APR</strong> — not just the headline rate — since the APR includes fees and gives a more accurate total-cost comparison.</p>
       </div>
       <div class="faq-item">
-        <h3>Should I make a larger down payment?</h3>
-        <p>A larger down payment reduces the loan principal, which lowers both your monthly payment and total interest. Putting down at least 20% also eliminates the need for private mortgage insurance (PMI), saving you additional monthly costs. However, you should balance a larger down payment against maintaining an adequate emergency fund.</p>
+        <h3>Does a longer loan term reduce monthly payments?</h3>
+        <p>Yes — but at a significant long-term cost. Spreading the same loan over more years lowers each monthly mortgage payment, but it greatly increases the total interest you pay over time. A $300,000 loan at 6.5% costs about <strong>$1,896/month over 30 years</strong> versus <strong>$2,613/month over 15 years</strong> — but the 30-year borrower pays nearly $182,000 more in interest over the life of the loan.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much interest will I pay over the life of my mortgage?</h3>
+        <p>It depends on your loan amount, interest rate, and term. On a $280,000 loan at 6.5% for 30 years, total payments come to roughly <strong>$357,000</strong> — meaning about $77,000 goes entirely to interest. This calculator shows your total interest figure automatically once you enter your details. Try adjusting the loan term or rate to see how the total cost changes dramatically.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I pay off my mortgage early?</h3>
+        <p>Yes. Making extra payments toward the principal reduces your balance faster, cutting total interest and shortening the loan term. Even an extra $100–$200 per month on a 30-year mortgage can eliminate several years from your repayment schedule. Before sending extra payments, check your mortgage agreement for any <strong>prepayment penalties</strong>, and confirm with your lender that the additional funds are applied directly to principal — not to future scheduled payments.</p>
       </div>
     </div>
 
     <!-- Ad Placeholder -->
     <div class="ad-slot" aria-hidden="true">
       <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Explore Mortgage Scenarios -->
+    <div class="card section" id="explore-scenarios">
+      <h2>Explore Mortgage Scenarios</h2>
+      <p>Not sure which mortgage setup fits your situation? Browse these pre-calculated pages to compare monthly payments across common loan types and amounts:</p>
+      <ul>
+        <li><a href="mortgage-calculator-30-year"><strong>30-Year Mortgage Calculator</strong></a> — Monthly payments and total interest for the most popular loan term</li>
+        <li><a href="mortgage-calculator-15-year"><strong>15-Year Mortgage Calculator</strong></a> — Higher monthly payments, but dramatically less total interest over the life of the loan</li>
+        <li><a href="monthly-payment-300k-mortgage"><strong>$300,000 Mortgage Monthly Payment</strong></a> — Pre-calculated results for a $300K loan across multiple interest rates</li>
+        <li><a href="mortgage-vs-rent-comparison"><strong>Mortgage vs. Rent Comparison</strong></a> — Find out whether buying or renting makes more financial sense for your situation</li>
+      </ul>
     </div>
 
     <!-- Popular Guides -->
@@ -228,7 +318,6 @@
         <p>Even a small difference in interest rates can save you thousands over the life of your loan. Before committing to a mortgage, consider comparing offers from multiple lenders to find the best rate and terms for your financial situation.</p>
       </div>
     </div>
-
 
     <!-- Example Scenarios -->
     <div class="card section">
