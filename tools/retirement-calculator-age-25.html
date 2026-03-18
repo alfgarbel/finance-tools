@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Calculator Age 25 – How Much Will You Have at 65?</title>
+  <meta name="description" content="Starting retirement savings at 25 is one of the most powerful financial decisions you can make. See how compound interest builds wealth over 40 years with our retirement calculator.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/retirement-calculator-age-25">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Retirement Calculator Age 25 – How Much Will You Have at 65?",
+  "url": "https://financialtoolkit.net/tools/retirement-calculator-age-25",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Starting retirement savings at 25 is one of the most powerful financial decisions you can make. See how compound interest builds wealth over 40 years with our retirement calculator."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I save for retirement at 25?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common guideline is to save 15% of your gross income for retirement. At 25, even $200–$400 per month invested in a low-cost index fund can grow to over $500,000 by age 65 at a 7% annual return. The key is to start immediately and increase contributions as your income grows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it worth starting a 401(k) at 25?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. At 25, you have 40 years of compounding ahead of you. Contributing to a 401(k) also reduces your taxable income today. If your employer offers a match, contribute at least enough to capture the full match — that is an immediate 50–100% return on your investment before the market does anything."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the power of starting at 25 vs. 35?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Starting at 25 instead of 35 with the same $300/month at 7% annual return produces roughly $868,000 vs. $365,000 at retirement — a difference of over $500,000 from just 10 extra years. The first decade of contributions benefits from the longest compounding runway and has by far the highest impact on your final balance."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../all-calculators">All Calculators</a>
+      <span class="sep">/</span>
+      <a href="retirement-calculator">Retirement Calculator</a>
+      <span class="sep">/</span>
+      <span>Starting at Age 25</span>
+    </div>
+
+    <div class="hero">
+      <h1>Retirement Calculator: Starting at Age 25</h1>
+      <p>With 40 years of compound growth ahead, starting at 25 is the single most powerful thing you can do for your retirement. See how your savings can grow by age 65.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Project Your Retirement Savings from Age 25</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="25" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="65" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="5000" min="0" step="100" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="monthly">Monthly Contribution</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="monthly" value="300" min="0" step="50" required>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Savings at Retirement</div>
+          <div class="value" id="savingsAtRetirement">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total Contributions</div>
+          <div class="value" id="totalContributions">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Investment Growth</div>
+          <div class="value" id="totalGrowth">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Explanation -->
+    <div class="card section">
+      <h2>Why Starting at 25 Is So Powerful</h2>
+      <p>Starting at 25 gives your money <strong>40 years</strong> to compound. During those four decades, even a modest monthly contribution grows dramatically because each year's gains are reinvested and themselves earn returns.</p>
+      <p>Consider a 25-year-old who invests $300 per month at 7% annually with $5,000 already saved:</p>
+      <ul>
+        <li>Over 40 years, they contribute roughly <strong>$149,000</strong> of their own money.</li>
+        <li>By age 65, the account could be worth approximately <strong>$869,000</strong>.</li>
+        <li>That means the market does more than <strong>80% of the work</strong> — nearly $720,000 comes from investment growth, not contributions.</li>
+      </ul>
+      <p>This ratio only improves with time. A dollar invested at 25 has roughly <strong>twice the final value</strong> of the same dollar invested at 35, assuming a 7% return.</p>
+    </div>
+
+    <!-- Worked Example Table -->
+    <div class="card section">
+      <h2>Worked Example: Age 25 → 65, $300/month, 7%</h2>
+      <p>Using $5,000 in current savings, $300 monthly contributions, and a 7% annual return over 40 years:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody id="exampleBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Contribution Comparison Table -->
+    <div class="card section">
+      <h2>How Different Monthly Contributions Grow (Age 25 → 65, 7%)</h2>
+      <p>See how increasing your monthly contribution affects your retirement balance over 40 years, starting with $5,000 saved.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="compTable">
+          <thead><tr><th>Monthly Contribution</th><th>Savings at 65</th><th>Total Contributed</th><th>Investment Growth</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Even $100 per month invested for 40 years at 7% adds up to over $263,000 — a compelling case for starting small rather than waiting until you can contribute more.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much should I save for retirement at 25?</h3>
+        <p>A common guideline is to save 15% of your gross income for retirement. At 25, even $200–$400 per month invested in a low-cost index fund can grow to over $500,000 by age 65 at a 7% annual return. The key is to start immediately and increase contributions as your income grows.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it worth starting a 401(k) at 25?</h3>
+        <p>Absolutely. At 25, you have 40 years of compounding ahead of you. Contributing to a 401(k) also reduces your taxable income today. If your employer offers a match, contribute at least enough to capture the full match — that is an immediate 50–100% return on your investment before the market does anything.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the power of starting at 25 vs. 35?</h3>
+        <p>Starting at 25 instead of 35 with the same $300/month at 7% annual return produces roughly $868,000 vs. $365,000 at retirement — a difference of over $500,000 from just 10 extra years. The first decade of contributions benefits from the longest compounding runway and has by far the highest impact on your final balance.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Info CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon amber">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>Time Is Your Greatest Asset</h3>
+        <p>At 25, the most important action is to start now — even a small amount. Increasing contributions later is always possible, but you can never recover the compounding years you miss by waiting. Open a Roth IRA or contribute to your employer's 401(k) today.</p>
+      </div>
+    </div>
+
+    <!-- Affiliate note -->
+    <div class="affiliate-note">
+      <h3>What to Look For in a Retirement Account at 25</h3>
+      <p>At 25, decades of compound growth mean that account fees and investment costs have an outsized effect on your final balance. Key factors to consider:</p>
+      <ul>
+        <li><strong>Roth IRA vs. Traditional IRA</strong> — at 25, most people are in a lower tax bracket than they will be at retirement, making a Roth IRA (tax-free growth) particularly attractive</li>
+        <li><strong>Expense ratios</strong> — a 0.5% fee difference on a 40-year account can cost tens of thousands of dollars in lost compounding; favor providers with low-cost index funds</li>
+        <li><strong>Employer 401(k) match</strong> — always contribute enough to capture the full employer match before directing money elsewhere; it is free money</li>
+        <li><strong>Auto-escalation</strong> — many 401(k) plans let you automatically increase contributions by 1% each year; enabling this is an effortless way to grow your savings rate over time</li>
+        <li><strong>Investment options</strong> — look for broad market index funds (total US market, S&amp;P 500, international) with expense ratios below 0.10%</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="retirement-calculator">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="retirement-calculator-age-35">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Starting at Age 35
+        </a>
+        <a href="compound-interest-calculator">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="savings-goal-calculator">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="../tools/retirement-calculator">Retirement</a></li>
+          <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+          <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+          <li><a href="../all-calculators">All Calculators &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+          <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+          <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+          <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var months = years * 12;
+      var balance = currentSavings;
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + r) + monthly;
+      }
+      var totalContrib = currentSavings + monthly * months;
+      return { balance: balance, totalContrib: totalContrib, growth: balance - totalContrib };
+    }
+
+    /* Worked example table */
+    (function() {
+      var res = calcRetirement(5000, 300, 7, 40);
+      var tbody = document.getElementById("exampleBody");
+      var rows = [
+        ["Current Age", "25"],
+        ["Retirement Age", "65"],
+        ["Years Until Retirement", "40"],
+        ["Current Savings", "$5,000"],
+        ["Monthly Contribution", "$300"],
+        ["Expected Annual Return", "7.00%"],
+        ["Savings at Retirement", formatCurrency(res.balance)],
+        ["Total Contributions", formatCurrency(res.totalContrib)],
+        ["Investment Growth", formatCurrency(res.growth)]
+      ];
+      rows.forEach(function(row) {
+        var tr = document.createElement("tr");
+        var isHighlight = row[0] === "Savings at Retirement" || row[0] === "Total Contributions" || row[0] === "Investment Growth";
+        tr.innerHTML = "<td>" + row[0] + "</td><td" + (isHighlight ? " class='highlight'" : "") + ">" + row[1] + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Contribution comparison table */
+    (function() {
+      var contribs = [100, 200, 300, 500, 750, 1000];
+      var tbody = document.querySelector("#compTable tbody");
+      contribs.forEach(function(c) {
+        var res = calcRetirement(5000, c, 7, 40);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>$" + c.toLocaleString() + "/mo</td><td>" + formatCurrency(res.balance) + "</td><td>" + formatCurrency(res.totalContrib) + "</td><td>" + formatCurrency(res.growth) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+      var currentAge     = parseInt10(document.getElementById("currentAge").value, 0);
+      var retireAge      = parseInt10(document.getElementById("retireAge").value, 0);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var monthly        = parseNum(document.getElementById("monthly").value);
+      var rate           = parseNum(document.getElementById("rate").value);
+      if (currentAge < 1 || currentAge > 100)  { setError("errorMsg", "Current age must be between 1 and 100."); return; }
+      if (retireAge < 1 || retireAge > 100)    { setError("errorMsg", "Retirement age must be between 1 and 100."); return; }
+      if (retireAge <= currentAge)              { setError("errorMsg", "Retirement age must be greater than your current age."); return; }
+      if (currentSavings < 0)                  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (monthly < 0)                         { setError("errorMsg", "Monthly contribution cannot be negative."); return; }
+      if (rate < 0)                            { setError("errorMsg", "Expected return cannot be negative."); return; }
+      var years = retireAge - currentAge;
+      var res = calcRetirement(currentSavings, monthly, rate, years);
+      if (!isFinite(res.balance)) { setError("errorMsg", "Result is too large. Try a lower return rate or shorter time horizon."); return; }
+      setText("savingsAtRetirement", formatCurrency(res.balance));
+      setText("totalContributions", formatCurrency(res.totalContrib));
+      setText("totalGrowth", formatCurrency(res.growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

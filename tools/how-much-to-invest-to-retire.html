@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Much to Invest to Retire – Monthly Investment Calculator</title>
+  <meta name="description" content="How much do you need to invest each month to retire? Enter your goal, timeline, and expected return to find the exact monthly contribution required to hit your retirement target.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/how-much-to-invest-to-retire">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "How Much to Invest to Retire – Monthly Investment Calculator",
+  "url": "https://financialtoolkit.net/tools/how-much-to-invest-to-retire",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "How much do you need to invest each month to retire? Enter your goal, timeline, and expected return to find the exact monthly contribution required to hit your retirement target."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do I need to invest per month to retire a millionaire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The monthly investment needed to accumulate $1 million depends heavily on your starting age, current savings, and expected return. Starting at 25 with no savings at 7% annual return, you need approximately $381/month to reach $1 million by age 65. Starting at 35 requires about $820/month. At 45, it takes roughly $2,060/month. The longer your time horizon, the less you need to save each month due to compound growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 4% rule for retirement savings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 4% rule states that you can safely withdraw 4% of your retirement portfolio per year without running out of money over a 30-year retirement. To use it in reverse: multiply your desired annual retirement income by 25 to find your required nest egg. For example, if you need $60,000/year, you need $1.5 million saved. If you need $80,000/year, you need $2 million."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 15% of income enough to save for retirement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For someone who starts saving consistently at 25, saving 15% of gross income is generally sufficient to retire at 65. If you start later — at 35 or 45 — you may need to save 20–25% to catch up. The 15% guideline assumes you invest in a diversified portfolio earning 6–7% annually and plan to use Social Security as a supplement to portfolio withdrawals."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        Finance Tools
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../all-calculators">All Calculators</a>
+      <span class="sep">/</span>
+      <a href="retirement-calculator">Retirement Calculator</a>
+      <span class="sep">/</span>
+      <span>How Much to Invest to Retire</span>
+    </div>
+
+    <div class="hero">
+      <h1>How Much Do You Need to Invest to Retire?</h1>
+      <p>Work backward from your retirement goal. Enter your target nest egg, current savings, years until retirement, and expected return — and find the exact monthly investment required.</p>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+      <h2 class="card-title">Find Your Required Monthly Investment</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="currentAge">Current Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="currentAge" value="35" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="retireAge">Retirement Age</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="retireAge" value="65" min="1" max="100" step="1" required>
+              <span class="suffix">yrs</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="currentSavings">Current Savings</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="currentSavings" value="10000" min="0" step="1000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="targetBalance">Retirement Goal</label>
+            <div class="input-wrap has-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="targetBalance" value="1000000" min="0" step="10000" required>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label for="rate">Expected Annual Return</label>
+            <div class="input-wrap has-suffix">
+              <input type="number" id="rate" value="7" min="0" max="100" step="0.01" required>
+              <span class="suffix">%</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+
+      <div class="results" id="results">
+        <div class="result-item blue">
+          <div class="label">Required Monthly Investment</div>
+          <div class="value" id="monthlyRequired">&mdash;</div>
+        </div>
+        <div class="result-item green">
+          <div class="label">Total You Will Contribute</div>
+          <div class="value" id="totalContrib">&mdash;</div>
+        </div>
+        <div class="result-item amber">
+          <div class="label">Growth from Investing</div>
+          <div class="value" id="totalGrowth">&mdash;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Explanation -->
+    <div class="card section">
+      <h2>How to Calculate Your Retirement Investment Goal</h2>
+      <p>The question "how much do I need to invest?" has a precise mathematical answer. The formula solves for the monthly contribution (<em>C</em>) required to reach a target balance (<em>FV</em>), given existing savings (<em>P</em>), a monthly return rate (<em>r</em>), and time in months (<em>n</em>):</p>
+      <p><strong>C = (FV &minus; P &times; (1+r)<sup>n</sup>) &times; r &divide; ((1+r)<sup>n</sup> &minus; 1)</strong></p>
+      <p>The two steps to find your retirement savings target:</p>
+      <ol>
+        <li><strong>Determine your annual retirement income need</strong> — e.g., $60,000/year</li>
+        <li><strong>Multiply by 25 (the 4% rule)</strong> — $60,000 &times; 25 = <strong>$1,500,000</strong> required nest egg</li>
+      </ol>
+      <p>Then use this calculator to find the monthly investment needed to reach that target from your current age.</p>
+    </div>
+
+    <!-- Required Investment Table by Starting Age and Goal -->
+    <div class="card section">
+      <h2>Monthly Investment Required by Age and Retirement Goal (7% Return)</h2>
+      <p>Starting with $0 in savings, here is the monthly investment needed to reach various retirement targets at 65:</p>
+      <div class="table-wrap">
+        <table class="data-table" id="reqTable">
+          <thead>
+            <tr>
+              <th>Start Age</th>
+              <th>Goal: $500K</th>
+              <th>Goal: $1M</th>
+              <th>Goal: $1.5M</th>
+              <th>Goal: $2M</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Starting 10 years earlier roughly cuts the required monthly investment in half — the clearest demonstration of why starting young is so powerful.</p>
+    </div>
+
+    <!-- Retire Income Needed → Required Nest Egg Table -->
+    <div class="card section">
+      <h2>Retirement Income Goal → Required Nest Egg (4% Rule)</h2>
+      <p>Use the 4% rule to find the nest egg required to support your desired retirement income:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Annual Income Needed</th><th>Monthly Income</th><th>Required Nest Egg (4% Rule)</th></tr></thead>
+          <tbody>
+            <tr><td>$30,000/yr</td><td>$2,500/mo</td><td>$750,000</td></tr>
+            <tr><td>$40,000/yr</td><td>$3,333/mo</td><td>$1,000,000</td></tr>
+            <tr><td>$50,000/yr</td><td>$4,167/mo</td><td>$1,250,000</td></tr>
+            <tr><td>$60,000/yr</td><td>$5,000/mo</td><td>$1,500,000</td></tr>
+            <tr><td>$80,000/yr</td><td>$6,667/mo</td><td>$2,000,000</td></tr>
+            <tr><td>$100,000/yr</td><td>$8,333/mo</td><td>$2,500,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Note: These figures represent portfolio withdrawals only. Social Security income reduces the required nest egg proportionally — if you expect $24,000/year from Social Security, subtract that from your income need before applying the 4% rule.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How much do I need to invest per month to retire a millionaire?</h3>
+        <p>The monthly investment needed to accumulate $1 million depends heavily on your starting age, current savings, and expected return. Starting at 25 with no savings at 7% annual return, you need approximately $381/month to reach $1 million by age 65. Starting at 35 requires about $820/month. At 45, it takes roughly $2,060/month. The longer your time horizon, the less you need to save each month due to compound growth.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the 4% rule for retirement savings?</h3>
+        <p>The 4% rule states that you can safely withdraw 4% of your retirement portfolio per year without running out of money over a 30-year retirement. To use it in reverse: multiply your desired annual retirement income by 25 to find your required nest egg. For example, if you need $60,000/year, you need $1.5 million saved. If you need $80,000/year, you need $2 million.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is 15% of income enough to save for retirement?</h3>
+        <p>For someone who starts saving consistently at 25, saving 15% of gross income is generally sufficient to retire at 65. If you start later — at 35 or 45 — you may need to save 20–25% to catch up. The 15% guideline assumes you invest in a diversified portfolio earning 6–7% annually and plan to use Social Security as a supplement to portfolio withdrawals.</p>
+      </div>
+    </div>
+
+    <!-- Ad Placeholder -->
+    <div class="ad-slot" aria-hidden="true">
+      <span class="ad-slot-label">Advertisement</span>
+    </div>
+
+    <!-- Info CTA -->
+    <div class="info-cta">
+      <div class="info-cta-icon green">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      </div>
+      <div class="info-cta-body">
+        <h3>Know Your Number, Then Work Backwards</h3>
+        <p>The most important step is to set a specific retirement goal. Without a target, it is impossible to know whether you are on track. Use the 4% rule to translate your desired retirement income into a savings target, then use this calculator to find exactly what monthly investment gets you there.</p>
+      </div>
+    </div>
+
+    <!-- Affiliate note -->
+    <div class="affiliate-note">
+      <h3>Where to Invest Your Monthly Retirement Contribution</h3>
+      <p>Once you know how much to invest, choosing the right account and investments maximizes the after-tax value of your contributions:</p>
+      <ul>
+        <li><strong>Account priority order</strong> — (1) 401(k) up to employer match, (2) Roth IRA up to annual limit ($7,000 in 2025), (3) 401(k) up to annual max ($23,500 in 2025), (4) taxable brokerage for additional investing</li>
+        <li><strong>Index fund investing</strong> — broad market index funds (total US market, S&amp;P 500, international) with expense ratios below 0.10% provide market returns at minimal cost; this approach outperforms the majority of actively managed funds over long periods</li>
+        <li><strong>Automate contributions</strong> — set up automatic monthly transfers to prevent the temptation to skip months; treating retirement contributions as a fixed expense (like rent) is the most reliable path to consistent saving</li>
+        <li><strong>Increase with raises</strong> — commit to directing at least 50% of each salary increase to retirement savings; this strategy grows your savings rate over time without requiring lifestyle sacrifice</li>
+        <li><strong>Tax diversification</strong> — holding a mix of pre-tax (traditional 401k/IRA), post-tax (Roth), and taxable accounts gives flexibility to manage your tax bracket in retirement</li>
+      </ul>
+    </div>
+
+    <!-- Related Calculators -->
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="retirement-calculator">
+          <span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement Calculator
+        </a>
+        <a href="retirement-calculator-age-25">
+          <span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          Retirement at Age 25
+        </a>
+        <a href="compound-interest-calculator">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+          Compound Interest Calculator
+        </a>
+        <a href="savings-goal-calculator">
+          <span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>
+          Savings Goal Calculator
+        </a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Finance Tools
+        </a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="../tools/retirement-calculator">Retirement</a></li>
+          <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+          <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+          <li><a href="../all-calculators">All Calculators &rarr;</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>Guides</h3>
+        <ul>
+          <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+          <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+          <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+          <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="../about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    /* Solve for required monthly contribution to reach a target balance */
+    function calcRequired(currentSavings, target, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var n = years * 12;
+      var fvSavings = currentSavings * Math.pow(1 + r, n);
+      var remaining = target - fvSavings;
+      if (remaining <= 0) return 0;
+      if (r === 0) return remaining / n;
+      var monthly = remaining * r / (Math.pow(1 + r, n) - 1);
+      return monthly;
+    }
+
+    /* For verification / display: project forward given monthly */
+    function calcRetirement(currentSavings, monthly, annualRate, years) {
+      var r = annualRate / 12 / 100;
+      var months = years * 12;
+      var balance = currentSavings;
+      for (var m = 1; m <= months; m++) {
+        balance = balance * (1 + r) + monthly;
+      }
+      var totalContrib = currentSavings + monthly * months;
+      return { balance: balance, totalContrib: totalContrib, growth: balance - totalContrib };
+    }
+
+    /* Required investment table by starting age */
+    (function() {
+      var startAges = [25, 30, 35, 40, 45, 50];
+      var goals     = [500000, 1000000, 1500000, 2000000];
+      var tbody     = document.querySelector("#reqTable tbody");
+      startAges.forEach(function(age) {
+        var yrs = 65 - age;
+        if (yrs <= 0) return;
+        var tr = document.createElement("tr");
+        var cells = "<td>" + age + "</td>";
+        goals.forEach(function(g) {
+          var req = calcRequired(0, g, 7, yrs);
+          cells += "<td>" + formatCurrency(req) + "/mo</td>";
+        });
+        tr.innerHTML = cells;
+        tbody.appendChild(tr);
+      });
+    })();
+
+    /* Form submit — solve for required monthly */
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      setError("errorMsg", "");
+      var currentAge     = parseInt10(document.getElementById("currentAge").value, 0);
+      var retireAge      = parseInt10(document.getElementById("retireAge").value, 0);
+      var currentSavings = parseNum(document.getElementById("currentSavings").value);
+      var target         = parseNum(document.getElementById("targetBalance").value);
+      var rate           = parseNum(document.getElementById("rate").value);
+      if (currentAge < 1 || currentAge > 100)  { setError("errorMsg", "Current age must be between 1 and 100."); return; }
+      if (retireAge < 1 || retireAge > 100)    { setError("errorMsg", "Retirement age must be between 1 and 100."); return; }
+      if (retireAge <= currentAge)              { setError("errorMsg", "Retirement age must be greater than your current age."); return; }
+      if (currentSavings < 0)                  { setError("errorMsg", "Current savings cannot be negative."); return; }
+      if (target <= 0)                         { setError("errorMsg", "Retirement goal must be greater than zero."); return; }
+      if (rate < 0)                            { setError("errorMsg", "Expected return cannot be negative."); return; }
+      var years = retireAge - currentAge;
+      var monthly = calcRequired(currentSavings, target, rate, years);
+      if (!isFinite(monthly) || monthly < 0)   { setError("errorMsg", "Your current savings already exceed the target, or the inputs are invalid."); return; }
+      var totalC = currentSavings + monthly * years * 12;
+      var growth = target - totalC;
+      setText("monthlyRequired", formatCurrency(monthly) + "/mo");
+      setText("totalContrib", formatCurrency(totalC));
+      setText("totalGrowth", formatCurrency(growth));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Payment at 4% Interest Rate – Monthly Cost Breakdown</title>
+  <meta name="description" content="Calculate your mortgage payment at 4% interest. See how a 4% rate compares to 3%, 5%, and 6% and understand the long-term cost of this historically low mortgage rate.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/mortgage-payment-4-percent-interest">
+  <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mortgage Payment at 4% Interest Rate – Monthly Cost Breakdown",
+  "url": "https://financialtoolkit.net/tools/mortgage-payment-4-percent-interest",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "description": "Calculate your mortgage payment at 4% interest. See how a 4% rate compares to 3%, 5%, and 6% and understand the long-term cost of this historically low mortgage rate."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is 4% a good mortgage rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes &mdash; 4% is well below the 50-year historical average of ~7.7% and below the 2023&ndash;2024 market range of 6.5&ndash;8%. If available (e.g., via an assumable mortgage on a property), a 4% rate is exceptional. For new originations as of 2025, 4% is not achievable without significant discount points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much more do I pay at 4% vs 3%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On a $300,000 loan over 30 years, 4% adds about $166/mo and $59,700 in total interest compared to 3%. Both rates are far better than current market rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you assume a 4% mortgage from a seller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes &mdash; FHA and VA loans are assumable, meaning a buyer can take over a seller&rsquo;s existing mortgage at the original rate (subject to lender approval and creditworthiness). Assuming a 4% mortgage in a 7% market can save hundreds of dollars per month. However, you typically need to compensate the seller for their equity, often requiring a second mortgage or large cash payment."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav>
+      <a href="/" class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="../all-calculators">All Calculators</a></li>
+        <li><a href="/#guides">Guides</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="../all-calculators">All Calculators</a>
+      <span class="sep">/</span>
+      <a href="mortgage-payment-calculator">Mortgage Payment Calculator</a>
+      <span class="sep">/</span>
+      <span>4% Interest Rate</span>
+    </div>
+
+    <div class="hero">
+      <h1>What Does a Mortgage Cost at 4% Interest?</h1>
+      <p>A 4% mortgage rate is well below historical averages and a significant advantage over current market rates. See the monthly payments, total costs, and how 4% stacks up against higher rates.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="card-title">Calculate Your Mortgage Payment at 4%</h2>
+      <form id="calcForm">
+        <div class="form-grid">
+          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="400000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="80000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="loanTerm">Loan Term</label><div class="input-wrap has-suffix"><input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required><span class="suffix">yrs</span></div></div>
+          <div class="form-group"><label for="rate">Interest Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="4.0" min="0" max="100" step="0.01" required><span class="suffix">%</span></div></div>
+        </div>
+        <button type="submit" class="btn">Calculate</button>
+        <div class="error-msg" id="errorMsg"></div>
+      </form>
+      <div class="results" id="results">
+        <div class="result-item blue"><div class="label">Monthly Payment</div><div class="value" id="monthlyPayment">&mdash;</div></div>
+        <div class="result-item green"><div class="label">Total Payment</div><div class="value" id="totalPayment">&mdash;</div></div>
+        <div class="result-item amber"><div class="label">Total Interest</div><div class="value" id="totalInterest">&mdash;</div></div>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Understanding a 4% Mortgage Rate</h2>
+      <p>4% was common in 2015&ndash;2019 and briefly available in early 2022 before the Federal Reserve began its rate-hiking cycle. At 4% on a $320,000 30-year loan, the monthly payment is approximately <strong>$1,528</strong> in principal and interest, with total interest of $230,080 and a total cost of $550,080.</p>
+      <p>Compare that to 6.5% on the same loan:</p>
+      <ul>
+        <li><strong>At 4%:</strong> $1,528/mo, $230,080 total interest</li>
+        <li><strong>At 6.5%:</strong> $2,023/mo &mdash; $495/mo more, $178,560 more in total interest</li>
+      </ul>
+      <p>A 4% rate is highly favorable by historical standards and below the 50-year average of approximately 7.7%. Holders of 4% mortgages enjoy a material cost advantage over new buyers entering the market at current rates.</p>
+    </div>
+
+    <div class="card section">
+      <h2>Monthly Payment at 4% by Loan Amount (30-Year Term)</h2>
+      <p>See monthly payments and total interest at 4% across common loan sizes for a 30-year fixed mortgage.</p>
+      <div class="table-wrap">
+        <table class="data-table" id="loanTable">
+          <thead><tr><th>Loan Amount</th><th>Monthly Payment</th><th>Total Interest</th><th>Total Cost</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Even on a $500,000 loan, a 4% rate keeps the monthly principal and interest payment under $2,400 &mdash; a figure that would require only about $355,000 at 7%.</p>
+    </div>
+
+    <div class="card section">
+      <h2>4% vs. 5% vs. 6% vs. 7% &mdash; Side-by-Side for $320K (30-Year)</h2>
+      <p>Here is how your monthly payment and total interest change as rates rise from 4% on a $320,000 loan over 30 years.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Rate</th><th>Monthly Payment</th><th>Total Interest</th><th>Extra vs. 4%/mo</th></tr></thead>
+          <tbody>
+            <tr><td>4%</td><td>$1,528</td><td>$230,080</td><td>&mdash;</td></tr>
+            <tr><td>5%</td><td>$1,717</td><td>$298,267</td><td>+$189/mo</td></tr>
+            <tr><td>6%</td><td>$1,919</td><td>$370,774</td><td>+$391/mo</td></tr>
+            <tr><td>7%</td><td>$2,129</td><td>$446,518</td><td>+$601/mo</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The difference between 4% and 7% is $601/mo and over $216,000 in total interest &mdash; roughly two-thirds of the original loan amount paid purely in additional interest cost.</p>
+    </div>
+
+    <div class="card section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>Is 4% a good mortgage rate?</h3>
+        <p>Yes &mdash; 4% is well below the 50-year historical average of ~7.7% and below the 2023&ndash;2024 market range of 6.5&ndash;8%. If available (e.g., via an assumable mortgage on a property), a 4% rate is exceptional. For new originations as of 2025, 4% is not achievable without significant discount points.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How much more do I pay at 4% vs 3%?</h3>
+        <p>On a $300,000 loan over 30 years, 4% adds about $166/mo and $59,700 in total interest compared to 3%. Both rates are far better than current market rates.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can you assume a 4% mortgage from a seller?</h3>
+        <p>Yes &mdash; FHA and VA loans are assumable, meaning a buyer can take over a seller&rsquo;s existing mortgage at the original rate (subject to lender approval and creditworthiness). Assuming a 4% mortgage in a 7% market can save hundreds of dollars per month. However, you typically need to compensate the seller for their equity, often requiring a second mortgage or large cash payment.</p>
+      </div>
+    </div>
+
+    <div class="ad-slot" aria-hidden="true"><span class="ad-slot-label">Advertisement</span></div>
+
+    <div class="card section">
+      <h2>Compare Other Interest Rates</h2>
+      <p>Use the <a href="mortgage-payment-calculator">full Mortgage Payment Calculator</a> to model any scenario, or compare adjacent rates:</p>
+      <ul>
+        <li><a href="mortgage-payment-3-percent-interest">Mortgage Payment at 3% Interest</a></li>
+        <li><a href="mortgage-payment-5-percent-interest">Mortgage Payment at 5% Interest</a></li>
+      </ul>
+    </div>
+
+    <div class="info-cta">
+      <div class="info-cta-icon blue"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="info-cta-body">
+        <h3>Learn How Mortgage Payments Work</h3>
+        <p>Understand amortization, how your payment splits between principal and interest, and strategies to pay off your mortgage faster.</p>
+        <a href="../guides/how-mortgage-payments-work">Read the guide &rarr;</a>
+      </div>
+    </div>
+
+    <div class="affiliate-note">
+      <h3>What to Look For When Comparing Mortgage Rates</h3>
+      <p>Even a 0.25% difference in your mortgage rate changes your total interest paid by tens of thousands of dollars over a 30-year term. When evaluating lenders, consider these factors alongside the headline rate:</p>
+      <ul>
+        <li><strong>APR vs. interest rate</strong> — the APR includes origination fees and gives a more accurate total-cost comparison across lenders</li>
+        <li><strong>Points</strong> — paying discount points upfront lowers your rate but extends the break-even period; worthwhile only if you stay in the home long enough</li>
+        <li><strong>Fixed vs. adjustable</strong> — ARMs start lower but carry rate-reset risk after the initial period; fixed rates offer long-term payment certainty</li>
+        <li><strong>Lender type</strong> — banks, credit unions, and online lenders each offer different rate structures, underwriting timelines, and service models</li>
+        <li><strong>Rate lock period</strong> — confirm how long the quoted rate is guaranteed during the underwriting process before you are committed</li>
+      </ul>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-tools-grid">
+        <a href="mortgage-payment-calculator"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Mortgage Payment Calculator</a>
+        <a href="loan-payment-calculator"><span class="rt-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>Loan Payment Calculator</a>
+        <a href="savings-goal-calculator"><span class="rt-icon green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></span>Savings Goal Calculator</a>
+        <a href="mortgage-vs-rent-comparison"><span class="rt-icon amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Mortgage vs. Rent Calculator</a>
+      </div>
+      <a href="../all-calculators" class="browse-all">Browse all calculators &rarr;</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">
+        <a href="/" class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Finance Tools</a>
+        <p>Free, private financial calculators.</p>
+      </div>
+      <div class="site-footer-col"><h3>Calculators</h3><ul>
+        <li><a href="../tools/compound-interest-calculator">Compound Interest</a></li>
+        <li><a href="../tools/retirement-calculator">Retirement</a></li>
+        <li><a href="../tools/mortgage-payment-calculator">Mortgage Payment</a></li>
+        <li><a href="../tools/savings-goal-calculator">Savings Goal</a></li>
+        <li><a href="../all-calculators">All Calculators →</a></li>
+      </ul></div>
+      <div class="site-footer-col"><h3>Guides</h3><ul>
+        <li><a href="../guides/how-compound-interest-works">Compound Interest</a></li>
+        <li><a href="../guides/how-mortgage-payments-work">Mortgage Payments</a></li>
+        <li><a href="../guides/how-retirement-savings-work">Retirement Savings</a></li>
+        <li><a href="../guides/how-dividend-investing-works">Dividend Investing</a></li>
+      </ul></div>
+      <div class="site-footer-col"><h3>About</h3><ul><li><a href="../about">About</a></li></ul></div>
+    </div>
+    <div class="site-footer-bottom"><p>&copy; 2026 Finance Tools. For educational purposes only. Not financial advice.</p></div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    function calcMortgage(principal, annualRate, years) {
+      var n = years * 12;
+      if (annualRate === 0) return { monthly: principal / n, total: principal, interest: 0 };
+      var r = annualRate / 12 / 100;
+      var factor = Math.pow(1 + r, n);
+      var monthly = principal * (r * factor) / (factor - 1);
+      var total = monthly * n;
+      return { monthly: monthly, total: total, interest: total - principal };
+    }
+
+    (function() {
+      var loans = [200000, 300000, 400000, 500000];
+      var tbody = document.querySelector("#loanTable tbody");
+      loans.forEach(function(principal) {
+        var res = calcMortgage(principal, 4.0, 30);
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td>" + formatCurrency(principal) + "</td><td>" + formatCurrency(res.monthly) + "</td><td>" + formatCurrency(res.interest) + "</td><td>" + formatCurrency(res.total) + "</td>";
+        tbody.appendChild(tr);
+      });
+    })();
+
+    document.getElementById("calcForm").addEventListener("submit", function(e) {
+      e.preventDefault(); setError("errorMsg", "");
+      var homePrice = parseNum(document.getElementById("homePrice").value);
+      var downPayment = parseNum(document.getElementById("downPayment").value);
+      var years = parseInt10(document.getElementById("loanTerm").value, 1);
+      var rate = parseNum(document.getElementById("rate").value);
+      if (homePrice <= 0) { setError("errorMsg", "Home price must be greater than zero."); return; }
+      if (downPayment < 0) { setError("errorMsg", "Down payment cannot be negative."); return; }
+      if (downPayment >= homePrice) { setError("errorMsg", "Down payment must be less than the home price."); return; }
+      if (years < 1) { setError("errorMsg", "Loan term must be at least 1 year."); return; }
+      if (rate < 0) { setError("errorMsg", "Interest rate cannot be negative."); return; }
+      var principal = homePrice - downPayment;
+      var res = calcMortgage(principal, rate, years);
+      if (!isFinite(res.monthly)) { setError("errorMsg", "Result is too large."); return; }
+      setText("monthlyPayment", formatCurrency(res.monthly));
+      setText("totalPayment", formatCurrency(res.total));
+      setText("totalInterest", formatCurrency(res.interest));
+      showResults("results");
+    });
+  </script>
+</body>
+</html>
