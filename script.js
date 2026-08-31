@@ -4,15 +4,38 @@
    across all calculator pages.
    ============================================================ */
 
+/* Formatters are built once — constructing an Intl.NumberFormat per call is
+   markedly slower, and the year-by-year tables format thousands of values. */
+var CURRENCY_FORMATTERS = {};
+
+/**
+ * Look up (or build) a cached currency formatter.
+ * @param {string} currency  ISO 4217 code, e.g. "USD"
+ * @returns {Intl.NumberFormat}
+ */
+function currencyFormatter(currency) {
+  if (!CURRENCY_FORMATTERS[currency]) {
+    CURRENCY_FORMATTERS[currency] = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: currency
+    });
+  }
+  return CURRENCY_FORMATTERS[currency];
+}
+
 /**
  * Format a number as USD currency string.
+ * Uses Intl so that very large results stay readable — hand-rolled grouping
+ * breaks above 1e21, where Number#toFixed switches to exponential notation
+ * and renders as "$1e+21".
  * @param {number} value
  * @returns {string} e.g. "$12,345.67"
  */
 function formatCurrency(value) {
   if (!isFinite(value)) return "$0.00";
-  var sign = value < 0 ? "-" : "";
-  return sign + "$" + Math.abs(value).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  /* Fold -0 and values that round to zero, so nothing shows as "-$0.00". */
+  if (Math.abs(value) < 0.005) value = 0;
+  return currencyFormatter("USD").format(value);
 }
 
 /**
@@ -22,8 +45,8 @@ function formatCurrency(value) {
  */
 function formatEUR(value) {
   if (!isFinite(value)) return "€0.00";
-  var sign = value < 0 ? "-" : "";
-  return sign + "€" + Math.abs(value).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  if (Math.abs(value) < 0.005) value = 0;
+  return currencyFormatter("EUR").format(value);
 }
 
 /**
@@ -35,7 +58,10 @@ function formatEUR(value) {
 function formatPercent(value, decimals) {
   if (decimals === undefined) decimals = 2;
   if (!isFinite(value)) return "0.00%";
-  return value.toFixed(decimals) + "%";
+  return new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  }).format(value) + "%";
 }
 
 /**

@@ -13,6 +13,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819786472653123" crossorigin="anonymous"></script>
   <script src="../ads.js"></script>
   <script src="../analytics.js" defer></script>
+  <script src="../share.js" defer></script>
   <title>Mortgage Payment Calculator – Estimate Your Monthly Payment</title>
   <meta name="description" content="Use our free mortgage payment calculator to estimate your monthly mortgage cost. Fast, accurate, and easy to use.">
   <meta name="robots" content="index, follow">
@@ -158,7 +159,7 @@
             <small class="field-hint">Total purchase price of the property</small>
             <div class="input-wrap has-prefix">
               <span class="prefix">$</span>
-              <input type="number" id="homePrice" value="350000" min="0" step="1000" required>
+              <input type="number" id="homePrice" value="350000" min="0" step="any" required>
             </div>
           </div>
           <div class="form-group">
@@ -166,7 +167,7 @@
             <small class="field-hint">Amount you're paying upfront (20% or more avoids PMI)</small>
             <div class="input-wrap has-prefix">
               <span class="prefix">$</span>
-              <input type="number" id="downPayment" value="70000" min="0" step="1000" required>
+              <input type="number" id="downPayment" value="70000" min="0" step="any" required>
             </div>
           </div>
           <div class="form-group">
@@ -181,7 +182,7 @@
             <label for="rate">Interest Rate</label>
             <small class="field-hint">Annual interest rate offered by your lender (e.g. 6.5%)</small>
             <div class="input-wrap has-suffix">
-              <input type="number" id="rate" value="6.5" min="0" max="100" step="0.01" required>
+              <input type="number" id="rate" value="6.5" min="0" max="100" step="any" required>
               <span class="suffix">%</span>
             </div>
           </div>

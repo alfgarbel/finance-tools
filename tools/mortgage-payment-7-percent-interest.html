@@ -13,6 +13,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4819786472653123" crossorigin="anonymous"></script>
   <script src="../ads.js"></script>
   <script src="../analytics.js" defer></script>
+  <script src="../share.js" defer></script>
   <title>Mortgage Payment at 7% Interest Rate – Affordability Impact</title>
   <meta name="description" content="Calculate your mortgage payment at 7% interest. See how 7% rates affect affordability, compare to lower rates, and find strategies to manage higher payments.">
   <meta name="robots" content="index, follow">
@@ -112,10 +113,10 @@
       <h2 class="card-title">Calculate Your Mortgage Payment at 7%</h2>
       <form id="calcForm">
         <div class="form-grid">
-          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="400000" min="0" step="1000" required></div></div>
-          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="80000" min="0" step="1000" required></div></div>
+          <div class="form-group"><label for="homePrice">Home Price</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="homePrice" value="400000" min="0" step="any" required></div></div>
+          <div class="form-group"><label for="downPayment">Down Payment</label><div class="input-wrap has-prefix"><span class="prefix">$</span><input type="number" id="downPayment" value="80000" min="0" step="any" required></div></div>
           <div class="form-group"><label for="loanTerm">Loan Term</label><div class="input-wrap has-suffix"><input type="number" id="loanTerm" value="30" min="1" max="50" step="1" required><span class="suffix">yrs</span></div></div>
-          <div class="form-group"><label for="rate">Interest Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="7.0" min="0" max="100" step="0.01" required><span class="suffix">%</span></div></div>
+          <div class="form-group"><label for="rate">Interest Rate</label><div class="input-wrap has-suffix"><input type="number" id="rate" value="7.0" min="0" max="100" step="any" required><span class="suffix">%</span></div></div>
         </div>
         <button type="submit" class="btn">Calculate</button>
         <div class="error-msg" id="errorMsg"></div>

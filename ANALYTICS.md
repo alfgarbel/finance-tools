@@ -72,3 +72,13 @@ Once dimensions are registered, the reports worth building in **Explore**:
   calculator never breaks because measurement failed.
 * Calculator inputs are never recorded — only that a calculation happened.
   This matches what `/privacy` tells visitors.
+
+## `calc_source`
+
+`calculate` events also carry `calc_source`:
+
+* `user` — someone filled in the form and ran it
+* `link` — the page auto-ran because it was opened from a shared result link
+
+Register it as a custom dimension alongside the others if you want usage
+numbers that exclude shared-link replays.

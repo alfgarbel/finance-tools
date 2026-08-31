@@ -80,7 +80,10 @@
     var shown = !!document.querySelector(".results.visible");
 
     track("calculate", withPage({
-      calc_status: failed ? "error" : (shown ? "success" : "unknown")
+      calc_status: failed ? "error" : (shown ? "success" : "unknown"),
+      /* share.js sets this when reopening a shared link, so auto-runs
+         do not inflate the count of people actually using the tool. */
+      calc_source: window.__ftCalcSource === "link" ? "link" : "user"
     }));
   });
 
