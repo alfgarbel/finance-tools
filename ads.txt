@@ -1,0 +1,5 @@
+# Authorized Digital Sellers — https://iabtechlab.com/ads-txt/
+# Replace pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID
+# (the same ID used in ads.js, without the leading "ca-").
+# Google will warn in the AdSense dashboard until this is correct.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

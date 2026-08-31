@@ -1228,7 +1228,8 @@ body {
   margin-bottom: 0.2rem;
 }
 
-/* ---------- Ad placeholders ---------- */
+/* ---------- Ad slots ---------- */
+/* Default (no publisher ID configured in ads.js): dashed placeholder. */
 .ad-slot {
   display: flex;
   align-items: center;
@@ -1246,6 +1247,36 @@ body {
   color: var(--slate-300);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* Live ads: ads.js sets .ads-live on <html> once AdSense is configured.
+   The placeholder chrome is dropped and the label becomes the disclosure
+   printed above the unit. min-height is reserved to limit layout shift. */
+.ads-live .ad-slot {
+  display: block;
+  min-height: 100px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ads-live .ad-slot-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  color: var(--slate-400);
+}
+
+.ads-live .ad-slot .adsbygoogle {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Unfilled units are collapsed by ads.js so they leave no empty gap. */
+.ad-slot[hidden] {
+  display: none;
 }
 
 /* ---------- Footer ---------- */
@@ -1316,4 +1347,5 @@ body {
   .hp-trust-item span { font-size: 0.75rem; }
   .hp-section-title { font-size: 1.25rem; }
   .ad-slot { min-height: 80px; margin: 1.5rem 0; }
+  .ads-live .ad-slot { min-height: 80px; }
 }
