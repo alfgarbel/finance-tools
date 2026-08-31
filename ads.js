@@ -15,7 +15,7 @@
 
 var ADSENSE_CONFIG = {
   /* Your AdSense publisher ID, e.g. "ca-pub-1234567890123456". */
-  client: "ca-pub-XXXXXXXXXXXXXXXX",
+  client: "ca-pub-4819786472653123",
 
   /* One entry per ad position used in the HTML
      (`<div class="ad-slot" data-ad-position="...">`).
@@ -68,12 +68,18 @@ var ADSENSE_CONFIG = {
 
   root.className += (root.className ? " " : "") + "ads-live";
 
-  /* ---- Load the AdSense library from <head> ---- */
-  var loader = document.createElement("script");
-  loader.async = true;
-  loader.crossOrigin = "anonymous";
-  loader.src = LOADER + "?client=" + encodeURIComponent(ADSENSE_CONFIG.client);
-  (document.head || document.documentElement).appendChild(loader);
+  /* ---- Load the AdSense library ----
+     Every page carries the loader statically in <head> so that Google's
+     site review and crawler see the tag without executing JavaScript.
+     Only inject a copy if that tag is missing — loading the library
+     twice makes it drop ad requests. */
+  if (!document.querySelector('script[src*="adsbygoogle.js"]')) {
+    var loader = document.createElement("script");
+    loader.async = true;
+    loader.crossOrigin = "anonymous";
+    loader.src = LOADER + "?client=" + encodeURIComponent(ADSENSE_CONFIG.client);
+    (document.head || document.documentElement).appendChild(loader);
+  }
 
   /**
    * Watch a rendered unit and collapse its container if AdSense
