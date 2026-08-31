@@ -39,6 +39,7 @@ finance-tools/
   style.css                     # Shared stylesheet
   script.js                     # Shared JS helpers (formatting, parsing, UI)
   ads.js                        # Google AdSense integration — see ADSENSE.md
+  analytics.js                  # GA4 event tracking — see ANALYTICS.md
   ads.txt                       # Authorized digital sellers
   robots.txt
   sitemap.xml
@@ -53,6 +54,13 @@ finance-tools/
 - **CSS3** — custom properties, grid, flexbox, responsive design
 - **Vanilla JavaScript** — no frameworks or transpilation
 - **Chart.js 4.x** (CDN) — used only for the compound interest growth chart
+
+## Analytics
+
+Custom GA4 events (`calculate`, `ad_slot_view`, `outbound_click`) are
+defined in `analytics.js`. The event parameters must be registered as
+custom dimensions in GA4 before they show up in reports — see
+[ANALYTICS.md](ANALYTICS.md).
 
 ## Monetization
 
