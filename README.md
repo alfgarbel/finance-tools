@@ -41,6 +41,8 @@ finance-tools/
   ads.js                        # Google AdSense integration — see ADSENSE.md
   analytics.js                  # GA4 event tracking — see ANALYTICS.md
   .mcp.json                     # GA4 MCP server — see MCP-ANALYTICS.md
+  favicon.ico / *.png           # Icons and social card (generated, see tools/README note)
+  site.webmanifest              # Icon manifest
   ads.txt                       # Authorized digital sellers
   robots.txt
   sitemap.xml
