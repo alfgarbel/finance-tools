@@ -1,6 +1,10 @@
 # Finance Tools
 
-A collection of free, lightweight financial calculators built with HTML, CSS, and vanilla JavaScript. No frameworks, no build step — just open `index.html` in a browser.
+Free, lightweight financial calculators built with HTML, CSS, and vanilla JavaScript.
+No frameworks, no build step — just open `index.html` in a browser.
+
+Live at [financialtoolkit.net](https://financialtoolkit.net). 97 calculator pages,
+27 guides, and 5 hub pages, deployed on Vercel.
 
 ## Calculators
 
@@ -24,16 +28,23 @@ No server, no build tools, no dependencies required (Chart.js is loaded via CDN 
 
 ```
 finance-tools/
-  index.html                                  # Homepage
-  style.css                                   # Shared stylesheet
-  script.js                                   # Shared JavaScript helpers
-  README.md
-  tools/
-    compound-interest-calculator.html
-    dividend-yield-calculator.html
-    percentage-increase-calculator.html
-    investment-return-calculator.html
-    salary-after-tax-spain.html
+  index.html                    # Homepage
+  all-calculators.html          # Full directory
+  about.html                    # About
+  privacy.html                  # Privacy policy
+  investing-calculators.html    # Topic hubs
+  mortgage-and-loan-calculators.html
+  savings-and-financial-planning.html
+  inflation-and-money-tools.html
+  style.css                     # Shared stylesheet
+  script.js                     # Shared JS helpers (formatting, parsing, UI)
+  ads.js                        # Google AdSense integration — see ADSENSE.md
+  ads.txt                       # Authorized digital sellers
+  robots.txt
+  sitemap.xml
+  vercel.json
+  tools/                        # 97 calculator pages
+  guides/                       # 27 explainer articles
 ```
 
 ## Tech Stack
@@ -42,6 +53,12 @@ finance-tools/
 - **CSS3** — custom properties, grid, flexbox, responsive design
 - **Vanilla JavaScript** — no frameworks or transpilation
 - **Chart.js 4.x** (CDN) — used only for the compound interest growth chart
+
+## Monetization
+
+Ads are served through Google AdSense and configured entirely in `ads.js`.
+Until a publisher ID is filled in, pages render inert grey placeholders.
+See [ADSENSE.md](ADSENSE.md) for the setup steps.
 
 ## License
 
