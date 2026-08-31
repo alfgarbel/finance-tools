@@ -40,6 +40,8 @@ finance-tools/
   script.js                     # Shared JS helpers (formatting, parsing, UI)
   ads.js                        # Google AdSense integration — see ADSENSE.md
   analytics.js                  # GA4 event tracking — see ANALYTICS.md
+  share.js                      # Shareable result links
+  amortization.js               # Amortization schedule (mortgage + loan pages)
   .mcp.json                     # GA4 MCP server — see MCP-ANALYTICS.md
   favicon.ico / *.png           # Icons and social card (generated, see tools/README note)
   site.webmanifest              # Icon manifest

@@ -14,6 +14,7 @@
   <script src="../ads.js"></script>
   <script src="../analytics.js" defer></script>
   <script src="../share.js" defer></script>
+  <script src="../amortization.js" defer></script>
   <title>Monthly Payment on a $450,000 Mortgage – Rate &amp; Term Comparisons</title>
   <meta name="description" content="Calculate the monthly payment on a $450,000 mortgage. At 6.5% over 30 years: $2,844/month. At 15 years: $3,920/month but saves $318,000 in interest. Compare rates and terms.">
   <meta name="robots" content="index, follow">
@@ -127,6 +128,27 @@
         <div class="result-item amber"><div class="label">Total Interest</div><div class="value" id="totalInterest">&mdash;</div></div>
       </div>
     </div>
+
+    <!-- Amortization schedule -->
+    <section class="card section" id="amortization" hidden>
+      <h2>Amortization Schedule</h2>
+      <p>How each payment splits between interest and principal over the life of the loan. Early payments are almost entirely interest; the balance falls slowly at first and then accelerates as the interest portion shrinks.</p>
+      <div class="amort-controls">
+        <div class="amort-toggle" role="group" aria-label="Schedule detail">
+          <button type="button" class="amort-tab is-active" data-view="yearly" aria-pressed="true">By year</button>
+          <button type="button" class="amort-tab" data-view="monthly" aria-pressed="false">By month</button>
+        </div>
+        <button type="button" class="amort-csv">Download CSV</button>
+      </div>
+      <p class="amort-summary" id="amortSummary"></p>
+      <div class="table-wrap amort-scroll">
+        <table class="data-table" id="amortTable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
 
     <div class="ad-slot" data-ad-position="content"><span class="ad-slot-label">Advertisement</span></div>
 

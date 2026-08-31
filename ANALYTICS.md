@@ -82,3 +82,9 @@ Once dimensions are registered, the reports worth building in **Explore**:
 
 Register it as a custom dimension alongside the others if you want usage
 numbers that exclude shared-link replays.
+
+## `amortization_view`
+
+Fires when someone switches the amortization schedule between the year and
+month views, with `schedule_view` set to `yearly` or `monthly`. A useful
+check on whether the schedule is worth extending to other calculators.
