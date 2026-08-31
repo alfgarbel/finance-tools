@@ -40,6 +40,7 @@ finance-tools/
   script.js                     # Shared JS helpers (formatting, parsing, UI)
   ads.js                        # Google AdSense integration — see ADSENSE.md
   analytics.js                  # GA4 event tracking — see ANALYTICS.md
+  .mcp.json                     # GA4 MCP server — see MCP-ANALYTICS.md
   ads.txt                       # Authorized digital sellers
   robots.txt
   sitemap.xml
@@ -61,6 +62,9 @@ Custom GA4 events (`calculate`, `ad_slot_view`, `outbound_click`) are
 defined in `analytics.js`. The event parameters must be registered as
 custom dimensions in GA4 before they show up in reports — see
 [ANALYTICS.md](ANALYTICS.md).
+
+Claude Code can query this property directly through Google's official
+Analytics MCP server — see [MCP-ANALYTICS.md](MCP-ANALYTICS.md).
 
 ## Monetization
 
