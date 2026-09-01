@@ -1306,6 +1306,48 @@ body {
   .amort-scroll .data-table { font-size: 0.75rem; }
 }
 
+/* ---------- Directory: compact scenario index ---------- */
+.dir-intro {
+  margin: -0.25rem 0 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+}
+
+.dir-sub {
+  margin: 1.5rem 0 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dir-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 0.125rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dir-links li { margin: 0; }
+
+.dir-links a {
+  display: block;
+  padding: 0.4rem 0;
+  font-size: 0.875rem;
+  color: var(--blue-700);
+  text-decoration: none;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.dir-links a:hover { color: var(--blue-800); text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .dir-links { grid-template-columns: 1fr; }
+}
+
 /* ---------- Share link ---------- */
 .share-row {
   display: flex;
