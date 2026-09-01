@@ -88,3 +88,12 @@ numbers that exclude shared-link replays.
 Fires when someone switches the amortization schedule between the year and
 month views, with `schedule_view` set to `yearly` or `monthly`. A useful
 check on whether the schedule is worth extending to other calculators.
+
+## `calc_source` values
+
+* `user` — someone filled in the form and ran it
+* `link` — the page auto-ran because it was opened from a shared result link
+* `preset` — the worked answer an embedded guide calculator runs on page load
+
+Guide-calculator success is `calculate` where `page_type = guide` **and
+`calc_source = user`**: a reader who changed the numbers, not the auto-run.
