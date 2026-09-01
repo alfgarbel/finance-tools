@@ -1,0 +1,41 @@
+# Ping IndexNow (Bing, Yandex, Seznam) with the pages a deploy changed.
+# Google does not participate in IndexNow; this is for the index that
+# currently sends the site essentially all of its search traffic.
+name: IndexNow
+
+on:
+  push:
+    # The default branch this repo deploys from. Add "main" here if the
+    # default branch is ever renamed.
+    branches:
+      - claude/compound-interest-calculator-NdupV
+      - main
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+
+# Never run two submissions at once for the same branch.
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need the parent commit so the script can diff against it.
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Vercel deploys on the same push; give it a moment so the changed
+      # pages are live before search engines are told to fetch them.
+      - name: Wait for deploy
+        run: sleep 90
+
+      - name: Submit changed URLs
+        run: node scripts/indexnow.mjs

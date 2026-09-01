@@ -40,6 +40,7 @@ finance-tools/
   script.js                     # Shared JS helpers (formatting, parsing, UI)
   ads.js                        # Google AdSense integration — see ADSENSE.md
   analytics.js                  # GA4 event tracking — see ANALYTICS.md
+  scripts/indexnow.mjs          # IndexNow submitter — see INDEXNOW.md
   share.js                      # Shareable result links
   embed-calc.js                 # Inline calculator for guide pages
   amortization.js               # Amortization schedule (mortgage + loan pages)
