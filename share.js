@@ -118,6 +118,9 @@
   document.addEventListener("submit", function (e) {
     if (e.target !== form) return;
     if (!hasResults()) return;
+    /* The worked answer embed-calc.js runs on load is not something the
+       reader asked to share — leave the clean URL alone. */
+    if (window.__ftCalcSource === "preset") return;
 
     var qs = serialize();
     history.replaceState(null, "", qs ? location.pathname + "?" + qs : location.pathname);

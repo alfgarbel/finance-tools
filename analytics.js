@@ -81,9 +81,11 @@
 
     track("calculate", withPage({
       calc_status: failed ? "error" : (shown ? "success" : "unknown"),
-      /* share.js sets this when reopening a shared link, so auto-runs
-         do not inflate the count of people actually using the tool. */
-      calc_source: window.__ftCalcSource === "link" ? "link" : "user"
+      /* Set by share.js when reopening a shared link, and by
+         embed-calc.js for the worked answer it runs on page load, so
+         neither inflates the count of people actually using the tool.
+         A real interaction reports "user". */
+      calc_source: window.__ftCalcSource || "user"
     }));
   });
 
