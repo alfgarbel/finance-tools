@@ -54,6 +54,21 @@ var ADSENSE_CONFIG = {
     return typeof c === "string" && /^ca-pub-\d{16}$/.test(c);
   }
 
+  /** True when a unit has a real ad-slot ID rather than the placeholder. */
+  function isUsableUnit(unit) {
+    return !!(unit && unit.slot && unit.slot.indexOf("X") === -1);
+  }
+
+  /** True when at least one position could render an ad. */
+  function hasRenderableUnit() {
+    var units = ADSENSE_CONFIG.units || {};
+    for (var key in units) {
+      if (Object.prototype.hasOwnProperty.call(units, key) &&
+          isUsableUnit(units[key])) return true;
+    }
+    return false;
+  }
+
   /** True on file:// and local dev hosts. */
   function isLocal() {
     var h = location.hostname;
@@ -66,7 +81,13 @@ var ADSENSE_CONFIG = {
     return;
   }
 
-  root.className += (root.className ? " " : "") + "ads-live";
+  /* A slot with no usable unit must never occupy space: until the ad units
+     exist in AdSense, the pages would otherwise show an empty box labelled
+     "Advertisement". `ads-live` therefore tracks whether anything can
+     actually render, not merely whether a publisher ID is present. */
+  if (hasRenderableUnit()) {
+    root.className += (root.className ? " " : "") + "ads-live";
+  }
 
   /* ---- Load the AdSense library ----
      Every page carries the loader statically in <head> so that Google's
@@ -107,7 +128,11 @@ var ADSENSE_CONFIG = {
 
     var position = container.getAttribute("data-ad-position");
     var unit = ADSENSE_CONFIG.units[position];
-    if (!unit || !unit.slot || unit.slot.indexOf("X") !== -1) return;
+    if (!isUsableUnit(unit)) {
+      /* Nothing to show here — collapse rather than leaving a labelled gap. */
+      container.hidden = true;
+      return;
+    }
 
     var ins = document.createElement("ins");
     ins.className = "adsbygoogle";
