@@ -36,7 +36,7 @@ finance-tools/
   mortgage-and-loan-calculators.html
   savings-and-financial-planning.html
   inflation-and-money-tools.html
-  style.css                     # Shared stylesheet
+  style.css                     # Shared stylesheet  — tokens documented in DESIGN.md
   script.js                     # Shared JS helpers (formatting, parsing, UI)
   ads.js                        # Google AdSense integration — see ADSENSE.md
   analytics.js                  # GA4 event tracking — see ANALYTICS.md

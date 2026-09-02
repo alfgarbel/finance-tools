@@ -9,52 +9,102 @@
 html { scroll-behavior: smooth; }
 
 :root {
-  /* Brand */
-  --blue-50:  #eff6ff;
-  --blue-100: #dbeafe;
-  --blue-500: #3b82f6;
-  --blue-600: #2563eb;
-  --blue-700: #1d4ed8;
-  --blue-800: #1e40af;
+  /* ---------- Palette ----------
+     Roles first. The Tailwind-shaped names further down are aliases, kept so
+     the 228 existing rules keep working without a sweep through all of them.
+     Every pair below meets WCAG AA against the surface it is used on. */
 
-  /* Semantic accents */
-  --emerald-50:  #ecfdf5;
-  --emerald-100: #d1fae5;
-  --emerald-500: #10b981;
-  --emerald-600: #059669;
-  --amber-50:  #fffbeb;
-  --amber-100: #fef3c7;
-  --amber-500: #f59e0b;
-  --amber-600: #d97706;
-  --red-50:  #fef2f2;
-  --red-500: #ef4444;
+  /* Accent — one hue. Marks the answer and the actions, nothing else. */
+  --accent-tint:   #eef3f1;
+  --accent-veil:   #d8e5e0;
+  --accent-light:  #14806a;
+  --accent:        #0e5c4a;
+  --accent-deep:   #0b4a3c;
+  --accent-deeper: #093c31;
 
-  /* Neutrals */
-  --slate-50:  #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1e293b;
-  --slate-900: #0f172a;
+  /* Supporting tones for secondary figures — deliberately quiet. */
+  --sage-tint: #eef2ee;
+  --sage-veil: #dde5dd;
+  --sage:      #5c7a63;
+  --sage-deep: #47614d;
 
-  /* Surfaces & shadows */
+  --sand-tint: #f6f3ec;
+  --sand-veil: #ebe4d5;
+  --sand:      #9a7c39;
+  --sand-deep: #80642c;
+
+  /* Negative — validation errors and losses only. */
+  --negative-tint: #f7ece8;
+  --negative:      #9b3a22;
+
+  /* Neutrals — one family, faint green cast so they sit with the accent
+     instead of fighting it. */
+  --n-50:  #f5f6f3;
+  --n-100: #ecefe9;
+  --n-200: #dfe3de;
+  --n-300: #c6ccc4;
+  --n-400: #616c65;   /* used only as text colour — dark enough for AA on every surface */
+  --n-500: #6b776f;
+  --n-600: #59635c;
+  --n-700: #414a44;
+  --n-800: #2a312c;
+  --n-900: #14181a;
+
+  /* ---------- Typography ---------- */
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas,
+               monospace;
+
+  /* ---------- Aliases ----------
+     Names inherited from the previous Tailwind-derived palette. Kept as a
+     compatibility layer; new rules should use the role names above. */
+  --blue-50:  var(--accent-tint);
+  --blue-100: var(--accent-veil);
+  --blue-500: var(--accent-light);
+  --blue-600: var(--accent);
+  --blue-700: var(--accent-deep);
+  --blue-800: var(--accent-deeper);
+
+  --emerald-50:  var(--sage-tint);
+  --emerald-100: var(--sage-veil);
+  --emerald-500: var(--sage);
+  --emerald-600: var(--sage-deep);
+
+  --amber-50:  var(--sand-tint);
+  --amber-100: var(--sand-veil);
+  --amber-500: var(--sand);
+  --amber-600: var(--sand-deep);
+
+  --red-50:  var(--negative-tint);
+  --red-500: var(--negative);
+
+  --slate-50:  var(--n-50);
+  --slate-100: var(--n-100);
+  --slate-200: var(--n-200);
+  --slate-300: var(--n-300);
+  --slate-400: var(--n-400);
+  --slate-500: var(--n-500);
+  --slate-600: var(--n-600);
+  --slate-700: var(--n-700);
+  --slate-800: var(--n-800);
+  --slate-900: var(--n-900);
+
+  /* ---------- Surfaces & shadows ----------
+     Shadows carry the ground's hue rather than neutral black, so they read
+     as shade rather than as a grey overlay. */
   --radius:    16px;
   --radius-sm: 10px;
   --radius-xs: 8px;
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.04);
-  --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.07), 0 4px 10px -4px rgba(0,0,0,0.04);
-  --shadow-xl: 0 20px 40px -5px rgba(0,0,0,0.08), 0 8px 16px -8px rgba(0,0,0,0.05);
+  --shadow-xs: 0 1px 2px rgba(20,24,26,0.05);
+  --shadow-sm: 0 1px 3px rgba(20,24,26,0.07), 0 1px 2px rgba(20,24,26,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(20,24,26,0.06), 0 2px 4px -2px rgba(20,24,26,0.04);
+  --shadow-lg: 0 10px 25px -3px rgba(20,24,26,0.08), 0 4px 10px -4px rgba(20,24,26,0.05);
+  --shadow-xl: 0 20px 40px -5px rgba(20,24,26,0.09), 0 8px 16px -8px rgba(20,24,26,0.06);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-               Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.6;
   color: var(--slate-700);
   background: #fff;
@@ -470,6 +520,9 @@ body {
 .result-item.amber .label { color: var(--amber-600); }
 
 .result-item .value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
   font-size: 1.375rem;
   font-weight: 800;
   color: var(--slate-900);
@@ -508,6 +561,8 @@ body {
 
 .data-table th,
 .data-table td {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
   text-align: right;
   padding: 0.625rem 0.75rem;
   border-bottom: 1px solid var(--slate-100);
@@ -588,7 +643,7 @@ body {
   border-radius: var(--radius-xs);
   padding: 1rem 1.25rem;
   margin: 1rem 0;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   color: var(--slate-700);
   overflow-x: auto;
@@ -596,7 +651,7 @@ body {
 }
 
 .formula-block .var-label {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   color: var(--slate-400);
   display: block;
@@ -1404,7 +1459,7 @@ body {
   border-radius: var(--radius-sm);
 }
 
-.embed-code code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; white-space: pre; }
+.embed-code code { font-family: var(--font-mono); white-space: pre; }
 
 .embed-preview-label {
   margin: 1.25rem 0 0.5rem;
@@ -1421,6 +1476,19 @@ body {
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-sm);
   background: #fff;
+}
+
+/* Numeric inputs and summaries use the same figure treatment as results,
+   so a value looks the same while it is being typed as after it is computed. */
+input[type="number"] {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.amort-summary,
+.stat-value,
+.hp-stat-value {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Share link ---------- */
