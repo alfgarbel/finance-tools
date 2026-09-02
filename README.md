@@ -43,6 +43,10 @@ finance-tools/
   scripts/indexnow.mjs          # IndexNow submitter — see INDEXNOW.md
   share.js                      # Shareable result links
   embed-calc.js                 # Inline calculator for guide pages
+  embed/                        # Embeddable calculator frames — see EMBED.md
+  embed-frame.js                # In-frame resize + analytics
+  embed-host.js                 # Host-side resizer (served to other sites)
+  embed-snippet.js              # "Embed this calculator" panel
   amortization.js               # Amortization schedule (mortgage + loan pages)
   .mcp.json                     # GA4 MCP server — see MCP-ANALYTICS.md
   favicon.ico / *.png           # Icons and social card (generated, see tools/README note)
