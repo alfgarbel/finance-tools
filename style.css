@@ -250,12 +250,6 @@ body {
 }
 
 /* Secondary content cards — lighter than the primary calculator card */
-.card.section {
-  background: var(--slate-50);
-  box-shadow: none;
-  border-color: var(--slate-100);
-}
-
 /* ---------- Tool grid (homepage) ---------- */
 .tool-grid {
   display: grid;
@@ -468,6 +462,7 @@ body {
   border-radius: var(--radius-xs);
   font-size: 0.9375rem;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer;
   letter-spacing: -0.01em;
   transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
@@ -500,7 +495,6 @@ body {
   border-top: 0;
 }
 
-/* ---------- Results ---------- */
 /* ---------- Results ----------
    The first .result-item is the figure people came for; the rest support it.
    That is true on every calculator, so the hierarchy is expressed with
@@ -634,6 +628,26 @@ body {
   color: var(--blue-600);
 }
 
+/* Field hint under an input label. Was inline on one tool page; it belongs
+   here so no page carries a stylesheet of its own. */
+.field-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--slate-400);
+  margin-top: 0.2rem;
+  margin-bottom: 0.35rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 /* ---------- Badges ---------- */
 .badge {
   display: inline-block;
@@ -749,20 +763,21 @@ body {
 .error-msg.visible { display: block; }
 
 /* ---------- Homepage: Hero ---------- */
-.hp-hero-inner { max-width: 46rem; }
-
 .hp-hero {
   /* A flat ground rather than a gradient — the tint was doing nothing the
      rule below the section does not do more quietly. */
   background: var(--n-50);
   border-bottom: 1px solid var(--n-200);
-  padding: 4.5rem 1.5rem 3.5rem;
+  padding: 4.5rem 0 3.5rem;
   text-align: left;
 }
 
+/* Mirrors .container, so the homepage h1 begins on the same line as the h1 on
+   every other page instead of 60px further in. */
 .hp-hero-inner {
-  max-width: 640px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .hp-badge {
@@ -777,19 +792,22 @@ body {
   margin-bottom: 1.25rem;
 }
 
+/* Same scale as .hero h1 / .hero p — the homepage used to run a size larger,
+   which read as a different site rather than as emphasis. */
 .hp-hero h1 {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.035em;
   color: var(--slate-900);
-  line-height: 1.12;
-  margin-bottom: 1rem;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  max-width: 46rem;
 }
 
 .hp-hero p {
   color: var(--slate-500);
-  font-size: 1.125rem;
-  line-height: 1.65;
+  font-size: 1.0625rem;
+  line-height: 1.6;
   max-width: 520px;
   margin: 0 0 1.75rem;
 }
@@ -802,11 +820,19 @@ body {
 }
 
 /* ---------- Homepage: Trust bar ---------- */
+/* Full-bleed rule, but the items sit on the same left edge as the h1 above
+   them and the content below. */
 .hp-trust-bar {
   display: flex;
   justify-content: flex-start;
   gap: 2rem;
-  padding: 1.25rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem;
+  background: #fff;
+}
+
+.hp-trust-bar-wrap {
   border-bottom: 1px solid var(--slate-200);
   background: #fff;
 }
@@ -891,18 +917,20 @@ body {
 }
 
 /* ---------- Homepage: Section styles ---------- */
+/* Same rhythm and same heading size as .card.section on every other page. */
 .hp-section {
-  margin-top: 3.5rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--slate-200);
+  margin-top: 2.25rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--n-200);
 }
 
 .hp-section-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--slate-800);
-  letter-spacing: -0.02em;
-  margin-bottom: 0.5rem;
+  color: var(--n-800);
+  letter-spacing: -0.015em;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
 }
 
 .hp-section-subtitle {
@@ -920,13 +948,16 @@ body {
 }
 
 .hp-audience-item {
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   border: 1px solid var(--slate-200);
   border-radius: var(--radius);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.25s, border-color 0.25s;
 }
 
-.hp-audience-item:hover { box-shadow: var(--shadow-md); }
+.hp-audience-item:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--slate-300);
+}
 
 .hp-audience-icon {
   width: 40px;
@@ -966,13 +997,16 @@ body {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  padding: 1.25rem 1.5rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   border: 1px solid var(--slate-200);
   border-radius: var(--radius);
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.25s, border-color 0.25s;
 }
 
-.hp-why-item:hover { box-shadow: var(--shadow-md); }
+.hp-why-item:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--slate-300);
+}
 
 .hp-why-number {
   flex-shrink: 0;
@@ -1001,64 +1035,6 @@ body {
   line-height: 1.55;
 }
 
-/* ---------- Homepage: Footer ---------- */
-.hp-footer-inner {
-  max-width: 1100px;
-  margin: 0 auto 1.25rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: 2rem 2.5rem;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid var(--n-200);
-}
-
-.hp-footer-brand { grid-column: 1 / -1; }
-
-.hp-footer-brand .logo {
-  margin-bottom: 0.5rem;
-  font-size: 0.9375rem;
-}
-
-.hp-footer-brand p {
-  font-size: 0.8125rem;
-  color: var(--slate-400);
-  max-width: 280px;
-  line-height: 1.5;
-}
-
-.hp-footer-links h3 {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--slate-400);
-  margin-bottom: 0.75rem;
-}
-
-.hp-footer-links ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.hp-footer-links a {
-  font-size: 0.8125rem;
-  color: var(--slate-500);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.hp-footer-links a:hover { color: var(--blue-600); }
-
-.hp-footer-bottom {
-  text-align: center;
-}
-
-.hp-footer-bottom p {
-  font-size: 0.75rem;
-  color: var(--slate-400);
-}
 
 /* ---------- Related calculators ---------- */
 .related-tools {
@@ -1110,7 +1086,7 @@ body {
 .related-tools-grid .rt-icon {
   width: 28px;
   height: 28px;
-  border-radius: 6px;
+  border-radius: var(--radius-xs);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1161,9 +1137,10 @@ body {
 .site-footer-inner {
   max-width: 800px;
   margin: 0 auto 1.25rem;
+  padding: 0 1.25rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: 2rem 2.5rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem 2rem;
   text-align: left;
   padding-bottom: 1.75rem;
   border-bottom: 1px solid var(--n-200);
@@ -1209,14 +1186,41 @@ body {
 .site-footer-col a:hover { color: var(--blue-600); }
 
 .site-footer-bottom {
-  text-align: center;
+  text-align: left;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 .site-footer-bottom p {
   font-size: 0.75rem;
   color: var(--slate-400);
+}
+
+/* ---------- Prose links ----------
+   Links inside body copy were never given a colour and were rendering as the
+   browser default blue on every page — the one element on the site still
+   outside the palette. Scoped to unclassed anchors inside prose so the
+   breadcrumb, nav, footer, tool cards and buttons keep their own rules.
+   The underline stays: colour alone should not be what marks a link. */
+.card.section p a:not([class]),
+.card.section li a:not([class]),
+.card.section td a:not([class]),
+.card.section dd a:not([class]),
+.hero p a:not([class]) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s;
+}
+
+.card.section p a:not([class]):hover,
+.card.section li a:not([class]):hover,
+.card.section td a:not([class]):hover,
+.card.section dd a:not([class]):hover,
+.hero p a:not([class]):hover {
+  color: var(--accent-deep);
 }
 
 /* ---------- CTA banner ---------- */
@@ -1624,7 +1628,7 @@ input[type="number"] {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 0;
   font-size: 0.8125rem;
   color: var(--slate-400);
   background: var(--slate-50);
@@ -1634,30 +1638,32 @@ input[type="number"] {
 /* ---------- Responsive — Tablet ---------- */
 @media (max-width: 768px) {
   .container { padding: 2rem 1rem 4rem; }
-  .hero h1 { font-size: 2rem; }
+  .hero h1, .hp-hero h1 { font-size: 2rem; }
+  .hp-hero-inner,
+  .site-footer-inner,
+  .site-footer-bottom { padding-left: 1rem; padding-right: 1rem; }
   .card { padding: 1.5rem; }
   .results.cols-4 { grid-template-columns: repeat(2, 1fr); }
 
-  .hp-hero { padding: 3.5rem 1.25rem 2.5rem; }
-  .hp-hero h1 { font-size: 2.125rem; }
+  .hp-hero { padding: 3.5rem 0 2.5rem; }
   .hp-trust-bar { gap: 1.25rem; flex-wrap: wrap; }
   .hp-featured-card { flex-direction: column; padding: 1.75rem; gap: 1.5rem; }
   .hp-featured-visual { width: 100%; max-width: 240px; }
   .hp-audience-grid { grid-template-columns: 1fr; }
   .hp-why-grid { grid-template-columns: 1fr; }
-  .hp-footer-inner { flex-direction: column; gap: 1.5rem; }
-  .site-footer-inner { flex-direction: column; gap: 1.5rem; }
+  .site-footer-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 }
 
 /* ---------- Responsive — Mobile ---------- */
 @media (max-width: 560px) {
   .site-header { padding: 0 1rem; }
+  .site-footer-inner { grid-template-columns: 1fr; gap: 1.75rem; }
   .form-grid { grid-template-columns: 1fr; }
   .results { grid-template-columns: 1fr !important; }
   .hero { margin-bottom: 2rem; }
-  .hero h1 { font-size: 1.625rem; }
-  .hero p  { font-size: 0.9375rem; }
-  .card { padding: 1.25rem; border-radius: 12px; }
+  .hero h1, .hp-hero h1 { font-size: 1.625rem; }
+  .hero p, .hp-hero p { font-size: 0.9375rem; }
+  .card { padding: 1.25rem; }
   .card-title { font-size: 1rem; }
 
   /* Compact scrollable nav instead of hiding it */
@@ -1683,9 +1689,7 @@ input[type="number"] {
   .related-tools { padding: 1.5rem; }
   .related-tools-grid { grid-template-columns: 1fr; }
 
-  .hp-hero { padding: 2.5rem 1rem 2rem; }
-  .hp-hero h1 { font-size: 1.75rem; }
-  .hp-hero p { font-size: 1rem; }
+  .hp-hero { padding: 2.5rem 0 2rem; }
   .hp-trust-bar { gap: 0.75rem; padding: 1rem 0.75rem; font-size: 0.75rem; }
   .hp-trust-item span { font-size: 0.75rem; }
   .hp-section-title { font-size: 1.25rem; }

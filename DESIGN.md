@@ -99,11 +99,47 @@ it on already-converted text would be a no-op.
 
 ## Footer
 
-Regrouped from four fixed towers into a flowing index, with the brand on its
-own row. **No links were removed.** They are real internal-linking paths and
+One footer, byte-identical on all 132 pages: brand on its own row, then four
+columns — Calculators, Guides, Topics, Pages — on a `repeat(4, minmax(0,1fr))`
+grid that steps to 2 columns at 768px and 1 at 560px. **No links were removed.** They are real internal-linking paths and
 the crawl depends on them — a previous change deliberately added 50 of them
 to give Google a route to pages it could otherwise only reach through the
 sitemap. Thinning the footer would have worked against that.
+
+## One system, not two
+
+The homepage used to run a parallel `hp-*` design system: its own footer, its
+own hero measure, its own type scale, its own section rhythm. Same palette, so
+it never looked *wrong* — but it did not line up with any other page, which is
+what made the site read as two sites stitched together.
+
+Everything below is now shared, and is the thing to check before adding a page:
+
+| | Value |
+|---|---|
+| Content column | `max-width: 800px`, `1.25rem` gutter (`1rem` under 768px) |
+| Left edge | every `h1`, section, hero and footer starts on the same line |
+| `h1` | 40px / 32px / 26px across the three breakpoints |
+| Hero lede | 17px, `max-width: 520px` |
+| Section heading | 20px, weight 700, `-0.015em` |
+| Section rhythm | `2.25rem` top padding and margin, 1px rule, first rule suppressed |
+| Bordered box | `1.5rem 1.5rem 1.25rem`, `--radius`, `--shadow-lg` on hover |
+
+`.hp-*` classes still exist for components only the homepage has — the badge,
+the trust bar, the featured card, the audience and "why" grids. They inherit
+the shared values rather than redefining them.
+
+Two things were folded back in on the way:
+
+* **`.content-section`** was used on `about` and `privacy` and had **no CSS
+  rule at all** — those two pages had been rendering with browser-default
+  `h2` sizing and no section separation. They now use `.card.section`.
+* **Prose links** were the browser default blue `#0000EE` on every page,
+  the one element never given a colour by the palette. They are now
+  `--accent`, underlined, scoped to unclassed anchors inside prose so the
+  breadcrumb, nav, footer and tool cards keep their own rules.
+* **`.btn`** never set `text-decoration`, so the same button was underlined
+  as an `<a>` and not underlined as a `<button>`.
 
 ## What has not changed yet
 
