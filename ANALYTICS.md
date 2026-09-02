@@ -97,3 +97,14 @@ check on whether the schedule is worth extending to other calculators.
 
 Guide-calculator success is `calculate` where `page_type = guide` **and
 `calc_source = user`**: a reader who changed the numbers, not the auto-run.
+
+## Embed events
+
+| Event | Fires when | Parameters |
+|---|---|---|
+| `embed_view` | An embedded calculator frame loads on another site | `page_type: "embed"`, `tool_id`, `embed_host` |
+| `embed_snippet_copy` | Someone copies an embed snippet from a tool page | `tool_id` |
+
+`embed_host` is the hostname of the page showing the embed, never its full
+URL. Register it as an eighth custom dimension to attribute referred traffic
+to the sites hosting the calculators.

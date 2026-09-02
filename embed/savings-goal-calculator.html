@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Goal Calculator – Financial Toolkit</title>
+  <meta name="description" content="Find how long a savings goal takes to reach.">
+  <!-- Embedded copy of the full calculator: keep the canonical page in the index, not this frame. -->
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/savings-goal-calculator">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* The frame is the whole viewport — no site chrome, no page padding. */
+    body { background: #fff; }
+    .embed-body { padding: 0.875rem; }
+    .embed-body .card { margin: 0; box-shadow: none; }
+    .embed-attribution {
+      margin: 0.75rem 0 0;
+      font-size: 0.75rem;
+      text-align: center;
+      color: var(--slate-500);
+    }
+    .embed-attribution a { color: var(--blue-700); font-weight: 600; text-decoration: none; }
+    .embed-attribution a:hover { text-decoration: underline; }
+  </style>
+  <script src="../script.js"></script>
+  <script src="../embed-calc.js" defer></script>
+  <script src="../embed-frame.js" defer></script>
+</head>
+<body>
+  <div class="embed-body">
+    <div class="embed-calc" data-calc="savings-goal"
+         data-goal="50000"
+         data-current="5000"
+         data-monthly="500"
+         data-rate="4.5"
+         data-title="Savings Goal Calculator"></div>
+    <p class="embed-attribution">
+      <a href="https://financialtoolkit.net/tools/savings-goal-calculator" target="_blank" rel="noopener">Savings Goal Calculator</a>
+      by Financial Toolkit
+    </p>
+  </div>
+</body>
+</html>

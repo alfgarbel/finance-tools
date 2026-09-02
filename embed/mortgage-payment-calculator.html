@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRJ4BNC69E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GRJ4BNC69E');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Payment Calculator – Financial Toolkit</title>
+  <meta name="description" content="Estimate a monthly mortgage payment and total interest.">
+  <!-- Embedded copy of the full calculator: keep the canonical page in the index, not this frame. -->
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://financialtoolkit.net/tools/mortgage-payment-calculator">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* The frame is the whole viewport — no site chrome, no page padding. */
+    body { background: #fff; }
+    .embed-body { padding: 0.875rem; }
+    .embed-body .card { margin: 0; box-shadow: none; }
+    .embed-attribution {
+      margin: 0.75rem 0 0;
+      font-size: 0.75rem;
+      text-align: center;
+      color: var(--slate-500);
+    }
+    .embed-attribution a { color: var(--blue-700); font-weight: 600; text-decoration: none; }
+    .embed-attribution a:hover { text-decoration: underline; }
+  </style>
+  <script src="../script.js"></script>
+  <script src="../embed-calc.js" defer></script>
+  <script src="../embed-frame.js" defer></script>
+</head>
+<body>
+  <div class="embed-body">
+    <div class="embed-calc" data-calc="mortgage"
+         data-homePrice="350000"
+         data-downPayment="70000"
+         data-loanTerm="30"
+         data-rate="6.5"
+         data-title="Mortgage Payment Calculator"></div>
+    <p class="embed-attribution">
+      <a href="https://financialtoolkit.net/tools/mortgage-payment-calculator" target="_blank" rel="noopener">Mortgage Payment Calculator</a>
+      by Financial Toolkit
+    </p>
+  </div>
+</body>
+</html>
