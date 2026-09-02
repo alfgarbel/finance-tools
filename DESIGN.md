@@ -44,9 +44,33 @@ ever used as a text colour, and it has to clear 4.5:1 on white, on the
 `#F5F6F3` footer, and on `#ECEFE9` panels. The palette it replaced failed
 that test in three places.
 
+## Results
+
+The first `.result-item` on every calculator is the figure people came for;
+the rest support it. That holds on all 97 pages, so the hierarchy is
+expressed with `:first-child` rather than a new class — no markup had to
+change, which is why the reordering carried no risk to the calculation code.
+
+The headline spans the full grid row in the accent at 2.75rem; supporting
+figures sit below a rule at 1.125rem in near-black. `.results.cols-2` stacks
+its pair, `.results.cols-4` puts three supporting figures in a row.
+
+The `.blue` / `.green` / `.amber` classes on result items are now inert.
+They remain in the markup of 97 pages, but colour no longer decorates a
+result — it marks the answer.
+
+## Form fields
+
+Inputs are a baseline rule rather than a box. Focus thickens and colours
+that rule; keyboard focus additionally draws a real outline, so removing the
+old focus ring did not cost the affordance.
+
 ## What has not changed yet
 
-Phases 3 and 4 of the redesign proposal — reworking the result block so one
-figure leads instead of three competing equally, and unboxing the content
-sections — are not applied. The current result tiles still give all three
-figures the same size and weight.
+**Phase 4** — unboxing the content sections, left-aligning the heroes and
+simplifying the footer — is not applied.
+
+Form labels are sentence-cased in style but the markup still reads
+`Home Price` rather than `Home price`. Converting it means editing label
+text on 97 pages, and the abbreviations in play (PMI, APY, IRPF, CAGR) make
+a blind lowercase unsafe, so it is left for a deliberate pass.
